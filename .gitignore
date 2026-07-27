@@ -9,7 +9,10 @@ __pycache__/
 .venv/
 venv/
 
-# Vercel / editores
+# Vercel (incluye el token OIDC de .env.local)
 .vercel
+.env*
+
+# Editores
 .DS_Store
 Thumbs.db

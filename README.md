@@ -1,5 +1,7 @@
 # Monitor de Deuda · Colombia
 
+**→ [monitor-deuda-colombia.vercel.app](https://monitor-deuda-colombia.vercel.app)**
+
 Página pública para consultar **quién es dueño de la deuda de Colombia**: quién
 tiene los TES, a quién le debe el país por fuera y cómo está compuesta la deuda
 del Gobierno Nacional Central. Bilingüe (ES/EN), tema claro y oscuro, sin
@@ -52,6 +54,18 @@ mano cada mes es `--trm` y `--pib`.
 
 ```bash
 pip install -r requirements.txt
+```
+
+### Comprobación opcional en CI
+
+En `.github/workflows/verificar-datos.yml` hay una acción que reconstruye los
+JSON en cada push y falla si no coinciden con los Excel — atrapa el olvido más
+probable de la rutina: reemplazar las fuentes y no volver a correr el script.
+Está sin publicar porque subir un workflow exige un permiso extra de GitHub.
+Para activarla, en una terminal:
+
+```bash
+gh auth refresh -s workflow && git add .github && git commit -m "Verificación de datos en CI" && git push
 ```
 
 ---
