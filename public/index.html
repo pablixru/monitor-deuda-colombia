@@ -1147,7 +1147,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
             <div style="{{ segInternaResto }}"></div>
           </div>
         </div>
-        <p style="color:var(--ink-faint);font-size:.82rem;margin:10px 0 0;line-height:1.55"><span class="Les">En rojo, la porción que ambas cuentas comparten. Las dos fuentes miden universos ligeramente distintos — el DCV registra custodia y el Banco de la República, residencia del acreedor — así que las cifras del traslape no coinciden exactamente.</span><span class="Len">In red, the portion both ledgers share. The two sources measure slightly different universes — the DCV records custody, Banco de la República records creditor residence — so the overlap figures do not match exactly.</span></p>
+        <p style="color:var(--ink-faint);font-size:.82rem;margin:10px 0 0;line-height:1.55"><span class="Les">En rojo, lo que ambas cuentas comparten. El DCV mide custodia y el Banco de la República, residencia del acreedor: por eso las cifras no coinciden exactamente.</span><span class="Len">In red, what both ledgers share. The DCV measures custody and Banco de la República, creditor residence — so the figures do not match exactly.</span></p>
       </div>
     </sc-if>
   </div>
@@ -1164,16 +1164,15 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     </div>
     <div>
       <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:12px"><span class="Les">Fuentes</span><span class="Len">Sources</span></div>
-      <div style="display:flex;flex-direction:column;gap:8px;font-size:.92rem;color:var(--ink-soft)">
-        <span class="Les">Tenedores de TES: DCV — Banco de la República / MinHacienda ({{ cTesMesEs }})</span><span class="Len">TES holders: DCV — Banco de la República / Ministry of Finance ({{ cTesMesEn }})</span>
-        <span class="Les">Deuda del GNC: MinHacienda — Datos históricos de la deuda GNC ({{ cGncMesEs }})</span><span class="Len">Central government debt: Ministry of Finance — Historical central government debt data ({{ cGncMesEn }})</span>
-        <span class="Les">Deuda externa: Banco de la República — Boletín de deuda externa, cuadros 1, 3 y 4 ({{ cExtMesEs }}, Pr)</span><span class="Len">External debt: Banco de la República — External debt bulletin, tables 1, 3 and 4 ({{ cExtMesEn }}, prelim.)</span>
-        <span class="Les">Deudores, acreedores y monedas: Banco de la República — cuadros 5, 6 y 7 ({{ cSnapMesEs }})</span><span class="Len">Borrowers, creditors &amp; currencies: Banco de la República — tables 5, 6 and 7 ({{ cSnapMesEn }})</span>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:.84rem;color:var(--ink-soft)">
+        <a href="https://www.irc.gov.co/deuda-publica/deuda-interna-gnc/tenedores-tes" target="_blank" rel="noopener noreferrer" style="color:var(--ink-soft);text-decoration:none;display:inline-flex;align-items:baseline;gap:7px;flex-wrap:wrap" style-hover="color:var(--accent-soft)" style-focus="outline:2px solid var(--accent);outline-offset:3px;border-radius:2px"><span class="Les">Tenedores de TES · MinHacienda</span><span class="Len">TES holders · Ministry of Finance</span><span style="color:var(--ink-faint)">· <span class="Les">{{ cTesMesEs }}</span><span class="Len">{{ cTesMesEn }}</span></span><span aria-hidden="true" style="color:var(--accent);font-size:.85em">↗</span></a>
+        <a href="https://www.irc.gov.co/deuda-publica/perfil-deuda-publica-gnc" target="_blank" rel="noopener noreferrer" style="color:var(--ink-soft);text-decoration:none;display:inline-flex;align-items:baseline;gap:7px;flex-wrap:wrap" style-hover="color:var(--accent-soft)" style-focus="outline:2px solid var(--accent);outline-offset:3px;border-radius:2px"><span class="Les">Deuda del GNC · MinHacienda</span><span class="Len">Central government debt · Ministry of Finance</span><span style="color:var(--ink-faint)">· <span class="Les">{{ cGncMesEs }}</span><span class="Len">{{ cGncMesEn }}</span></span><span aria-hidden="true" style="color:var(--accent);font-size:.85em">↗</span></a>
+        <a href="https://suameca.banrep.gov.co/estadisticas-economicas/tablasPreconstruidas?idDashboard=407211,407221,407231,40713" target="_blank" rel="noopener noreferrer" style="color:var(--ink-soft);text-decoration:none;display:inline-flex;align-items:baseline;gap:7px;flex-wrap:wrap" style-hover="color:var(--accent-soft)" style-focus="outline:2px solid var(--accent);outline-offset:3px;border-radius:2px"><span class="Les">Deuda externa · Banco de la República</span><span class="Len">External debt · Banco de la República</span><span style="color:var(--ink-faint)">· <span class="Les">{{ cExtMesEs }}</span><span class="Len">{{ cExtMesEn }}</span></span><span aria-hidden="true" style="color:var(--accent);font-size:.85em">↗</span></a>
       </div>
     </div>
     <div>
       <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:12px"><span class="Les">Notas</span><span class="Len">Notes</span></div>
-      <p style="color:var(--ink-soft);font-size:.92rem;line-height:1.55;margin:0;max-width:44ch"><span class="Les">B = billones de pesos (10¹²). Los TES clase B son títulos de deuda pública interna en pesos. La deuda externa se reporta en millones de dólares y el boletín se publica con dos meses de rezago.</span><span class="Len">B = trillions of pesos (10¹²). Class-B TES are domestic peso-denominated public debt. External debt is reported in millions of dollars and the bulletin is published with a two-month lag.</span></p>
+      <p style="color:var(--ink-faint);font-size:.84rem;line-height:1.55;margin:0"><span class="Les">B = billones de pesos (10¹²). La deuda externa se reporta en dólares y sale con dos meses de rezago.</span><span class="Len">B = trillion pesos (10¹²). External debt is reported in dollars and published with a two-month lag.</span></p>
     </div>
   </div>
 </footer>
