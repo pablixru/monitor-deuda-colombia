@@ -1,0 +1,15 @@
+# Archivos sueltos en la raíz: los insumos viven en fuentes/ con nombres
+# estables y la página en public/.
+/*.xlsx
+/*.html
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Vercel / editores
+.vercel
+.DS_Store
+Thumbs.db

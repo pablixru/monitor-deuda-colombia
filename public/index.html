@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitor de Deuda · Colombia</title>
+
+
+
+
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"assets/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"assets/react-dom.production.min.js"};</script>
+<script src="assets/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-italic-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-italic-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-italic-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-italic-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-italic-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-italic-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-italic-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-italic-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/hanken-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/hanken-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/hanken-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/hanken-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/hanken-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/hanken-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/hanken-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+#dmon{--bg:#0a0a0a;--bg-deep:#0e0e0e;--surface:#171717;--surface-high:#202020;--ink:#e5e2e1;--ink-soft:#b6b2b0;--ink-faint:#878280;--line:#2e2c2b;--line-soft:#222020;--accent:#00c08b;--accent-soft:#8ce8c8;--accent-deep:#00795a;--red:#ff5449;--blue:#0096fd;--glow:rgba(0,192,139,.22);--paper-hi:#f2f4f1;--paper-lo:#e5e9e4;--hdr:rgba(10,10,10,.78);--pad-x:clamp(24px,4vw,56px)}
+#dmon[data-theme="light"]{--bg:#f5f4f2;--bg-deep:#eceae7;--surface:#ffffff;--surface-high:#f1efec;--ink:#1b1a19;--ink-soft:#46433f;--ink-faint:#6d6763;--line:#dbd7d3;--line-soft:#e7e3df;--accent-soft:#04724f;--red:#d23a2e;--blue:#0a72c9;--glow:rgba(0,192,139,.16);--hdr:rgba(245,244,242,.82)}
+#dmon a{color:var(--ink);text-decoration:none}
+#dmon a:hover{color:var(--accent-soft)}
+#dmon:not([data-lang="en"]) .Len{display:none!important}
+#dmon[data-lang="en"] .Les{display:none!important}
+@keyframes dmonMq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+#dmon input[type="range"]{-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;background:var(--line);outline:none;cursor:pointer;margin:0}
+#dmon input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);border:none;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+#dmon input[type="range"]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);border:none}
+@media(prefers-reduced-motion:reduce){#dmon *{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div id="dmon" data-theme="{{ theme }}" data-lang="{{ lang }}" style="background:var(--bg);color:var(--ink);min-height:100vh;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif">
+
+<header style="position:sticky;top:0;z-index:50;background:var(--hdr);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)">
+  <div style="max-width:1680px;margin:0 auto;padding:12px var(--pad-x);display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-0.02em;font-size:1.02rem">
+      <span style="width:11px;height:11px;background:var(--accent);border-radius:2px;flex:none"></span>
+      <span class="Les">Monitor de Deuda · Colombia</span><span class="Len">Debt Monitor · Colombia</span>
+    </div>
+    <div style="display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px">
+      <button sc-camel-on-click="{{ goTotal }}" style="{{ vTotStyle }}"><span class="Les">Total GNC</span><span class="Len">Total CG</span></button>
+      <button sc-camel-on-click="{{ goInterna }}" style="{{ vIntStyle }}"><span class="Les">Interna</span><span class="Len">Domestic</span></button>
+      <button sc-camel-on-click="{{ goExterna }}" style="{{ vExtStyle }}"><span class="Les">Externa</span><span class="Len">External</span></button>
+    </div>
+    <sc-if value="{{ vInterna }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
+        <a href="#tenedores" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Tenedores</span><span class="Len">Holders</span></a>
+        <a href="#evolucion" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Evolución</span><span class="Len">History</span></a>
+        <a href="#cambios" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Cambios</span><span class="Len">Changes</span></a>
+        <a href="#traslape" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Traslape</span><span class="Len">Overlap</span></a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ vExterna }}" hint-placeholder-val="{{ false }}">
+      <nav style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
+        <a href="#xevolucion" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Evolución</span><span class="Len">History</span></a>
+        <a href="#xcosto" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Costo</span><span class="Len">Cost</span></a>
+        <a href="#xflujos" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Flujos</span><span class="Len">Flows</span></a>
+        <a href="#xquien" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Quién y a quién</span><span class="Len">Who owes whom</span></a>
+        <a href="#traslape" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Traslape</span><span class="Len">Overlap</span></a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ vTotal }}" hint-placeholder-val="{{ false }}">
+      <nav style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
+        <a href="#gvuelco" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">El vuelco</span><span class="Len">The shift</span></a>
+        <a href="#gperfil" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Vencimientos</span><span class="Len">Maturities</span></a>
+        <a href="#gcosto" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Costo y plazo</span><span class="Len">Cost &amp; term</span></a>
+        <a href="#gcomposicion" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Composición</span><span class="Len">Composition</span></a>
+        <a href="#traslape" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Traslape</span><span class="Len">Overlap</span></a>
+      </nav>
+    </sc-if>
+    <div style="display:flex;gap:8px">
+      <button sc-camel-on-click="{{ toggleLang }}" style="padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);font-weight:650;font-size:.82rem;cursor:pointer;font-family:inherit" style-hover="border-color:var(--accent);color:var(--accent-soft)" style-focus="outline:2px solid var(--accent);outline-offset:2px">{{ langBtn }}</button>
+      <button sc-camel-on-click="{{ toggleTheme }}" style="padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);font-weight:650;font-size:.82rem;cursor:pointer;font-family:inherit" style-hover="border-color:var(--accent);color:var(--accent-soft)" style-focus="outline:2px solid var(--accent);outline-offset:2px">{{ themeBtn }}</button>
+    </div>
+  </div>
+</header>
+
+<sc-if value="{{ vInterna }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="Interna">
+
+<sc-if value="{{ heroA }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1680px;margin:0 auto;padding:92px var(--pad-x) 76px">
+  <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Tenedores de TES · Saldos a {{ cTesEs }}</span><span class="Len">TES holders · Balances as of {{ cTesEn }}</span></div>
+  <h1 style="font-size:clamp(3.2rem,8.6vw,8.8rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 40px;text-wrap:balance;max-width:14ch"><span class="Les">¿De quién es la <span style="color:var(--accent)">deuda interna</span> de Colombia?</span><span class="Len">Who holds Colombia's <span style="color:var(--accent)">domestic debt</span>?</span></h1>
+  <div style="display:flex;gap:48px;flex-wrap:wrap;align-items:flex-end">
+    <div>
+      <div style="font-size:clamp(2.4rem,4.4vw,4rem);font-weight:800;letter-spacing:-0.03em;line-height:1">{{ totalTxt }}</div>
+      <div style="color:var(--ink-faint);font-size:.9rem;margin-top:8px"><span class="Les">billones de pesos en TES clase B</span><span class="Len">trillion pesos in class-B TES</span></div>
+    </div>
+    <div>
+      <div style="font-weight:800;font-size:1.5rem" data-dm-style="{{ totD1Style }}"><span style="{{ totD1Style }}">{{ totD1Txt }}</span></div>
+      <div style="color:var(--ink-faint);font-size:.9rem;margin-top:6px"><span class="Les">variación mensual</span><span class="Len">monthly change</span></div>
+    </div>
+    <div>
+      <div style="font-weight:800;font-size:1.5rem;color:var(--ink)">{{ extPct }}</div>
+      <div style="color:var(--ink-faint);font-size:.9rem;margin-top:6px"><span class="Les">en manos extranjeras</span><span class="Len">held by foreign investors</span></div>
+    </div>
+    <svg sc-camel-view-box="0 0 220 56" style="width:220px;height:56px;overflow:visible" aria-hidden="true"><polyline points="{{ sparkPts }}" fill="none" stroke="#00c08b" sc-camel-stroke-width="2.5"></polyline></svg>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ heroB }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1680px;margin:0 auto;padding:88px var(--pad-x) 72px;display:grid;grid-template-columns:minmax(300px,1.15fr) minmax(300px,1fr);gap:56px;align-items:center">
+  <div>
+    <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Tenedores de TES · {{ cTesEsC }}</span><span class="Len">TES holders · {{ cTesEnC }}</span></div>
+    <h1 style="font-size:clamp(2.8rem,5.6vw,5.6rem);font-weight:800;letter-spacing:-0.045em;line-height:.97;margin:18px 0 26px;text-wrap:balance"><span class="Les">¿De quién es la <span style="color:var(--accent)">deuda interna</span> de Colombia?</span><span class="Len">Who holds Colombia's <span style="color:var(--accent)">domestic debt</span>?</span></h1>
+    <div style="font-size:clamp(2rem,3vw,2.8rem);font-weight:800;letter-spacing:-0.03em">{{ totalTxt }}</div>
+    <div style="color:var(--ink-faint);font-size:.9rem;margin-top:6px"><span class="Les">billones de pesos en TES clase B</span><span class="Len">trillion pesos in class-B TES</span></div>
+  </div>
+  <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:28px">
+    <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:18px"><span class="Les">Composición actual</span><span class="Len">Current composition</span></div>
+    <div style="display:flex;height:34px;border-radius:4px;overflow:hidden;margin-bottom:20px">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6"><div style="{{ g.segStyle }}"></div></sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
+        <div style="display:flex;align-items:baseline;gap:10px;font-size:.94rem">
+          <span style="width:9px;height:9px;border-radius:2px;background:{{ g.color }};flex:none;align-self:center"></span>
+          <span style="font-weight:600">{{ g.nombre }}</span>
+          <span style="flex:1;border-bottom:1px dotted var(--line)"></span>
+          <span style="color:var(--ink-soft);white-space:nowrap;flex:none">{{ g.pctTxt }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ heroC }}" hint-placeholder-val="{{ true }}">
+<div style="position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft)">
+  <svg sc-camel-view-box="0 0 1000 300" sc-camel-preserve-aspect-ratio="none" style="position:absolute;left:0;right:0;bottom:0;width:100%;height:52%;opacity:.9" aria-hidden="true">
+    <defs><linearGradient id="dmonHg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" sc-camel-stop-color="#00c08b" sc-camel-stop-opacity="0.5"></stop><stop offset="1" sc-camel-stop-color="#00c08b" sc-camel-stop-opacity="0.04"></stop></linearGradient></defs>
+    <path d="{{ heroPath }}" fill="url(#dmonHg)"></path>
+    <path d="{{ heroLine }}" fill="none" stroke="#00c08b" sc-camel-stroke-width="2"></path>
+  </svg>
+  <div style="position:relative;max-width:1680px;margin:0 auto;padding:100px var(--pad-x) 190px">
+    <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Tenedores de TES · {{ rTes }}</span><span class="Len">TES holders · {{ rTes }}</span></div>
+    <h1 style="font-size:clamp(3.2rem,8.2vw,8.4rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 30px;text-wrap:balance;max-width:14ch"><span class="Les">¿De quién es la <span style="color:var(--accent)">deuda interna</span> de Colombia?</span><span class="Len">Who holds Colombia's <span style="color:var(--accent)">domestic debt</span>?</span></h1>
+    <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap">
+      <span style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.03em">{{ totalTxt }}</span>
+      <span style="color:var(--ink-faint);font-size:.92rem"><span class="Les">billones de pesos en TES clase B · {{ cTesMesEs }}</span><span class="Len">trillion pesos in class-B TES · {{ cTesMesEn }}</span></span>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ gnReady }}" hint-placeholder-val="{{ false }}">
+<div style="border-bottom:1px solid var(--line-soft);background:var(--bg-deep)">
+  <div style="max-width:1680px;margin:0 auto;padding:40px var(--pad-x);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:34px 56px;align-items:start">
+    <div>
+      <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:12px"><span class="Les">Dos cifras de deuda interna</span><span class="Len">Two domestic-debt figures</span></div>
+      <p style="color:var(--ink-soft);line-height:1.6;margin:0;max-width:54ch"><span class="Les">Esta vista sigue los <strong style="color:var(--ink);font-weight:700">{{ totalTxt }}</strong> en TES clase B que registra el DCV — el {{ recTesPct }} de la deuda interna del Gobierno. El total que reporta Hacienda es <strong style="color:var(--ink);font-weight:700">{{ recIntTxt }}</strong>: los {{ recNoTesTxt }} de diferencia son instrumentos que no son TES.</span><span class="Len">This view tracks the <strong style="color:var(--ink);font-weight:700">{{ totalTxt }}</strong> in class-B TES recorded by the DCV — {{ recTesPct }} of the government's domestic debt. The total the Ministry reports is <strong style="color:var(--ink);font-weight:700">{{ recIntTxt }}</strong>; the {{ recNoTesTxt }} difference is non-TES instruments.</span></p>
+      <p style="color:var(--ink-faint);font-size:.84rem;line-height:1.55;margin:14px 0 0;max-width:54ch"><span class="Les">Depósitos pasivos del Tesoro {{ recDeposTxt }} · otros {{ recOtrosTxt }}. Las dos fuentes coinciden en el saldo de TES con menos de un billón de diferencia.</span><span class="Len">Treasury passive deposits {{ recDeposTxt }} · other {{ recOtrosTxt }}. Both sources agree on the TES balance to within one trillion pesos.</span></p>
+    </div>
+    <div>
+      <div style="display:flex;height:30px;border-radius:4px;overflow:hidden;margin-bottom:16px">
+        <sc-for list="{{ gnFuenteInt }}" as="r" hint-placeholder-count="3"><div style="{{ r.segStyle }}"></div></sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:.94rem">
+        <sc-for list="{{ gnFuenteInt }}" as="r" hint-placeholder-count="3">
+          <div style="display:grid;grid-template-columns:9px 1fr auto auto;gap:10px;align-items:start">
+            <span style="width:9px;height:9px;border-radius:2px;background:{{ r.color }};margin-top:.42em"></span>
+            <span style="line-height:1.35">{{ r.nombre }}</span>
+            <span style="color:var(--ink-faint);white-space:nowrap">{{ r.valTxt }}</span>
+            <span style="color:var(--ink-soft);white-space:nowrap;font-weight:600;min-width:54px;text-align:right">{{ r.pctTxt }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:14px;font-size:.82rem;color:var(--ink-faint)"><span class="Les">Deuda interna del GNC a {{ cGncEs }} — Ministerio de Hacienda.</span><span class="Len">Central government domestic debt, {{ cGncEn }} — Ministry of Finance.</span></div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<section id="tenedores" style="padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">¿Quién tiene los TES?</span><span class="Len">Who holds the TES?</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 01</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:62ch;line-height:1.55;margin:0 0 36px"><span class="Les">Saldo de títulos de tesorería en poder de cada grupo de tenedores. Selecciona un mes con el control deslizante y pulsa un grupo para ver su detalle.</span><span class="Len">Treasury bond balances held by each group. Pick a month with the slider and click a group to expand its detail.</span></p>
+    <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:18px">
+      <div style="display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px">
+        <button sc-camel-on-click="{{ setU$ }}" style="{{ u$Style }}"><span class="Les">Pesos</span><span class="Len">Pesos</span></button>
+        <button sc-camel-on-click="{{ setUP }}" style="{{ uPStyle }}"><span class="Les">% del total</span><span class="Len">% of total</span></button>
+        <button sc-camel-on-click="{{ setUPib }}" style="{{ uPibStyle }}"><span class="Les">% del PIB</span><span class="Len">% of GDP</span></button>
+      </div>
+      <input type="range" min="0" max="197" value="{{ mes }}" sc-camel-on-change="{{ setMes }}" style="flex:1;min-width:200px" aria-label="Mes">
+      <span style="font-weight:700;font-size:1.02rem;min-width:130px;text-transform:capitalize">{{ fechaSel }}</span>
+    </div>
+    <sc-if value="{{ internaPib }}" hint-placeholder-val="{{ false }}">
+      <p style="color:var(--ink-faint);font-size:.84rem;line-height:1.55;margin:0 0 22px;max-width:76ch"><span class="Les">Calculado sobre un PIB nominal de {{ pibCopTxt }} — el que implican las razones deuda/PIB que publicó Hacienda a {{ cGncEs }}. Es un denominador fijo: los meses anteriores se leen como «cuánto pesaría hoy», no como cuánto pesaba entonces.</span><span class="Len">Computed against a nominal GDP of {{ pibCopTxt }} — the one implied by the debt/GDP ratios the Ministry published for {{ cGncEn }}. It is a fixed denominator: earlier months read as “how much it would weigh today”, not how much it weighed then.</span></p>
+    </sc-if>
+    <div style="height:16px"></div>
+    <sc-if value="{{ ready }}" hint-placeholder-val="{{ true }}">
+      <div>
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
+          <div style="border-top:1px solid var(--line-soft)">
+            <button sc-camel-on-click="{{ g.toggle }}" style="all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%" style-focus="outline:2px solid var(--accent);outline-offset:-2px" style-hover="background:var(--surface)">
+              <div style="display:grid;grid-template-columns:minmax(170px,320px) 1fr auto;gap:18px;align-items:center;padding:15px 8px">
+                <div style="display:flex;align-items:center;gap:12px">
+                  <span style="width:10px;height:10px;border-radius:2px;background:{{ g.color }};flex:none"></span>
+                  <span style="font-weight:700;font-size:1.04rem;letter-spacing:-0.01em">{{ g.nombre }}</span>
+                  <span style="color:var(--ink-faint);font-size:.78rem">{{ g.caret }}</span>
+                </div>
+                <div style="height:24px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="{{ g.barStyle }}"></div></div>
+                <div style="text-align:right;min-width:150px">
+                  <div style="font-weight:800;font-size:1.12rem">{{ g.valTxt }}</div>
+                  <div style="color:var(--ink-faint);font-size:.82rem">{{ g.subTxt }}</div>
+                </div>
+              </div>
+            </button>
+            <sc-if value="{{ g.open }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 8px 20px 30px">
+                <sc-for list="{{ g.subs }}" as="s" hint-placeholder-count="3">
+                  <div style="display:grid;grid-template-columns:minmax(150px,300px) 1fr auto;gap:18px;align-items:center;padding:7px 0">
+                    <span style="color:var(--ink-soft);font-size:.92rem">{{ s.nombre }}</span>
+                    <div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="{{ s.barStyle }}"></div></div>
+                    <div style="text-align:right;min-width:150px;color:var(--ink-soft);font-size:.9rem">{{ s.valTxt }} <span style="color:var(--ink-faint)">· {{ s.pctTxt }}</span></div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+        <div style="border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(170px,320px) 1fr auto;gap:18px;padding:16px 8px;align-items:center">
+          <span style="font-weight:800;font-size:1.04rem"><span class="Les">Total general</span><span class="Len">Grand total</span></span>
+          <span></span>
+          <div style="text-align:right;min-width:150px;font-weight:800;font-size:1.12rem">{{ totalSelTxt }}</div>
+        </div>
+      </div>
+    </sc-if>
+    <p style="color:var(--ink-faint);font-size:.82rem;margin-top:18px">{{ notaUnidadTxt }} <span class="Les">Fuente: DCV — Banco de la República / Ministerio de Hacienda.</span><span class="Len">Source: DCV — Banco de la República / Ministry of Finance.</span></p>
+  </div>
+</section>
+
+<section id="evolucion" style="border-top:1px solid var(--line-soft);padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Evolución {{ rTes }}</span><span class="Len">Evolution {{ rTes }}</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 02</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:62ch;line-height:1.55;margin:0 0 30px"><span class="Les">Saldo mensual por grupo de tenedores. Pasa el cursor sobre la gráfica para ver los valores de cada mes.</span><span class="Len">Monthly balance by holder group. Hover over the chart to inspect each month.</span></p>
+    <div style="display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap">
+      <sc-for list="{{ rBtns }}" as="b" hint-placeholder-count="4"><button sc-camel-on-click="{{ b.on }}" style="{{ b.style }}">{{ b.label }}</button></sc-for>
+    </div>
+    <sc-if value="{{ ready }}" hint-placeholder-val="{{ true }}">
+      <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px;position:relative">
+        <div sc-camel-on-mouse-move="{{ chMove }}" sc-camel-on-mouse-leave="{{ chLeave }}" style="position:relative;margin:6px 0 40px">
+          <svg sc-camel-view-box="0 0 1000 400" style="width:100%;display:block">
+            <sc-for list="{{ gridY }}" as="y" hint-placeholder-count="4">
+              <line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line>
+            </sc-for>
+            <sc-for list="{{ chAreas }}" as="a" hint-placeholder-count="6"><path d="{{ a.d }}" fill="{{ a.color }}" sc-camel-fill-opacity="0.93"></path></sc-for>
+            <sc-for list="{{ gridX }}" as="x" hint-placeholder-count="8"><line x1="{{ x.x }}" x2="{{ x.x }}" y1="400" y2="406" stroke="#6d6763" sc-camel-stroke-width="1"></line></sc-for>
+            <line x1="60" x2="1000" y1="399.2" y2="399.2" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <line x1="60.8" x2="60.8" y1="0" y2="400" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <sc-if value="{{ hoverOn }}" hint-placeholder-val="{{ false }}"><line x1="{{ hx }}" x2="{{ hx }}" y1="0" y2="400" stroke="#1b1a19" sc-camel-stroke-width="1.2" sc-camel-stroke-dasharray="4 3"></line></sc-if>
+          </svg>
+          <sc-for list="{{ yLabs }}" as="y" hint-placeholder-count="5"><div style="{{ y.labStyle }}">{{ y.label }}</div></sc-for>
+          <sc-for list="{{ gridX }}" as="x" hint-placeholder-count="8"><div style="{{ x.labStyle }}">{{ x.label }}</div></sc-for>
+          <sc-if value="{{ hoverOn }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ tipStyle }}">
+              <div style="font-weight:800;font-size:.88rem;margin-bottom:8px;text-transform:capitalize;color:#1b1a19">{{ tipDate }} — {{ tipTotal }}</div>
+              <sc-for list="{{ tipRows }}" as="r" hint-placeholder-count="6">
+                <div style="display:flex;align-items:center;gap:8px;font-size:.82rem;padding:2px 0;color:#46433f">
+                  <span style="width:8px;height:8px;border-radius:2px;background:{{ r.color }};flex:none"></span>
+                  <span style="flex:1;padding-right:14px">{{ r.nombre }}</span>
+                  <span style="font-weight:700">{{ r.txt }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:8px 2px 0;font-size:.78rem;color:#6d6763">
+          <span>↑ {{ yAxisTxt }}</span>
+          <span><span class="Les">Año →</span><span class="Len">Year →</span></span>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;padding:14px 2px 8px">
+          <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:#46433f;font-weight:600"><span style="width:9px;height:9px;border-radius:2px;background:{{ g.color }}"></span>{{ g.nombre }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section id="cambios" style="border-top:1px solid var(--line-soft);padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Cambios recientes</span><span class="Len">Recent changes</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 03</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:62ch;line-height:1.55;margin:0 0 40px"><span class="Les">Variación del saldo de cada grupo respecto al mes anterior y al mismo mes del año pasado, para el mes seleccionado (</span><span class="Len">Change in each group's balance vs. the previous month and the same month last year, for the selected month (</span><span style="font-weight:700;text-transform:capitalize">{{ fechaSel }}</span>).</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:34px 40px">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
+        <div style="border-top:1px solid var(--line);padding-top:16px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <span style="width:9px;height:9px;border-radius:2px;background:{{ g.color }};flex:none"></span>
+            <h3 style="font-size:1.08rem;font-weight:700;letter-spacing:-0.015em;margin:0">{{ g.nombre }}</h3>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem;padding:3px 0">
+            <span style="color:var(--ink-faint)"><span class="Les">Δ mensual</span><span class="Len">Δ month</span></span>
+            <span style="{{ g.d1Style }}">{{ g.d1Txt }}</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem;padding:3px 0">
+            <span style="color:var(--ink-faint)"><span class="Les">Δ 12 meses</span><span class="Len">Δ 12 months</span></span>
+            <span style="{{ g.d12Style }}">{{ g.d12Txt }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+</div>
+</sc-if>
+
+<sc-if value="{{ vExterna }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="Externa">
+
+<div style="position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft)">
+  <svg sc-camel-view-box="0 0 1000 300" sc-camel-preserve-aspect-ratio="none" style="position:absolute;left:0;right:0;bottom:0;width:100%;height:52%;opacity:.9" aria-hidden="true">
+    <defs><linearGradient id="dmonXg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" sc-camel-stop-color="#2f89dd" sc-camel-stop-opacity="0.45"></stop><stop offset="1" sc-camel-stop-color="#2f89dd" sc-camel-stop-opacity="0.04"></stop></linearGradient></defs>
+    <path d="{{ xHeroPath }}" fill="url(#dmonXg)"></path>
+    <path d="{{ xHeroLine }}" fill="none" stroke="#2f89dd" sc-camel-stroke-width="2"></path>
+  </svg>
+  <div style="position:relative;max-width:1680px;margin:0 auto;padding:100px var(--pad-x) 190px">
+    <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Deuda externa · {{ rExt }}</span><span class="Len">External debt · {{ rExt }}</span></div>
+    <h1 style="font-size:clamp(3rem,7.4vw,7.6rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 30px;text-wrap:balance;max-width:15ch"><span class="Les">¿A quién le debe Colombia <span style="color:var(--accent)">por fuera</span>?</span><span class="Len">Who does Colombia owe <span style="color:var(--accent)">abroad</span>?</span></h1>
+    <div style="display:flex;gap:40px;align-items:baseline;flex-wrap:wrap">
+      <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap">
+        <span style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.03em">{{ xTotalTxt }}</span>
+        <span style="color:var(--ink-faint);font-size:.92rem">{{ xHeroUnidad }}</span>
+      </div>
+      <div style="display:flex;gap:14px;align-items:baseline">
+        <span style="font-size:clamp(1.4rem,2.2vw,2rem);font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ xPibTxt }}</span>
+        <span style="color:var(--ink-faint);font-size:.92rem"><span class="Les">del PIB, calculado en dólares</span><span class="Len">of GDP, computed in dollars</span></span>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:34px;flex-wrap:wrap">
+      <div style="display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--hdr)">
+        <button sc-camel-on-click="{{ setCopOff }}" style="{{ copOffStyle }}"><span class="Les">Dólares</span><span class="Len">Dollars</span></button>
+        <button sc-camel-on-click="{{ setCopOn }}" style="{{ copOnStyle }}"><span class="Les">Pesos</span><span class="Len">Pesos</span></button>
+      </div>
+      <sc-if value="{{ enPesos }}" hint-placeholder-val="{{ false }}">
+        <span style="color:var(--ink-faint);font-size:.84rem;max-width:52ch;line-height:1.5"><span class="Les">Convertido a una TRM de {{ trmTxt }} — la del {{ cExtDiaEs }}, fecha de corte del boletín. El porcentaje del PIB no sale de esta cifra: el Banco de la República lo calcula en dólares, contra un PIB también en dólares, así que dividir los pesos entre el PIB en pesos da un número distinto.</span><span class="Len">Converted at a TRM of {{ trmTxt }} — {{ cExtDiaEn }}, the bulletin's cut-off. The share of GDP does not come from this figure: Banco de la República computes it in dollars against a dollar-denominated GDP, so dividing pesos by peso GDP gives a different number.</span></span>
+      </sc-if>
+    </div>
+  </div>
+</div>
+
+<section id="xevolucion" style="padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Evolución {{ rExt }}</span><span class="Len">Evolution {{ rExt }}</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 01</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:62ch;line-height:1.55;margin:0 0 30px"><span class="Les">Saldo mensual de la deuda externa bruta. Cambia el desglose entre sectores y plazos, y la escala entre el saldo y su peso en el PIB.</span><span class="Len">Monthly gross external debt balance. Switch the breakdown between sectors and maturities, and the scale between the balance and its share of GDP.</span></p>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px">
+      <div style="display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px">
+        <button sc-camel-on-click="{{ setDesgSector }}" style="{{ dSecStyle }}"><span class="Les">Público / privado</span><span class="Len">Public / private</span></button>
+        <button sc-camel-on-click="{{ setDesgPlazo }}" style="{{ dPlaStyle }}"><span class="Les">Corto / largo plazo</span><span class="Len">Short / long term</span></button>
+      </div>
+      <div style="display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px">
+        <button sc-camel-on-click="{{ setXVal }}" style="{{ xUsdStyle }}"><span class="Les">Saldo</span><span class="Len">Balance</span></button>
+        <button sc-camel-on-click="{{ setXPib }}" style="{{ xPibStyle }}"><span class="Les">% del PIB</span><span class="Len">% of GDP</span></button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ xRBtns }}" as="b" hint-placeholder-count="4"><button sc-camel-on-click="{{ b.on }}" style="{{ b.style }}">{{ b.label }}</button></sc-for>
+      </div>
+    </div>
+    <sc-if value="{{ xReady }}" hint-placeholder-val="{{ true }}">
+      <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px;position:relative">
+        <div sc-camel-on-mouse-move="{{ xMove }}" sc-camel-on-mouse-leave="{{ xLeave }}" style="position:relative;margin:6px 0 40px">
+          <svg sc-camel-view-box="0 0 1000 400" style="width:100%;display:block">
+            <sc-for list="{{ xGridY }}" as="y" hint-placeholder-count="4">
+              <line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line>
+            </sc-for>
+            <sc-if value="{{ modoArea }}" hint-placeholder-val="{{ true }}">
+              <sc-for list="{{ xAreas }}" as="a" hint-placeholder-count="2"><path d="{{ a.d }}" fill="{{ a.color }}" sc-camel-fill-opacity="0.93"></path></sc-for>
+            </sc-if>
+            <sc-if value="{{ modoLinea }}" hint-placeholder-val="{{ false }}">
+              <sc-for list="{{ xAreas }}" as="a" hint-placeholder-count="2"><path d="{{ a.lineD }}" fill="none" stroke="{{ a.color }}" sc-camel-stroke-width="2.6" sc-camel-stroke-linejoin="round"></path></sc-for>
+            </sc-if>
+            <sc-for list="{{ xGridX }}" as="x" hint-placeholder-count="8"><line x1="{{ x.x }}" x2="{{ x.x }}" y1="400" y2="406" stroke="#6d6763" sc-camel-stroke-width="1"></line></sc-for>
+            <line x1="60" x2="1000" y1="399.2" y2="399.2" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <line x1="60.8" x2="60.8" y1="0" y2="400" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <sc-if value="{{ xHoverOn }}" hint-placeholder-val="{{ false }}"><line x1="{{ xHx }}" x2="{{ xHx }}" y1="0" y2="400" stroke="#1b1a19" sc-camel-stroke-width="1.2" sc-camel-stroke-dasharray="4 3"></line></sc-if>
+          </svg>
+          <sc-for list="{{ xYLabs }}" as="y" hint-placeholder-count="5"><div style="{{ y.labStyle }}">{{ y.label }}</div></sc-for>
+          <sc-for list="{{ xGridX }}" as="x" hint-placeholder-count="8"><div style="{{ x.labStyle }}">{{ x.label }}</div></sc-for>
+          <sc-if value="{{ xHoverOn }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ xTipStyle }}">
+              <div style="font-weight:800;font-size:.88rem;margin-bottom:8px;text-transform:capitalize;color:#1b1a19">{{ xTipDate }} — {{ xTipTotal }}</div>
+              <sc-for list="{{ xTipRows }}" as="r" hint-placeholder-count="2">
+                <div style="display:flex;align-items:center;gap:8px;font-size:.82rem;padding:2px 0;color:#46433f">
+                  <span style="width:8px;height:8px;border-radius:2px;background:{{ r.color }};flex:none"></span>
+                  <span style="flex:1;padding-right:14px">{{ r.nombre }}</span>
+                  <span style="font-weight:700">{{ r.txt }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:8px 2px 0;font-size:.78rem;color:#6d6763">
+          <span>↑ {{ xAxisTxt }}</span>
+          <span><span class="Les">Año →</span><span class="Len">Year →</span></span>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;padding:14px 2px 8px">
+          <sc-for list="{{ xLegend }}" as="g" hint-placeholder-count="2">
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:#46433f;font-weight:600"><span style="width:9px;height:9px;border-radius:2px;background:{{ g.color }}"></span>{{ g.nombre }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section id="xcosto" style="border-top:1px solid var(--line-soft);padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">¿Cuánto cuesta?</span><span class="Len">What does it cost?</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 02</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:62ch;line-height:1.55;margin:0 0 40px"><span class="Les">Intereses efectivamente pagados sobre la deuda de largo plazo. La tasa implícita divide los intereses de los últimos doce meses entre el saldo promedio del período: es lo que en la práctica cuesta el endeudamiento externo.</span><span class="Len">Interest actually paid on long-term debt. The implicit rate divides the last twelve months of interest by the average balance over the same period — what external borrowing costs in practice.</span></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px 40px;margin-bottom:52px">
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ int12Txt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Intereses pagados en 12 meses</span><span class="Len">Interest paid over 12 months</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ tasaImpTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Tasa implícita anual</span><span class="Len">Implicit annual rate</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ intPub12Txt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">De los cuales, sector público</span><span class="Len">Of which, public sector</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ intDiaTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Promedio por día</span><span class="Len">Average per day</span></div>
+      </div>
+    </div>
+    <sc-if value="{{ xReady }}" hint-placeholder-val="{{ true }}">
+      <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px">
+        <div style="position:relative;margin:6px 0 40px">
+          <svg sc-camel-view-box="0 0 1000 300" style="width:100%;display:block">
+            <sc-for list="{{ tGridY }}" as="y" hint-placeholder-count="4">
+              <line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line>
+            </sc-for>
+            <path d="{{ tasaPath }}" fill="none" stroke="#00c08b" sc-camel-stroke-width="2.6" sc-camel-stroke-linejoin="round"></path>
+            <sc-for list="{{ tGridX }}" as="x" hint-placeholder-count="8"><line x1="{{ x.x }}" x2="{{ x.x }}" y1="300" y2="306" stroke="#6d6763" sc-camel-stroke-width="1"></line></sc-for>
+            <line x1="60" x2="1000" y1="299.2" y2="299.2" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <line x1="60.8" x2="60.8" y1="0" y2="300" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+          </svg>
+          <sc-for list="{{ tYLabs }}" as="y" hint-placeholder-count="5"><div style="{{ y.labStyle }}">{{ y.label }}</div></sc-for>
+          <sc-for list="{{ tGridX }}" as="x" hint-placeholder-count="8"><div style="{{ x.labStyle }}">{{ x.label }}</div></sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:8px 2px 14px;font-size:.78rem;color:#6d6763">
+          <span>↑ <span class="Les">Tasa implícita anual (%)</span><span class="Len">Implicit annual rate (%)</span></span>
+          <span><span class="Les">Año →</span><span class="Len">Year →</span></span>
+        </div>
+      </div>
+    </sc-if>
+    <p style="color:var(--ink-faint);font-size:.82rem;margin-top:18px"><span class="Les">La tasa implícita mide lo pagado, no lo que el mercado exige hoy. Para eso hace falta la curva cero cupón de TES, que no viene en este boletín.</span><span class="Len">The implicit rate measures what was paid, not what the market demands today. That requires the TES zero-coupon curve, which this bulletin does not include.</span></p>
+  </div>
+</section>
+
+<section id="xflujos" style="border-top:1px solid var(--line-soft);padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Cuánto entra, cuánto sale</span><span class="Len">Money in, money out</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 03</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:62ch;line-height:1.55;margin:0 0 30px"><span class="Les">Desembolsos y amortizaciones mensuales del Gobierno general en deuda de largo plazo — títulos y préstamos. Hacia arriba, plata que entra; hacia abajo, deuda que se paga.</span><span class="Len">Monthly disbursements and repayments of general government long-term debt — securities and loans. Up is money coming in; down is debt being repaid.</span></p>
+    <sc-if value="{{ xReady }}" hint-placeholder-val="{{ true }}">
+      <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px">
+        <div style="position:relative;margin:6px 0 40px">
+          <svg sc-camel-view-box="0 0 1000 340" style="width:100%;display:block">
+            <sc-for list="{{ fGridY }}" as="y" hint-placeholder-count="4">
+              <line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line>
+            </sc-for>
+            <sc-for list="{{ fBars }}" as="b" hint-placeholder-count="48">
+              <rect x="{{ b.x }}" y="{{ b.y }}" width="{{ b.w }}" height="{{ b.h }}" fill="{{ b.color }}"></rect>
+            </sc-for>
+            <line x1="60" x2="1000" y1="{{ fZeroY }}" y2="{{ fZeroY }}" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <line x1="60.8" x2="60.8" y1="0" y2="340" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+          </svg>
+          <sc-for list="{{ fYLabs }}" as="y" hint-placeholder-count="5"><div style="{{ y.labStyle }}">{{ y.label }}</div></sc-for>
+          <sc-for list="{{ fGridX }}" as="x" hint-placeholder-count="5"><div style="{{ x.labStyle }}">{{ x.label }}</div></sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:8px 2px 0;font-size:.78rem;color:#6d6763">
+          <span>↕ {{ fUnidadTxt }}</span>
+          <span><span class="Les">Año →</span><span class="Len">Year →</span></span>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;padding:14px 2px 8px">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:#46433f;font-weight:600"><span style="width:9px;height:9px;border-radius:2px;background:#00c08b"></span><span class="Les">Desembolsos</span><span class="Len">Disbursements</span></span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:#46433f;font-weight:600"><span style="width:9px;height:9px;border-radius:2px;background:#d9453c"></span><span class="Les">Amortizaciones</span><span class="Len">Repayments</span></span>
+          <span style="margin-left:auto;font-size:.78rem;color:#6d6763"><span class="Les">Últimos 5 años</span><span class="Len">Last 5 years</span></span>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section id="xquien" style="border-top:1px solid var(--line-soft);padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Quién debe y a quién</span><span class="Len">Who owes, and to whom</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 04</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:62ch;line-height:1.55;margin:0 0 44px"><span class="Les">Deuda del sector público a largo plazo — {{ pubLpTxt }} en {{ cSnapEs }} — desagregada por deudor, por acreedor y por moneda.</span><span class="Len">Long-term public sector debt — {{ pubLpTxt }} in {{ cSnapEn }} — broken down by borrower, creditor and currency.</span></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:56px 48px">
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700;letter-spacing:-0.015em;margin:0 0 18px"><span class="Les">Por deudor</span><span class="Len">By borrower</span></h3>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ prestatarios }}" as="r" hint-placeholder-count="5">
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="font-weight:600;font-size:.94rem;line-height:1.35">{{ r.nombre }}</div>
+              <div style="display:flex;gap:12px;align-items:center">
+                <div style="flex:1;min-width:40px;height:10px;background:var(--surface);border-radius:5px;overflow:hidden"><div style="{{ r.barStyle }}"></div></div>
+                <span style="color:var(--ink-soft);white-space:nowrap;flex:none;font-size:.9rem">{{ r.valTxt }}</span>
+                <span style="color:var(--ink-faint);white-space:nowrap;flex:none;font-size:.9rem;min-width:48px;text-align:right">{{ r.pctTxt }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700;letter-spacing:-0.015em;margin:0 0 18px"><span class="Les">Por acreedor</span><span class="Len">By creditor</span></h3>
+        <div style="display:flex;height:30px;border-radius:4px;overflow:hidden;margin-bottom:16px">
+          <sc-for list="{{ acreedores }}" as="r" hint-placeholder-count="5"><div style="{{ r.segStyle }}"></div></sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:.94rem">
+          <sc-for list="{{ acreedores }}" as="r" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:9px 1fr auto;gap:10px;align-items:start">
+              <span style="width:9px;height:9px;border-radius:2px;background:{{ r.color }};margin-top:.42em"></span>
+              <span style="line-height:1.35">{{ r.nombre }}</span>
+              <span style="color:var(--ink-soft);white-space:nowrap;font-weight:600">{{ r.pctTxt }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:22px;padding-top:16px;border-top:1px solid var(--line-soft)">
+          <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:12px"><span class="Les">Dentro de los organismos internacionales</span><span class="Len">Within multilateral organisations</span></div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:.9rem">
+            <sc-for list="{{ multilaterales }}" as="r" hint-placeholder-count="4">
+              <div style="display:flex;gap:10px;align-items:baseline">
+                <span style="color:var(--ink-soft)">{{ r.nombre }}</span>
+                <span style="flex:1;border-bottom:1px dotted var(--line)"></span>
+                <span style="color:var(--ink-soft);white-space:nowrap;flex:none">{{ r.valTxt }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700;letter-spacing:-0.015em;margin:0 0 18px"><span class="Les">Por moneda</span><span class="Len">By currency</span></h3>
+        <div style="display:flex;height:30px;border-radius:4px;overflow:hidden;margin-bottom:16px">
+          <sc-for list="{{ monedas }}" as="r" hint-placeholder-count="5"><div style="{{ r.segStyle }}"></div></sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:.94rem">
+          <sc-for list="{{ monedas }}" as="r" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:9px 1fr auto;gap:10px;align-items:start">
+              <span style="width:9px;height:9px;border-radius:2px;background:{{ r.color }};margin-top:.42em"></span>
+              <span style="line-height:1.35">{{ r.nombre }}</span>
+              <span style="color:var(--ink-soft);white-space:nowrap;font-weight:600">{{ r.pctTxt }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <p style="color:var(--ink-faint);font-size:.82rem;margin-top:18px;line-height:1.55"><span class="Les">Casi un tercio de la deuda «externa» pública está en pesos: son TES en manos de no residentes.</span><span class="Len">Nearly a third of “external” public debt is in pesos: TES held by non-residents.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</sc-if>
+
+<sc-if value="{{ vTotal }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="Total GNC">
+
+<div style="position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft)">
+  <svg sc-camel-view-box="0 0 1000 300" sc-camel-preserve-aspect-ratio="none" style="position:absolute;left:0;right:0;bottom:0;width:100%;height:52%;opacity:.9" aria-hidden="true">
+    <defs><linearGradient id="dmonGg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" sc-camel-stop-color="#00c08b" sc-camel-stop-opacity="0.42"></stop><stop offset="1" sc-camel-stop-color="#00c08b" sc-camel-stop-opacity="0.04"></stop></linearGradient></defs>
+    <path d="{{ gnHeroPath }}" fill="url(#dmonGg)"></path>
+    <path d="{{ gnHeroLine }}" fill="none" stroke="#00c08b" sc-camel-stroke-width="2"></path>
+  </svg>
+  <div style="position:relative;max-width:1680px;margin:0 auto;padding:100px var(--pad-x) 170px">
+    <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Gobierno Nacional Central · {{ rGnc }}</span><span class="Len">Central Government · {{ rGnc }}</span></div>
+    <h1 style="font-size:clamp(3rem,7.4vw,7.6rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 30px;text-wrap:balance;max-width:15ch"><span class="Les">Todo lo que debe <span style="color:var(--accent)">el Gobierno</span></span><span class="Len">Everything <span style="color:var(--accent)">the government</span> owes</span></h1>
+    <div style="display:flex;gap:40px;align-items:baseline;flex-wrap:wrap">
+      <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap">
+        <span style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.03em">{{ gnTotalTxt }}</span>
+        <span style="color:var(--ink-faint);font-size:.92rem">{{ gnHeroUnidad }}</span>
+      </div>
+      <div style="display:flex;gap:14px;align-items:baseline">
+        <span style="font-size:clamp(1.4rem,2.2vw,2rem);font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ gnIntPct }}</span>
+        <span style="color:var(--ink-faint);font-size:.92rem"><span class="Les">es deuda interna</span><span class="Len">is domestic</span></span>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:34px;flex-wrap:wrap">
+      <div style="display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--hdr)">
+        <button sc-camel-on-click="{{ setGnCop }}" style="{{ gnCopStyle }}"><span class="Les">Pesos</span><span class="Len">Pesos</span></button>
+        <button sc-camel-on-click="{{ setGnUsd }}" style="{{ gnUsdStyle }}"><span class="Les">Dólares</span><span class="Len">Dollars</span></button>
+      </div>
+      <span style="color:var(--ink-faint);font-size:.84rem;max-width:52ch;line-height:1.5"><span class="Les">Cifras del propio Ministerio de Hacienda, en las dos monedas en que las publica. Aquí interna y externa sí son comparables: son las dos mitades de una misma cuenta.</span><span class="Len">Figures from the Ministry of Finance itself, in both currencies it publishes. Here domestic and external are comparable — two halves of the same ledger.</span></span>
+    </div>
+  </div>
+</div>
+
+<section id="gvuelco" style="padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">El vuelco: de afuera hacia adentro</span><span class="Len">The shift: from abroad to home</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 01</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:64ch;line-height:1.55;margin:0 0 30px"><span class="Les">En 2001 el Gobierno debía casi lo mismo adentro que afuera. Hoy la deuda interna pesa {{ gnIntPct }} y la externa {{ gnExtPct }}. Es el cambio estructural más importante de las finanzas públicas colombianas del siglo.</span><span class="Len">In 2001 the government owed almost as much at home as abroad. Today domestic debt is {{ gnIntPct }} and external {{ gnExtPct }} — the biggest structural change in Colombian public finances this century.</span></p>
+    <div style="display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap">
+      <sc-for list="{{ gnRBtns }}" as="b" hint-placeholder-count="4"><button sc-camel-on-click="{{ b.on }}" style="{{ b.style }}">{{ b.label }}</button></sc-for>
+    </div>
+    <sc-if value="{{ gnReady }}" hint-placeholder-val="{{ true }}">
+      <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px;position:relative">
+        <div sc-camel-on-mouse-move="{{ gnMove }}" sc-camel-on-mouse-leave="{{ gnLeave }}" style="position:relative;margin:6px 0 40px">
+          <svg sc-camel-view-box="0 0 1000 400" style="width:100%;display:block">
+            <sc-for list="{{ gnGridY }}" as="y" hint-placeholder-count="4"><line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line></sc-for>
+            <sc-for list="{{ gnAreas }}" as="a" hint-placeholder-count="2"><path d="{{ a.d }}" fill="{{ a.color }}" sc-camel-fill-opacity="0.93"></path></sc-for>
+            <sc-for list="{{ gnGridX }}" as="x" hint-placeholder-count="8"><line x1="{{ x.x }}" x2="{{ x.x }}" y1="400" y2="406" stroke="#6d6763" sc-camel-stroke-width="1"></line></sc-for>
+            <line x1="60" x2="1000" y1="399.2" y2="399.2" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <line x1="60.8" x2="60.8" y1="0" y2="400" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <sc-if value="{{ gnHoverOn }}" hint-placeholder-val="{{ false }}"><line x1="{{ gnHx }}" x2="{{ gnHx }}" y1="0" y2="400" stroke="#1b1a19" sc-camel-stroke-width="1.2" sc-camel-stroke-dasharray="4 3"></line></sc-if>
+          </svg>
+          <sc-for list="{{ gnYLabs }}" as="y" hint-placeholder-count="5"><div style="{{ y.labStyle }}">{{ y.label }}</div></sc-for>
+          <sc-for list="{{ gnGridX }}" as="x" hint-placeholder-count="8"><div style="{{ x.labStyle }}">{{ x.label }}</div></sc-for>
+          <sc-if value="{{ gnHoverOn }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ gnTipStyle }}">
+              <div style="font-weight:800;font-size:.88rem;margin-bottom:8px;text-transform:capitalize;color:#1b1a19">{{ gnTipDate }} — {{ gnTipTotal }}</div>
+              <sc-for list="{{ gnTipRows }}" as="r" hint-placeholder-count="2">
+                <div style="display:flex;align-items:center;gap:8px;font-size:.82rem;padding:2px 0;color:#46433f">
+                  <span style="width:8px;height:8px;border-radius:2px;background:{{ r.color }};flex:none"></span>
+                  <span style="flex:1;padding-right:14px">{{ r.nombre }}</span>
+                  <span style="font-weight:700">{{ r.txt }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:8px 2px 0;font-size:.78rem;color:#6d6763">
+          <span>↑ {{ gnAxisTxt }}</span>
+          <span><span class="Les">Año →</span><span class="Len">Year →</span></span>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;padding:14px 2px 8px">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:#46433f;font-weight:600"><span style="width:9px;height:9px;border-radius:2px;background:#00c08b"></span><span class="Les">Deuda interna</span><span class="Len">Domestic debt</span></span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:#46433f;font-weight:600"><span style="width:9px;height:9px;border-radius:2px;background:#2f89dd"></span><span class="Les">Deuda externa</span><span class="Len">External debt</span></span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px 40px;margin-top:44px">
+        <div style="border-top:1px solid var(--line);padding-top:16px">
+          <div style="font-size:2rem;font-weight:800;letter-spacing:-0.03em">{{ gnIntPct01 }} / {{ gnExtPct01 }}</div>
+          <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Interna / externa en {{ iGncEs }}</span><span class="Len">Domestic / external in {{ iGncEn }}</span></div>
+        </div>
+        <div style="border-top:1px solid var(--line);padding-top:16px">
+          <div style="font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ gnIntPct }} / {{ gnExtPct }}</div>
+          <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Interna / externa hoy</span><span class="Len">Domestic / external today</span></div>
+        </div>
+        <div style="border-top:1px solid var(--line);padding-top:16px">
+          <div style="font-size:2rem;font-weight:800;letter-spacing:-0.03em">{{ gnIntTxt }}</div>
+          <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Deuda interna hoy</span><span class="Len">Domestic debt today</span></div>
+        </div>
+        <div style="border-top:1px solid var(--line);padding-top:16px">
+          <div style="font-size:2rem;font-weight:800;letter-spacing:-0.03em">{{ gnExtTxt }}</div>
+          <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Deuda externa hoy</span><span class="Len">External debt today</span></div>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section id="gperfil" style="border-top:1px solid var(--line-soft);padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Cuánto vence y cuándo</span><span class="Len">What matures, and when</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 02</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:64ch;line-height:1.55;margin:0 0 40px"><span class="Les">Todo lo que el Gobierno tendrá que pagar por la deuda que ya tiene: capital que vence cada año más los intereses que corren hasta entonces. No incluye deuda futura.</span><span class="Len">Everything the government must pay on debt it already holds: principal maturing each year plus the interest accruing until then. Future borrowing not included.</span></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px 40px;margin-bottom:52px">
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ pTotTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Servicio total pendiente</span><span class="Len">Total remaining service</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ pIntTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Solo en intereses</span><span class="Len">Interest alone</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ pProxTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Resto de 2026</span><span class="Len">Rest of 2026</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ pProx2Txt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">2027 completo</span><span class="Len">Full year 2027</span></div>
+      </div>
+    </div>
+    <sc-if value="{{ gnReady }}" hint-placeholder-val="{{ true }}">
+      <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px">
+        <div style="position:relative;margin:6px 0 40px">
+          <svg sc-camel-view-box="0 0 1000 360" style="width:100%;display:block">
+            <sc-for list="{{ pGridY }}" as="y" hint-placeholder-count="4"><line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line></sc-for>
+            <sc-for list="{{ pBars }}" as="b" hint-placeholder-count="22"><rect x="{{ b.x }}" y="{{ b.y }}" width="{{ b.w }}" height="{{ b.h }}" fill="{{ b.color }}"></rect></sc-for>
+            <line x1="60" x2="1000" y1="359.2" y2="359.2" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <line x1="60.8" x2="60.8" y1="0" y2="360" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+          </svg>
+          <sc-for list="{{ pYLabs }}" as="y" hint-placeholder-count="5"><div style="{{ y.labStyle }}">{{ y.label }}</div></sc-for>
+          <sc-for list="{{ pGridX }}" as="x" hint-placeholder-count="5"><div style="{{ x.labStyle }}">{{ x.label }}</div></sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:8px 2px 0;font-size:.78rem;color:#6d6763">
+          <span>↑ <span class="Les">Servicio anual en billones de pesos</span><span class="Len">Annual service in trillion pesos</span></span>
+          <span><span class="Les">Año de vencimiento →</span><span class="Len">Maturity year →</span></span>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;padding:14px 2px 8px">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:#46433f;font-weight:600"><span style="width:9px;height:9px;border-radius:2px;background:#00c08b"></span><span class="Les">Amortizaciones (capital)</span><span class="Len">Principal</span></span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:#46433f;font-weight:600"><span style="width:9px;height:9px;border-radius:2px;background:#2f89dd"></span><span class="Les">Intereses</span><span class="Len">Interest</span></span>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section id="gcosto" style="border-top:1px solid var(--line-soft);padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">A qué tasa y a qué plazo</span><span class="Len">At what rate, for how long</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 03</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:64ch;line-height:1.55;margin:0 0 40px"><span class="Les">El cupón promedio es la tasa que efectivamente paga la deuda viva. La interna se paga en pesos y la externa en dólares, así que las dos cifras no son comparables entre sí: la brecha refleja sobre todo la inflación colombiana, no el riesgo del país.</span><span class="Len">The average coupon is the rate the outstanding debt actually pays. Domestic debt pays in pesos and external in dollars, so the two are not directly comparable: the gap mostly reflects Colombian inflation, not country risk.</span></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:34px 40px;margin-bottom:52px">
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ cupTotTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Cupón promedio total</span><span class="Len">Average coupon, total</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ cupIntTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Interna, en pesos</span><span class="Len">Domestic, in pesos</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ cupExtTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Externa, en dólares</span><span class="Len">External, in dollars</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ vidaMediaTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Años de vida media</span><span class="Len">Years, average life</span></div>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ tasaFijaTxt }}</div>
+        <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Está a tasa fija</span><span class="Len">Is at a fixed rate</span></div>
+      </div>
+    </div>
+    <sc-if value="{{ gnReady }}" hint-placeholder-val="{{ true }}">
+      <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px">
+        <div style="position:relative;margin:6px 0 40px">
+          <svg sc-camel-view-box="0 0 1000 300" style="width:100%;display:block">
+            <sc-for list="{{ cGridY }}" as="y" hint-placeholder-count="4"><line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line></sc-for>
+            <path d="{{ cupPath }}" fill="none" stroke="#00c08b" sc-camel-stroke-width="2.6" sc-camel-stroke-linejoin="round"></path>
+            <line x1="60" x2="1000" y1="299.2" y2="299.2" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+            <line x1="60.8" x2="60.8" y1="0" y2="300" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
+          </svg>
+          <sc-for list="{{ cYLabs }}" as="y" hint-placeholder-count="5"><div style="{{ y.labStyle }}">{{ y.label }}</div></sc-for>
+          <sc-for list="{{ cGridX }}" as="x" hint-placeholder-count="8"><div style="{{ x.labStyle }}">{{ x.label }}</div></sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:8px 2px 14px;font-size:.78rem;color:#6d6763">
+          <span>↑ <span class="Les">Cupón promedio de la deuda total (%)</span><span class="Len">Average coupon, total debt (%)</span></span>
+          <span><span class="Les">Año →</span><span class="Len">Year →</span></span>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section id="gcomposicion" style="border-top:1px solid var(--line-soft);padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">De qué está hecha</span><span class="Len">What it is made of</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 04</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:64ch;line-height:1.55;margin:0 0 44px"><span class="Les">Instrumento por instrumento y moneda por moneda. El {{ monedaLocalTxt }} de la deuda del Gobierno está en moneda local — pesos o UVR —, lo que la blinda frente a los saltos del dólar.</span><span class="Len">Instrument by instrument, currency by currency. {{ monedaLocalTxt }} of government debt is in local currency — pesos or UVR — which shields it from swings in the dollar.</span></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:56px 48px">
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700;letter-spacing:-0.015em;margin:0 0 18px"><span class="Les">Deuda interna, por instrumento</span><span class="Len">Domestic debt, by instrument</span></h3>
+        <div style="display:flex;height:30px;border-radius:4px;overflow:hidden;margin-bottom:16px">
+          <sc-for list="{{ gnFuenteInt }}" as="r" hint-placeholder-count="4"><div style="{{ r.segStyle }}"></div></sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:.94rem">
+          <sc-for list="{{ gnFuenteInt }}" as="r" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:9px 1fr auto auto;gap:10px;align-items:start">
+              <span style="width:9px;height:9px;border-radius:2px;background:{{ r.color }};margin-top:.42em"></span>
+              <span style="line-height:1.35">{{ r.nombre }}</span>
+              <span style="color:var(--ink-faint);white-space:nowrap">{{ r.valTxt }}</span>
+              <span style="color:var(--ink-soft);white-space:nowrap;font-weight:600;min-width:54px;text-align:right">{{ r.pctTxt }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700;letter-spacing:-0.015em;margin:0 0 18px"><span class="Les">Deuda externa, por acreedor</span><span class="Len">External debt, by creditor</span></h3>
+        <div style="display:flex;height:30px;border-radius:4px;overflow:hidden;margin-bottom:16px">
+          <sc-for list="{{ gnFuenteExt }}" as="r" hint-placeholder-count="5"><div style="{{ r.segStyle }}"></div></sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:.94rem">
+          <sc-for list="{{ gnFuenteExt }}" as="r" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:9px 1fr auto auto;gap:10px;align-items:start">
+              <span style="width:9px;height:9px;border-radius:2px;background:{{ r.color }};margin-top:.42em"></span>
+              <span style="line-height:1.35">{{ r.nombre }}</span>
+              <span style="color:var(--ink-faint);white-space:nowrap">{{ r.valTxt }}</span>
+              <span style="color:var(--ink-soft);white-space:nowrap;font-weight:600;min-width:54px;text-align:right">{{ r.pctTxt }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700;letter-spacing:-0.015em;margin:0 0 18px"><span class="Les">Deuda total, por moneda</span><span class="Len">Total debt, by currency</span></h3>
+        <div style="display:flex;height:30px;border-radius:4px;overflow:hidden;margin-bottom:16px">
+          <sc-for list="{{ gnMonedas }}" as="r" hint-placeholder-count="5"><div style="{{ r.segStyle }}"></div></sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:.94rem">
+          <sc-for list="{{ gnMonedas }}" as="r" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:9px 1fr auto auto;gap:10px;align-items:start">
+              <span style="width:9px;height:9px;border-radius:2px;background:{{ r.color }};margin-top:.42em"></span>
+              <span style="line-height:1.35">{{ r.nombre }}</span>
+              <span style="color:var(--ink-faint);white-space:nowrap">{{ r.valTxt }}</span>
+              <span style="color:var(--ink-soft);white-space:nowrap;font-weight:600;min-width:54px;text-align:right">{{ r.pctTxt }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <p style="color:var(--ink-faint);font-size:.82rem;margin-top:18px;line-height:1.55"><span class="Les">Moneda local {{ monedaLocalTxt }} · moneda extranjera {{ monedaExtTxt }}. La UVR sigue la inflación, no el dólar.</span><span class="Len">Local currency {{ monedaLocalTxt }} · foreign currency {{ monedaExtTxt }}. UVR tracks inflation, not the dollar.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</sc-if>
+
+<section id="traslape" style="border-top:1px solid var(--line-soft);padding:88px 0;background:var(--bg-deep)">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Un mismo papel, dos cuentas</span><span class="Len">One security, two ledgers</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 05</span>
+    </div>
+    <p style="color:var(--ink-soft);max-width:66ch;line-height:1.55;margin:0 0 44px"><span class="Les">Las tres vistas de este monitor no se pueden sumar entre sí. Hacienda cuenta un TES como deuda interna aunque lo tenga un extranjero — clasifica por dónde se emitió el título. El Banco de la República lo cuenta como deuda externa — clasifica por dónde vive el acreedor. Por eso Hacienda reporta {{ gnExtTxt }} de deuda externa del Gobierno y el Emisor {{ xTotalTxt }} para todo el país.</span><span class="Len">The three views in this monitor cannot be added together. The Finance Ministry counts a TES as domestic debt even when a foreigner holds it — it classifies by where the security was issued. Banco de la República counts it as external — it classifies by where the creditor lives. Hence {{ gnExtTxt }} of government external debt on one side, {{ xTotalTxt }} for the whole country on the other.</span></p>
+    <sc-if value="{{ xReady }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px 48px;align-items:start">
+        <div style="border-top:2px solid var(--accent);padding-top:18px">
+          <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:12px"><span class="Les">Deuda interna · {{ cGncMesEs }}</span><span class="Len">Domestic debt · {{ cGncMesEn }}</span></div>
+          <div style="font-size:2.4rem;font-weight:800;letter-spacing:-0.03em">{{ totalTxt }}</div>
+          <div style="color:var(--ink-soft);margin-top:8px;line-height:1.5"><span class="Les">TES clase B en circulación. De ese total, {{ extPct }} está en manos de fondos de capital extranjero.</span><span class="Len">Class-B TES outstanding. Of that total, {{ extPct }} is held by foreign capital funds.</span></div>
+        </div>
+        <div style="border-top:2px solid #2f89dd;padding-top:18px">
+          <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:12px"><span class="Les">Deuda externa · {{ cExtMesEs }}</span><span class="Len">External debt · {{ cExtMesEn }}</span></div>
+          <div style="font-size:2.4rem;font-weight:800;letter-spacing:-0.03em">{{ xTotalTxt }}</div>
+          <div style="color:var(--ink-soft);margin-top:8px;line-height:1.5"><span class="Les">Obligaciones con acreedores no residentes, {{ xPibTxt }} del PIB.</span><span class="Len">Liabilities to non-resident creditors, {{ xPibTxt }} of GDP.</span></div>
+        </div>
+        <div style="border-top:2px solid var(--red);padding-top:18px">
+          <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:12px"><span class="Les">El traslape</span><span class="Len">The overlap</span></div>
+          <div style="font-size:2.4rem;font-weight:800;letter-spacing:-0.03em;color:var(--red)">{{ traslapeTxt }}</div>
+          <div style="color:var(--ink-soft);margin-top:8px;line-height:1.5"><span class="Les">TES en pesos contabilizados como deuda externa: {{ traslapePctTxt }} del total externo, y {{ traslapePubTxt }} de la deuda pública de largo plazo.</span><span class="Len">Peso TES counted as external debt: {{ traslapePctTxt }} of the external total, and {{ traslapePubTxt }} of long-term public debt.</span></div>
+        </div>
+      </div>
+      <div style="margin-top:44px;display:flex;flex-direction:column;gap:10px;max-width:900px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <span style="width:120px;font-size:.86rem;color:var(--ink-faint);flex:none"><span class="Les">Externa</span><span class="Len">External</span></span>
+          <div style="flex:1;display:flex;height:26px;border-radius:4px;overflow:hidden">
+            <div style="{{ segTraslape }}"></div>
+            <div style="{{ segExternaResto }}"></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <span style="width:120px;font-size:.86rem;color:var(--ink-faint);flex:none"><span class="Les">Interna</span><span class="Len">Domestic</span></span>
+          <div style="flex:1;display:flex;height:26px;border-radius:4px;overflow:hidden">
+            <div style="{{ segInternaExt }}"></div>
+            <div style="{{ segInternaResto }}"></div>
+          </div>
+        </div>
+        <p style="color:var(--ink-faint);font-size:.82rem;margin:10px 0 0;line-height:1.55"><span class="Les">En rojo, la porción que ambas cuentas comparten. Las dos fuentes miden universos ligeramente distintos — el DCV registra custodia y el Banco de la República, residencia del acreedor — así que las cifras del traslape no coinciden exactamente.</span><span class="Len">In red, the portion both ledgers share. The two sources measure slightly different universes — the DCV records custody, Banco de la República records creditor residence — so the overlap figures do not match exactly.</span></p>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<footer id="fuentes" style="background:var(--bg-deep);border-top:1px solid var(--line-soft);padding:56px 0 44px">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px">
+        <span style="width:11px;height:11px;background:var(--accent);border-radius:2px"></span>
+        <span class="Les">Monitor de Deuda · Colombia</span><span class="Len">Debt Monitor · Colombia</span>
+      </div>
+      <p style="color:var(--ink-faint);font-size:.88rem;line-height:1.55;margin:0;max-width:38ch"><span class="Les">Hecho con HTML, CSS y datos. Sin interpretación: solo cifras oficiales.</span><span class="Len">Built with HTML, CSS and data. No interpretation: official figures only.</span></p>
+    </div>
+    <div>
+      <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:12px"><span class="Les">Fuentes</span><span class="Len">Sources</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:.92rem;color:var(--ink-soft)">
+        <span class="Les">Tenedores de TES: DCV — Banco de la República / MinHacienda ({{ cTesMesEs }})</span><span class="Len">TES holders: DCV — Banco de la República / Ministry of Finance ({{ cTesMesEn }})</span>
+        <span class="Les">Deuda del GNC: MinHacienda — Datos históricos de la deuda GNC ({{ cGncMesEs }})</span><span class="Len">Central government debt: Ministry of Finance — Historical central government debt data ({{ cGncMesEn }})</span>
+        <span class="Les">Deuda externa: Banco de la República — Boletín de deuda externa, cuadros 1, 3 y 4 ({{ cExtMesEs }}, Pr)</span><span class="Len">External debt: Banco de la República — External debt bulletin, tables 1, 3 and 4 ({{ cExtMesEn }}, prelim.)</span>
+        <span class="Les">Deudores, acreedores y monedas: Banco de la República — cuadros 5, 6 y 7 ({{ cSnapMesEs }})</span><span class="Len">Borrowers, creditors &amp; currencies: Banco de la República — tables 5, 6 and 7 ({{ cSnapMesEn }})</span>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:12px"><span class="Les">Notas</span><span class="Len">Notes</span></div>
+      <p style="color:var(--ink-soft);font-size:.92rem;line-height:1.55;margin:0;max-width:44ch"><span class="Les">B = billones de pesos (10¹²). Los TES clase B son títulos de deuda pública interna en pesos. La deuda externa se reporta en millones de dólares y el boletín se publica con dos meses de rezago.</span><span class="Len">B = trillions of pesos (10¹²). Class-B TES are domestic peso-denominated public debt. External debt is reported in millions of dollars and the bulletin is published with a two-month lag.</span></p>
+    </div>
+  </div>
+</footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;vistaInicial&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;total&quot;,&quot;options&quot;:[&quot;total&quot;,&quot;interna&quot;,&quot;externa&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Portada&quot;},&quot;hero&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;inmersivo&quot;,&quot;options&quot;:[&quot;cifra&quot;,&quot;panel&quot;,&quot;inmersivo&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Portada&quot;},&quot;unidad&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;$&quot;,&quot;options&quot;:[&quot;$&quot;,&quot;%&quot;,&quot;pib&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Datos&quot;},&quot;pibCop&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:1928,&quot;min&quot;:500,&quot;max&quot;:5000,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Datos&quot;,&quot;unit&quot;:&quot;billones COP&quot;},&quot;graficaExterna&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;area&quot;,&quot;options&quot;:[&quot;area&quot;,&quot;lineas&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Datos&quot;},&quot;trm&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:3621.86,&quot;min&quot;:2000,&quot;max&quot;:6000,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Datos&quot;,&quot;unit&quot;:&quot;COP/USD&quot;}}">
+class Component extends DCLogic {
+  state = { data: null, xdata: null, mes: 197, unidad: null, lang: 'es', theme: 'dark', abierto: null, rango: 'max', hover: null,
+            vista: null, xMoneda: 'usd', xEscala: 'valor', xDesglose: 'sector', xRango: 'max', xHover: null,
+            gdata: null, gnMoneda: 'cop', gnRango: 'max', gnHover: null, meta: null };
+  GDEF = [
+    { id: 'pen', es: 'Fondos de pensiones y cesantías', en: 'Pension & severance funds', color: '#00c08b', cats: ['Fondos de Pensiones y Cesantias', 'Fondos de Prima Media', 'Administradoras de Carteras Colectivas y de Fdos Pensiones y Cesantias'] },
+    { id: 'ext', es: 'Inversionistas extranjeros', en: 'Foreign investors', color: '#2f89dd', cats: ['Fondos de Capital Extranjero'] },
+    { id: 'ban', es: 'Bancos comerciales', en: 'Commercial banks', color: '#8f8880', cats: ['Bancos Comerciales'] },
+    { id: 'seg', es: 'Aseguradoras', en: 'Insurance companies', color: '#d9453c', cats: ['Compañias de Seguros y Capitalizacion'] },
+    { id: 'pub', es: 'Sector público', en: 'Public sector', color: '#b3aba2', cats: ['Banco de la Republica', 'Fiducia Publica', 'Entidades Publicas', 'Ministerio de Hacienda y CP', 'Instituciones Oficiales Especiales'] },
+    { id: 'otr', es: 'Otros tenedores', en: 'Other holders', color: '#625c56', cats: ['Carteras Colectivas y Fondos Administrados', 'Comisionistas de Bolsa', 'Compañias de Financiamiento Comercial', 'Cooperativas Grado Super. Caracter Finan', 'Corporaciones Financieras', 'Entidades sin Animo de Lucro', 'Otros Fondos', 'Personas Juridicas', 'Personas Naturales', 'Proveedores de Infraestructura'] }
+  ];
+  PALETA = ['#00c08b', '#2f89dd', '#8f8880', '#d9453c', '#b3aba2', '#625c56'];
+  MES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  MEN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  MESs = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  MENs = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  componentDidMount() {
+    var R = function (id, path) { return (window.__resources && window.__resources[id]) || path; };
+    try { const t = localStorage.getItem('dmon-theme'); if (t === 'light' || t === 'dark') this.setState({ theme: t }); } catch (e) {}
+    fetch(R('tesData', 'data/tes.json')).then(r => r.json()).then(d => {
+      const n = d.dates.length, gs = {};
+      for (const g of this.GDEF) { gs[g.id] = new Array(n).fill(0); for (const c of g.cats) { const s = d.series[c]; if (s) for (let i = 0; i < n; i++) gs[g.id][i] += s[i]; } }
+      this.gs = gs; this.tot = d.series['Total general'];
+      this.setState({ data: d, mes: n - 1 });
+    }).catch(e => console.error('No se pudo cargar data/tes.json', e));
+    fetch(R('externaData', 'data/externa.json')).then(r => r.json()).then(d => this.setState({ xdata: d }))
+      .catch(e => console.error('No se pudo cargar data/externa.json', e));
+    fetch(R('gncData', 'data/gnc.json')).then(r => r.json()).then(d => this.setState({ gdata: d }))
+      .catch(e => console.error('No se pudo cargar data/gnc.json', e));
+    fetch(R('metaData', 'data/meta.json')).then(r => r.json()).then(d => this.setState({ meta: d }))
+      .catch(e => console.error('No se pudo cargar data/meta.json', e));
+  }
+  delta(arr, i, k, loc, fPct) {
+    if (i - k < 0) return { txt: '—', style: { color: 'var(--ink-faint)' } };
+    const d = arr[i] - arr[i - k], b = Math.abs(d) / 1e6, prev = arr[i - k];
+    const pc = prev ? Math.abs(d / prev * 100) : 0, sg = d < 0 ? '−' : '+';
+    const dec = b < 1 ? 2 : 1;
+    return {
+      txt: sg + '$' + b.toLocaleString(loc, { minimumFractionDigits: dec, maximumFractionDigits: dec }) + ' B (' + sg + pc.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %)',
+      style: { color: d < 0 ? 'var(--red)' : 'var(--ink)', fontWeight: 700 }
+    };
+  }
+  niceMax(v) {
+    if (!(v > 0)) return 1;
+    const e = Math.pow(10, Math.floor(Math.log10(v))), steps = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+    for (const s of steps) if (s * e >= v) return s * e;
+    return 10 * e;
+  }
+  tick(extra) { return Object.assign({ position: 'absolute', fontSize: '.8rem', color: '#6d6763', whiteSpace: 'nowrap', pointerEvents: 'none', fontVariantNumeric: 'tabular-nums', fontWeight: 600 }, extra); }
+  // Shared stacked-area / line chart builder
+  chart(cfg) {
+    const { dates, layers, s0, hover, es, fmtAxis, fmtTip, fmtTotal, setHover, H } = cfg;
+    const n = dates.length, len = n - s0, h = H || 400;
+    const cols = [];
+    for (let i = 0; i < len; i++) { let t = 0; for (const L of layers) t += L.vals[s0 + i] || 0; cols.push(t); }
+    const ymax = cfg.ymax || this.niceMax(Math.max.apply(null, cols));
+    const X = i => 60 + (len > 1 ? i / (len - 1) : 0) * 940, Y = v => h - v / ymax * h;
+    const base = new Array(len).fill(0), areas = [];
+    for (const L of layers) {
+      const tops = [];
+      for (let i = 0; i < len; i++) tops.push(base[i] + (L.vals[s0 + i] || 0));
+      let d = 'M' + X(0).toFixed(1) + ',' + Y(tops[0]).toFixed(1);
+      let ld = 'M' + X(0).toFixed(1) + ',' + Y(L.vals[s0] || 0).toFixed(1);
+      for (let i = 1; i < len; i++) { d += 'L' + X(i).toFixed(1) + ',' + Y(tops[i]).toFixed(1); ld += 'L' + X(i).toFixed(1) + ',' + Y(L.vals[s0 + i] || 0).toFixed(1); }
+      for (let i = len - 1; i >= 0; i--) d += 'L' + X(i).toFixed(1) + ',' + Y(base[i]).toFixed(1);
+      areas.push({ d: d + 'Z', lineD: ld, color: L.color });
+      for (let i = 0; i < len; i++) base[i] = tops[i];
+    }
+    const gridY = [1, 2, 3, 4].map(k => ({ y: Y(ymax * k / 4).toFixed(1) }));
+    const yLabs = [0, 1, 2, 3, 4].map(k => {
+      const v = ymax * k / 4;
+      return { label: fmtAxis(v), labStyle: this.tick({ right: '94%', marginRight: '10px', top: (Y(v) / h * 100).toFixed(2) + '%', transform: 'translateY(-50%)' }) };
+    });
+    const gridX = [];
+    const pushX = (i, label) => gridX.push({ x: X(i).toFixed(1), label, labStyle: this.tick({ left: (X(i) / 10).toFixed(2) + '%', top: '100%', marginTop: '11px', transform: 'translateX(-50%)', fontWeight: 500 }) });
+    const every = len > 200 ? 5 : (len > 130 ? 2 : 1);
+    for (let i = 0; i < len; i++) {
+      const p = dates[s0 + i].split('-'), y = p[0], m = p[1];
+      if (len > 30) { if (m === '01' && +y % every === 0 && i > len * 0.02 && i < len * 0.98) pushX(i, y); }
+      else if (i % 3 === 0) pushX(i, (es ? this.MESs : this.MENs)[+m - 1] + ' ' + y.slice(2));
+    }
+    const hoverOn = hover != null && hover >= s0 && hover < n;
+    let hx = 0, tipRows = [], tipDate = '', tipTotal = '', tipStyle = {};
+    if (hoverOn) {
+      const rel = (hover - s0) / (len - 1);
+      hx = X(hover - s0).toFixed(1);
+      const p = dates[hover].split('-');
+      tipDate = (es ? this.MES : this.MEN)[+p[1] - 1] + ' ' + p[0];
+      tipTotal = fmtTotal(cols[hover - s0]);
+      tipRows = layers.map(L => ({ nombre: L.nombre, color: L.color, txt: fmtTip(L.vals[hover] || 0, cols[hover - s0]) })).reverse();
+      tipStyle = { position: 'absolute', top: '10px', left: (8 + Math.min(0.9, Math.max(0, rel)) * 66) + '%', background: '#f8f6f4', border: '1px solid #dbd7d3', borderRadius: '6px', padding: '12px 14px', minWidth: '250px', boxShadow: '0 12px 32px -8px rgba(0,0,0,.35)', pointerEvents: 'none', zIndex: 5 };
+    }
+    const move = e => {
+      const r = e.currentTarget.getBoundingClientRect();
+      const f = Math.min(1, Math.max(0, ((e.clientX - r.left) / r.width * 1000 - 60) / 940));
+      const idx = s0 + Math.round(f * (len - 1));
+      if (idx !== hover) setHover(idx);
+    };
+    return { areas, gridY, gridX, yLabs, hoverOn, hx, tipRows, tipDate, tipTotal, tipStyle, move, leave: () => setHover(null) };
+  }
+  // --- etiquetas de corte -------------------------------------------------
+  // Se derivan de los propios datos para que el texto no pueda desmentir a las
+  // gráficas: si un JSON llega con un mes más, los títulos se mueven solos.
+  fmtCorte(iso) {
+    if (!iso) return { es: '', en: '', esC: '', enC: '', mesEs: '', mesEn: '', diaEs: '', diaEn: '', anio: '' };
+    const p = String(iso).split('-'), y = +p[0], m = +p[1];
+    const es = this.MES[m - 1], en = this.MEN[m - 1];
+    const ult = new Date(y, m, 0).getDate();
+    return {
+      es: es + ' de ' + y, en: en + ' ' + y,
+      esC: es.charAt(0).toUpperCase() + es.slice(1) + ' ' + y, enC: en + ' ' + y,
+      mesEs: es + ' ' + y, mesEn: en + ' ' + y,
+      diaEs: ult + ' de ' + es + ' de ' + y, diaEn: ult + ' ' + en + ' ' + y,
+      anio: String(y)
+    };
+  }
+  rango(fechas) {
+    if (!fechas || !fechas.length) return '';
+    return fechas[0].slice(0, 4) + ' \u2014 ' + fechas[fechas.length - 1].slice(0, 4);
+  }
+  ponFechas(vals) {
+    const st = this.state;
+    const vacio = this.fmtCorte(null);
+    const tes = st.data ? this.fmtCorte(st.data.dates[st.data.dates.length - 1]) : vacio;
+    const gnc = st.gdata ? this.fmtCorte(st.gdata.dates[st.gdata.dates.length - 1]) : vacio;
+    const ext = st.xdata ? this.fmtCorte(st.xdata.dates[st.xdata.dates.length - 1]) : vacio;
+    const snap = st.xdata && st.xdata.snapshot ? this.fmtCorte(st.xdata.snapshot.fecha) : ext;
+    const gncIni = st.gdata ? this.fmtCorte(st.gdata.dates[0]) : vacio;
+    Object.assign(vals, {
+      iGncEs: gncIni.es, iGncEn: gncIni.en,
+      cTesEs: tes.es, cTesEn: tes.en, cTesEsC: tes.esC, cTesEnC: tes.enC,
+      cTesMesEs: tes.mesEs, cTesMesEn: tes.mesEn,
+      cGncEs: gnc.es, cGncEn: gnc.en, cGncMesEs: gnc.mesEs, cGncMesEn: gnc.mesEn,
+      cExtEs: ext.es, cExtEn: ext.en, cExtMesEs: ext.mesEs, cExtMesEn: ext.mesEn,
+      cExtDiaEs: ext.diaEs, cExtDiaEn: ext.diaEn,
+      cSnapEs: snap.es, cSnapEn: snap.en, cSnapMesEs: snap.mesEs, cSnapMesEn: snap.mesEn,
+      rTes: this.rango(st.data && st.data.dates), rExt: this.rango(st.xdata && st.xdata.dates),
+      rGnc: this.rango(st.gdata && st.gdata.dates)
+    });
+  }
+  renderVals() {
+    const st = this.state, es = st.lang === 'es', loc = es ? 'es-CO' : 'en-US';
+    const hero = this.props.hero ?? 'inmersivo';
+    const vista = st.vista ?? this.props.vistaInicial ?? 'interna';
+    const btnBase = { padding: '7px 16px', borderRadius: '999px', fontWeight: 650, fontSize: '.85rem', border: '1px solid transparent', background: 'transparent', color: 'var(--ink-soft)', cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap' };
+    const on = { ...btnBase, background: 'var(--accent)', color: '#001410' };
+    const goto = v => { this.setState({ vista: v }); try { window.scrollTo(0, 0); } catch (e) {} };
+    const meta = st.meta || {};
+    const trm = +(meta.trm ?? this.props.trm ?? 3621.86) || 3621.86;
+    const cop = (st.xMoneda ?? 'usd') === 'cop';
+    const vals = {
+      enPesos: cop, trmTxt: '$' + trm.toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+      setCopOff: () => this.setState({ xMoneda: 'usd' }), setCopOn: () => this.setState({ xMoneda: 'cop' }),
+      copOffStyle: !cop ? on : btnBase, copOnStyle: cop ? on : btnBase,
+      theme: st.theme, lang: st.lang, ready: !!st.data, xReady: !!st.xdata,
+      vInterna: vista === 'interna', vExterna: vista === 'externa', vTotal: vista === 'total',
+      goInterna: () => goto('interna'), goExterna: () => goto('externa'), goTotal: () => goto('total'),
+      vIntStyle: vista === 'interna' ? on : btnBase, vExtStyle: vista === 'externa' ? on : btnBase,
+      vTotStyle: vista === 'total' ? on : btnBase,
+      heroA: hero === 'cifra', heroB: hero === 'panel', heroC: hero === 'inmersivo',
+      langBtn: es ? 'EN' : 'ES',
+      themeBtn: st.theme === 'dark' ? (es ? 'Claro' : 'Light') : (es ? 'Oscuro' : 'Dark'),
+      toggleLang: () => this.setState({ lang: es ? 'en' : 'es' }),
+      toggleTheme: () => { const t = st.theme === 'dark' ? 'light' : 'dark'; try { localStorage.setItem('dmon-theme', t); } catch (e) {} this.setState({ theme: t }); }
+    };
+    const fPct = p => p.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %';
+
+    // ---------- interna ----------
+    if (st.data) {
+      const D = st.data, n = D.dates.length, mes = Math.min(st.mes, n - 1), gs = this.gs, tot = this.tot;
+      const unidad = st.unidad ?? this.props.unidad ?? '$', u$ = unidad === '$', uPib = unidad === 'pib';
+      const pibCop = +(meta.pibCop ?? this.props.pibCop ?? 1928) || 1928;
+      const fmtB = v => { const b = v / 1e6, dec = Math.abs(b) < 1 ? 2 : 1; return '$' + b.toLocaleString(loc, { minimumFractionDigits: dec, maximumFractionDigits: dec }) + ' B'; };
+      const fPib = v => fPct(v / 1e6 / pibCop * 100);
+      const fecha = i => { const p = D.dates[i].split('-'); return (es ? this.MES : this.MEN)[+p[1] - 1] + ' ' + p[0]; };
+      const T = tot[mes], Tlast = tot[n - 1];
+      const maxg = Math.max.apply(null, this.GDEF.map(g => gs[g.id][mes]));
+      vals.groups = this.GDEF.map(g => {
+        const v = gs[g.id][mes], p = v / T * 100, open = st.abierto === g.id;
+        const subs = g.cats.map(c => ({ nombre: c, v: D.series[c][mes] })).filter(s => s.v > 0).sort((a, b) => b.v - a.v);
+        const maxs = Math.max.apply(null, subs.map(s => s.v).concat([1]));
+        const d1 = this.delta(gs[g.id], mes, 1, loc, fPct), d12 = this.delta(gs[g.id], mes, 12, loc, fPct);
+        return {
+          id: g.id, color: g.color, nombre: es ? g.es : g.en, open, caret: open ? '▾' : '▸',
+          valTxt: u$ ? fmtB(v) : (uPib ? fPib(v) : fPct(p)), subTxt: u$ ? fPct(p) : (uPib ? fPct(p) : fmtB(v)), pctTxt: fPct(p),
+          barStyle: { height: '100%', width: (v / maxg * 100) + '%', background: g.color, borderRadius: '4px', transition: 'width .4s cubic-bezier(.16,1,.3,1)' },
+          segStyle: { width: p + '%', background: g.color, height: '100%' },
+          toggle: () => this.setState({ abierto: open ? null : g.id }),
+          d1Txt: d1.txt, d1Style: d1.style, d12Txt: d12.txt, d12Style: d12.style,
+          subs: subs.map(s => ({ nombre: s.nombre, valTxt: fmtB(s.v), pctTxt: fPct(s.v / T * 100), barStyle: { height: '100%', width: (s.v / maxs * 100) + '%', background: g.color, opacity: 0.55, borderRadius: '4px' } }))
+        };
+      });
+      const totD1 = this.delta(tot, n - 1, 1, loc, fPct);
+      const spN = 61, sp0 = n - spN, spMax = Math.max.apply(null, tot.slice(sp0)), spMin = Math.min.apply(null, tot.slice(sp0));
+      vals.sparkPts = tot.slice(sp0).map((v, i) => (i / (spN - 1) * 220).toFixed(1) + ',' + (52 - (v - spMin) / (spMax - spMin) * 48 + 2).toFixed(1)).join(' ');
+      const hMax = Math.max.apply(null, tot);
+      let heroLine = 'M0,' + (300 - tot[0] / hMax * 280).toFixed(1);
+      for (let i = 1; i < n; i++) heroLine += 'L' + (i / (n - 1) * 1000).toFixed(1) + ',' + (300 - tot[i] / hMax * 280).toFixed(1);
+      vals.heroLine = heroLine; vals.heroPath = heroLine + 'L1000,300L0,300Z';
+      const startMap = { max: 0, a10: Math.max(0, n - 121), a5: Math.max(0, n - 61), a1: Math.max(0, n - 13) };
+      const s0 = startMap[st.rango] != null ? startMap[st.rango] : 0, len = n - s0;
+      const colTot = [];
+      for (let i = 0; i < len; i++) colTot.push(tot[s0 + i]);
+      const C = this.chart({
+        dates: D.dates, s0, hover: st.hover, es, ymax: (u$ || uPib) ? null : 100,
+        layers: this.GDEF.map(g => ({
+          nombre: es ? g.es : g.en, color: g.color,
+          vals: u$ ? gs[g.id] : (uPib ? gs[g.id].map(v => v / 1e6 / pibCop * 100) : gs[g.id].map((v, i) => (tot[i] ? v / tot[i] * 100 : 0)))
+        })),
+        fmtAxis: v => u$ ? '$' + Math.round(v / 1e6).toLocaleString(loc) + ' B' : (uPib ? v.toLocaleString(loc, { maximumFractionDigits: 1 }) + ' %' : Math.round(v) + ' %'),
+        fmtTip: v => u$ ? fmtB(v) : fPct(v),
+        fmtTotal: v => u$ ? fmtB(v) : (uPib ? fPct(v) : '100,0 %'.replace(',', es ? ',' : '.')),
+        setHover: i => this.setState({ hover: i })
+      });
+      Object.assign(vals, {
+        mes, fechaSel: fecha(mes), setMes: e => this.setState({ mes: +e.target.value }),
+        totalTxt: fmtB(Tlast), totalSelTxt: u$ ? fmtB(T) : (uPib ? fPib(T) : '100,0 %'.replace(',', es ? ',' : '.')),
+        totD1Txt: totD1.txt, totD1Style: totD1.style, extPct: fPct(gs.ext[n - 1] / Tlast * 100),
+        setU$: () => this.setState({ unidad: '$' }), setUP: () => this.setState({ unidad: '%' }), setUPib: () => this.setState({ unidad: 'pib' }),
+        u$Style: u$ ? on : btnBase, uPStyle: unidad === '%' ? on : btnBase, uPibStyle: uPib ? on : btnBase,
+        internaPib: uPib, pibCopTxt: '$' + pibCop.toLocaleString(loc) + ' B',
+        notaUnidadTxt: u$ ? (es ? 'Cifras en billones de pesos (B = 10¹²).' : 'Figures in trillions of pesos (B = 10¹²).')
+          : (uPib ? (es ? 'Saldo de cada grupo como porcentaje del PIB.' : 'Each group’s balance as a share of GDP.')
+            : (es ? 'Participación de cada grupo en el saldo total.' : 'Each group’s share of the total balance.')),
+        yAxisTxt: u$ ? (es ? 'Saldo en billones de pesos (B = 10¹²)' : 'Balance in trillions of pesos (B = 10¹²)') : (uPib ? (es ? 'Saldo como porcentaje del PIB (%)' : 'Balance as a share of GDP (%)') : (es ? 'Participación en el total (%)' : 'Share of total (%)')),
+        chAreas: C.areas, gridY: C.gridY, gridX: C.gridX, yLabs: C.yLabs, hoverOn: C.hoverOn, hx: C.hx,
+        tipRows: C.tipRows, tipDate: C.tipDate, tipTotal: C.tipTotal, tipStyle: C.tipStyle,
+        chMove: C.move, chLeave: C.leave,
+        rBtns: [['max', es ? 'Máx' : 'Max'], ['a10', es ? '10 años' : '10 yrs'], ['a5', es ? '5 años' : '5 yrs'], ['a1', es ? '1 año' : '1 yr']]
+          .map(r => ({ label: r[1], on: () => this.setState({ rango: r[0], hover: null }), style: st.rango === r[0] ? on : { ...btnBase, border: '1px solid var(--line)' } }))
+      });
+    }
+
+    // ---------- externa ----------
+    if (st.xdata) {
+      const E = st.xdata, xn = E.dates.length, last = xn - 1;
+      const pib = st.xEscala === 'pib';
+      const fUSD = v => 'US$' + Math.round(v).toLocaleString(loc) + ' M';
+      const fCOP = v => {
+        const b = v * trm / 1e6;
+        if (Math.abs(b) < 1) return '$' + (v * trm / 1e3).toLocaleString(loc, { maximumFractionDigits: 1 }) + (es ? ' mil M' : ' bn');
+        return '$' + b.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' B';
+      };
+      const fMon = v => cop ? fCOP(v) : fUSD(v);
+      const fMonAxis = v => cop
+        ? '$' + Math.round(v * trm / 1e6).toLocaleString(loc) + ' B'
+        : (v >= 1000 ? Math.round(v / 1000).toLocaleString(loc) + (es ? ' mil M' : ' bn') : Math.round(v).toLocaleString(loc) + ' M');
+      const sector = st.xDesglose === 'sector';
+      const capa = (nombreEs, nombreEn, color, arrVal, arrPib) => ({ nombre: es ? nombreEs : nombreEn, color, vals: pib ? arrPib : arrVal });
+      const pibFrom = arr => arr.map((v, i) => (E.total[i] ? v / E.total[i] * E.pibTotal[i] : 0));
+      const layers = sector
+        ? [capa('Sector público', 'Public sector', '#00c08b', E.pub, E.pibPub), capa('Sector privado', 'Private sector', '#2f89dd', E.priv, E.pibPriv)]
+        : [capa('Largo plazo', 'Long term', '#00c08b', E.lp, pibFrom(E.lp)), capa('Corto plazo', 'Short term', '#d9453c', E.cp, pibFrom(E.cp))];
+      const xStart = { max: 0, a10: Math.max(0, xn - 121), a5: Math.max(0, xn - 61), a1: Math.max(0, xn - 13) };
+      const xs0 = xStart[st.xRango] != null ? xStart[st.xRango] : 0;
+      const XC = this.chart({
+        dates: E.dates, s0: xs0, hover: st.xHover, es, layers,
+        fmtAxis: v => pib ? Math.round(v) + ' %' : fMonAxis(v),
+        fmtTip: v => pib ? fPct(v) : fMon(v),
+        fmtTotal: v => pib ? fPct(v) : fMon(v),
+        setHover: i => this.setState({ xHover: i })
+      });
+      const modo = this.props.graficaExterna ?? 'area';
+      // hero backdrop
+      const xMax = Math.max.apply(null, E.total);
+      let xLine = 'M0,' + (300 - E.total[0] / xMax * 280).toFixed(1);
+      for (let i = 1; i < xn; i++) xLine += 'L' + (i / (xn - 1) * 1000).toFixed(1) + ',' + (300 - E.total[i] / xMax * 280).toFixed(1);
+      // costo
+      const sum12 = (arr, i) => { let s = 0; for (let k = i - 11; k <= i; k++) s += arr[k] || 0; return s; };
+      const avg12 = (arr, i) => { let s = 0; for (let k = i - 11; k <= i; k++) s += arr[k] || 0; return s / 12; };
+      const int12 = sum12(E.intTotal, last), intPub12 = sum12(E.intPub, last);
+      const tasa = [];
+      for (let i = 0; i < xn; i++) tasa.push(i < 11 ? null : sum12(E.intTotal, i) / avg12(E.total, i) * 100);
+      const tFrom = 11, tLen = xn - tFrom;
+      const tMax = this.niceMax(Math.max.apply(null, tasa.slice(tFrom)));
+      const TX = i => 60 + i / (tLen - 1) * 940, TY = v => 300 - v / tMax * 300;
+      let tasaPath = 'M' + TX(0).toFixed(1) + ',' + TY(tasa[tFrom]).toFixed(1);
+      for (let i = 1; i < tLen; i++) tasaPath += 'L' + TX(i).toFixed(1) + ',' + TY(tasa[tFrom + i]).toFixed(1);
+      const tGridY = [1, 2, 3, 4].map(k => ({ y: TY(tMax * k / 4).toFixed(1) }));
+      const tYLabs = [0, 1, 2, 3, 4].map(k => {
+        const v = tMax * k / 4;
+        return { label: v.toLocaleString(loc, { maximumFractionDigits: 1 }) + ' %', labStyle: this.tick({ right: '94%', marginRight: '10px', top: (TY(v) / 300 * 100).toFixed(2) + '%', transform: 'translateY(-50%)' }) };
+      });
+      const tGridX = [];
+      for (let i = 0; i < tLen; i++) {
+        const p = E.dates[tFrom + i].split('-');
+        if (p[1] === '01' && +p[0] % 3 === 0 && i > tLen * 0.02 && i < tLen * 0.98) tGridX.push({ x: TX(i).toFixed(1), label: p[0], labStyle: this.tick({ left: (TX(i) / 10).toFixed(2) + '%', top: '100%', marginTop: '11px', transform: 'translateX(-50%)', fontWeight: 500 }) });
+      }
+      // flujos: últimos 60 meses
+      const fLen = 60, f0 = xn - fLen;
+      const des = [], amo = [];
+      for (let i = 0; i < fLen; i++) {
+        des.push((E.govDesTit[f0 + i] || 0) + (E.govDesPre[f0 + i] || 0));
+        amo.push((E.govAmoTit[f0 + i] || 0) + (E.govAmoPre[f0 + i] || 0));
+      }
+      const fMax = this.niceMax(Math.max(Math.max.apply(null, des), Math.max.apply(null, amo)));
+      const fZeroY = 170, fSpan = 160, fW = 940 / fLen;
+      const fBars = [];
+      for (let i = 0; i < fLen; i++) {
+        const x = (60 + i * fW + fW * 0.12).toFixed(1), w = (fW * 0.76).toFixed(1);
+        const hd = des[i] / fMax * fSpan, ha = amo[i] / fMax * fSpan;
+        if (hd > 0.3) fBars.push({ x, w, y: (fZeroY - hd).toFixed(1), h: hd.toFixed(1), color: '#00c08b' });
+        if (ha > 0.3) fBars.push({ x, w, y: fZeroY.toFixed(1), h: ha.toFixed(1), color: '#d9453c' });
+      }
+      const fGridY = [], fYLabs = [];
+      [-1, -0.5, 0.5, 1].forEach(k => fGridY.push({ y: (fZeroY - k * fSpan).toFixed(1) }));
+      const fFlow = v => cop ? (v * trm / 1e6).toLocaleString(loc, { maximumFractionDigits: 1 }) : Math.round(v).toLocaleString(loc);
+      [1, 0.5, 0, -0.5, -1].forEach(k => {
+        const v = Math.abs(k) * fMax;
+        fYLabs.push({ label: k === 0 ? '0' : (k < 0 ? '−' : '') + fFlow(v), labStyle: this.tick({ right: '94%', marginRight: '10px', top: ((fZeroY - k * fSpan) / 340 * 100).toFixed(2) + '%', transform: 'translateY(-50%)' }) });
+      });
+      const fGridX = [];
+      for (let i = 0; i < fLen; i++) {
+        const p = E.dates[f0 + i].split('-');
+        if (p[1] === '01') fGridX.push({ label: p[0], labStyle: this.tick({ left: ((60 + i * fW + fW / 2) / 10).toFixed(2) + '%', top: '100%', marginTop: '11px', transform: 'translateX(-50%)', fontWeight: 500 }) });
+      }
+      // snapshots
+      const S = E.snapshot, pubLp = S.pubLargoPlazo;
+      const maxPrest = Math.max.apply(null, S.prestatarios.map(r => r.v));
+      const lista = (arr, total) => arr.map((r, i) => ({
+        nombre: es ? r.es : r.en, valTxt: fMon(r.v), pctTxt: fPct(r.v / total * 100), color: this.PALETA[i % 6],
+        segStyle: { width: (r.v / total * 100) + '%', background: this.PALETA[i % 6], height: '100%' }
+      }));
+      const traslape = S.monedas.find(r => r.es.indexOf('Peso') === 0);
+      const tv = traslape ? traslape.v : 0;
+      Object.assign(vals, {
+        xHeroLine: xLine, xHeroPath: xLine + 'L1000,300L0,300Z',
+        xTotalTxt: fMon(E.total[last]), xPibTxt: fPct(E.pibTotal[last]),
+        xHeroUnidad: cop ? (es ? 'billones de pesos · abril 2026' : 'trillion pesos · April 2026') : (es ? 'millones de dólares · abril 2026' : 'million dollars · April 2026'),
+        fUnidadTxt: cop ? (es ? 'Billones de pesos por mes — arriba entra, abajo sale' : 'Trillion pesos per month — up is in, down is out') : (es ? 'Millones de dólares por mes — arriba entra, abajo sale' : 'Million dollars per month — up is in, down is out'),
+        setDesgSector: () => this.setState({ xDesglose: 'sector', xHover: null }),
+        setDesgPlazo: () => this.setState({ xDesglose: 'plazo', xHover: null }),
+        dSecStyle: sector ? on : btnBase, dPlaStyle: !sector ? on : btnBase,
+        setXVal: () => this.setState({ xEscala: 'valor' }), setXPib: () => this.setState({ xEscala: 'pib' }),
+        xUsdStyle: !pib ? on : btnBase, xPibStyle: pib ? on : btnBase,
+        xRBtns: [['max', es ? 'Máx' : 'Max'], ['a10', es ? '10 años' : '10 yrs'], ['a5', es ? '5 años' : '5 yrs'], ['a1', es ? '1 año' : '1 yr']]
+          .map(r => ({ label: r[1], on: () => this.setState({ xRango: r[0], xHover: null }), style: st.xRango === r[0] ? on : { ...btnBase, border: '1px solid var(--line)' } })),
+        modoArea: modo === 'area', modoLinea: modo === 'lineas',
+        xAreas: XC.areas, xGridY: XC.gridY, xGridX: XC.gridX, xYLabs: XC.yLabs,
+        xHoverOn: XC.hoverOn, xHx: XC.hx, xTipRows: XC.tipRows, xTipDate: XC.tipDate, xTipTotal: XC.tipTotal, xTipStyle: XC.tipStyle,
+        xMove: XC.move, xLeave: XC.leave,
+        xLegend: layers.map(L => ({ nombre: L.nombre, color: L.color })),
+        xAxisTxt: pib ? (es ? 'Porcentaje del PIB' : 'Share of GDP') : (cop ? (es ? 'Saldo en billones de pesos (B = 10¹²)' : 'Balance in trillions of pesos (B = 10¹²)') : (es ? 'Saldo en millones de dólares' : 'Balance in millions of dollars')),
+        int12Txt: fMon(int12), intPub12Txt: fMon(intPub12),
+        tasaImpTxt: fPct(tasa[last]), intDiaTxt: fMon(int12 / 365),
+        tasaPath, tGridY, tYLabs, tGridX,
+        fBars, fGridY, fYLabs, fGridX, fZeroY: fZeroY.toFixed(1),
+        pubLpTxt: fMon(pubLp),
+        prestatarios: S.prestatarios.map(r => ({
+          nombre: es ? r.es : r.en, valTxt: fMon(r.v), pctTxt: fPct(r.v / pubLp * 100),
+          barStyle: { height: '100%', width: (r.v / maxPrest * 100) + '%', background: '#00c08b', borderRadius: '5px' }
+        })),
+        acreedores: lista(S.acreedores, pubLp),
+        multilaterales: S.multilaterales.map(r => ({ nombre: es ? r.es : r.en, valTxt: fMon(r.v) })),
+        monedas: lista(S.monedas, pubLp),
+        traslapeTxt: fMon(tv), traslapePctTxt: fPct(tv / E.total[last] * 100), traslapePubTxt: fPct(tv / pubLp * 100),
+        segTraslape: { width: (tv / E.total[last] * 100) + '%', background: 'var(--red)', height: '100%' },
+        segExternaResto: { flex: 1, background: '#2f89dd', height: '100%' },
+        segInternaExt: { width: (st.data ? this.gs.ext[this.tot.length - 1] / this.tot[this.tot.length - 1] * 100 : 0) + '%', background: 'var(--red)', height: '100%' },
+        segInternaResto: { flex: 1, background: 'var(--accent)', height: '100%' }
+      });
+    }
+    // ---------- total GNC (MinHacienda) ----------
+    if (st.gdata) {
+      const G = st.gdata, gN = G.dates.length, gL = gN - 1;
+      const gcop = (st.gnMoneda ?? 'cop') === 'cop';
+      const fB = v => '$' + v.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' B';
+      const fUS = v => 'US$' + Math.round(v).toLocaleString(loc) + ' M';
+      const fGn = v => gcop ? fB(v) : fUS(v);
+      const gStart = { max: 0, a10: Math.max(0, gN - 121), a5: Math.max(0, gN - 61), a1: Math.max(0, gN - 13) };
+      const gs0 = gStart[st.gnRango] != null ? gStart[st.gnRango] : 0;
+      const GC = this.chart({
+        dates: G.dates, s0: gs0, hover: st.gnHover, es,
+        layers: [
+          { nombre: es ? 'Deuda interna' : 'Domestic debt', color: '#00c08b', vals: gcop ? G.copInt : G.usdInt },
+          { nombre: es ? 'Deuda externa' : 'External debt', color: '#2f89dd', vals: gcop ? G.copExt : G.usdExt }
+        ],
+        fmtAxis: v => gcop ? '$' + Math.round(v).toLocaleString(loc) + ' B' : (v >= 1000 ? Math.round(v / 1000).toLocaleString(loc) + (es ? ' mil M' : ' bn') : Math.round(v).toLocaleString(loc) + ' M'),
+        fmtTip: v => fGn(v), fmtTotal: v => fGn(v),
+        setHover: i => this.setState({ gnHover: i })
+      });
+      const gMax = Math.max.apply(null, G.copTot);
+      let gLine = 'M0,' + (300 - G.copTot[0] / gMax * 280).toFixed(1);
+      for (let i = 1; i < gN; i++) gLine += 'L' + (i / (gN - 1) * 1000).toFixed(1) + ',' + (300 - G.copTot[i] / gMax * 280).toFixed(1);
+      // perfil de vencimientos
+      const pa = G.perfil.anios, pAmo = G.perfil.series[0].vals, pInt = G.perfil.series[1].vals;
+      const i0 = Math.max(0, pa.indexOf(2026)), iN = Math.min(pa.length, i0 + 22), pLen = iN - i0;
+      const sumaCol = k => (pAmo[i0 + k] || 0) + (pInt[i0 + k] || 0);
+      let pTop = 0; for (let k = 0; k < pLen; k++) pTop = Math.max(pTop, sumaCol(k));
+      const pMax = this.niceMax(pTop), pH = 360, pW = 940 / pLen, pBars = [];
+      for (let k = 0; k < pLen; k++) {
+        const a = pAmo[i0 + k] || 0, it = pInt[i0 + k] || 0;
+        const ha = a / pMax * pH, hi = it / pMax * pH;
+        const x = (60 + k * pW + pW * 0.15).toFixed(1), w = (pW * 0.7).toFixed(1);
+        if (ha > 0.3) pBars.push({ x, w, y: (pH - ha).toFixed(1), h: ha.toFixed(1), color: '#00c08b' });
+        if (hi > 0.3) pBars.push({ x, w, y: (pH - ha - hi).toFixed(1), h: hi.toFixed(1), color: '#2f89dd' });
+      }
+      const pGridY = [1, 2, 3, 4].map(k => ({ y: (pH - k / 4 * pH).toFixed(1) }));
+      const pYLabs = [0, 1, 2, 3, 4].map(k => ({
+        label: '$' + Math.round(pMax * k / 4).toLocaleString(loc) + ' B',
+        labStyle: this.tick({ right: '94%', marginRight: '10px', top: (100 - k * 25).toFixed(2) + '%', transform: 'translateY(-50%)' })
+      }));
+      const pGridX = [];
+      for (let k = 0; k < pLen; k++) if (pa[i0 + k] % 5 === 0 || k === 0) pGridX.push({
+        label: String(pa[i0 + k]),
+        labStyle: this.tick({ left: ((60 + k * pW + pW / 2) / 10).toFixed(2) + '%', top: '100%', marginTop: '11px', transform: 'translateX(-50%)', fontWeight: 500 })
+      });
+      let totAmo = 0, totInt = 0;
+      for (let k = 0; k < pAmo.length; k++) { totAmo += pAmo[k] || 0; totInt += pInt[k] || 0; }
+      // cupón promedio en el tiempo
+      const cup = G.ind.cupTot.map(v => v == null ? null : v * 100);
+      let cMax = 0; for (const v of cup) if (v != null) cMax = Math.max(cMax, v);
+      const cTop = this.niceMax(cMax), CX = i => 60 + i / (gN - 1) * 940, CY = v => 300 - v / cTop * 300;
+      let cupPath = '', started = false;
+      for (let i = 0; i < gN; i++) { if (cup[i] == null) continue; cupPath += (started ? 'L' : 'M') + CX(i).toFixed(1) + ',' + CY(cup[i]).toFixed(1); started = true; }
+      const cGridY = [1, 2, 3, 4].map(k => ({ y: CY(cTop * k / 4).toFixed(1) }));
+      const cYLabs = [0, 1, 2, 3, 4].map(k => ({
+        label: (cTop * k / 4).toLocaleString(loc, { maximumFractionDigits: 1 }) + ' %',
+        labStyle: this.tick({ right: '94%', marginRight: '10px', top: (100 - k * 25).toFixed(2) + '%', transform: 'translateY(-50%)' })
+      }));
+      const cGridX = [];
+      for (let i = 0; i < gN; i++) { const q = G.dates[i].split('-'); if (q[1] === '01' && +q[0] % 3 === 0) cGridX.push({ label: q[0], labStyle: this.tick({ left: (CX(i) / 10).toFixed(2) + '%', top: '100%', marginTop: '11px', transform: 'translateX(-50%)', fontWeight: 500 }) }); }
+      // composiciones
+      const comp = (defs, base) => {
+        const filas = defs.map((d, i) => ({ nombre: es ? d[0] : d[1], pct: (d[2] || 0) * 100, color: this.PALETA[i % 6] })).filter(f => f.pct >= 0.05).sort((a, b) => b.pct - a.pct);
+        return filas.map((f, i) => ({
+          nombre: f.nombre, pctTxt: fPct(f.pct), valTxt: fB(f.pct / 100 * base), color: this.PALETA[i % 6],
+          segStyle: { width: f.pct + '%', background: this.PALETA[i % 6], height: '100%' }
+        }));
+      };
+      const FI = G.fInt, FE = G.fExt, MO = G.moneda, TA = G.tasa, IN = G.ind;
+      Object.assign(vals, {
+        gnReady: true,
+        gnTotalTxt: fGn(gcop ? G.copTot[gL] : G.usdTot[gL]),
+        gnIntTxt: fGn(gcop ? G.copInt[gL] : G.usdInt[gL]), gnExtTxt: fGn(gcop ? G.copExt[gL] : G.usdExt[gL]),
+        gnIntPct: fPct(G.copInt[gL] / G.copTot[gL] * 100), gnExtPct: fPct(G.copExt[gL] / G.copTot[gL] * 100),
+        gnIntPct01: fPct(G.copInt[0] / G.copTot[0] * 100), gnExtPct01: fPct(G.copExt[0] / G.copTot[0] * 100),
+        gnHeroUnidad: gcop ? (es ? 'billones de pesos · junio 2026' : 'trillion pesos · June 2026') : (es ? 'millones de dólares · junio 2026' : 'million dollars · June 2026'),
+        gnHeroLine: gLine, gnHeroPath: gLine + 'L1000,300L0,300Z',
+        setGnCop: () => this.setState({ gnMoneda: 'cop' }), setGnUsd: () => this.setState({ gnMoneda: 'usd' }),
+        gnCopStyle: gcop ? on : btnBase, gnUsdStyle: !gcop ? on : btnBase,
+        gnRBtns: [['max', es ? 'Máx' : 'Max'], ['a10', es ? '10 años' : '10 yrs'], ['a5', es ? '5 años' : '5 yrs'], ['a1', es ? '1 año' : '1 yr']]
+          .map(r => ({ label: r[1], on: () => this.setState({ gnRango: r[0], gnHover: null }), style: st.gnRango === r[0] ? on : { ...btnBase, border: '1px solid var(--line)' } })),
+        gnAreas: GC.areas, gnGridY: GC.gridY, gnGridX: GC.gridX, gnYLabs: GC.yLabs,
+        gnHoverOn: GC.hoverOn, gnHx: GC.hx, gnTipRows: GC.tipRows, gnTipDate: GC.tipDate, gnTipTotal: GC.tipTotal, gnTipStyle: GC.tipStyle,
+        gnMove: GC.move, gnLeave: GC.leave,
+        gnAxisTxt: gcop ? (es ? 'Saldo en billones de pesos (B = 10¹²)' : 'Balance in trillions of pesos (B = 10¹²)') : (es ? 'Saldo en millones de dólares' : 'Balance in millions of dollars'),
+        pBars, pGridY, pYLabs, pGridX,
+        pAmoTxt: fB(totAmo), pIntTxt: fB(totInt), pTotTxt: fB(totAmo + totInt),
+        pProxTxt: fB(sumaCol(0)), pProx2Txt: fB(sumaCol(1)),
+        cupPath, cGridY, cYLabs, cGridX,
+        cupIntTxt: fPct(IN.cupInt[gL] * 100), cupExtTxt: fPct(IN.cupExt[gL] * 100), cupTotTxt: fPct(IN.cupTot[gL] * 100),
+        vidaMediaTxt: IN.vmTot[gL].toLocaleString(loc, { maximumFractionDigits: 1 }), duracionTxt: IN.durTot[gL].toLocaleString(loc, { maximumFractionDigits: 1 }),
+        tasaFijaTxt: fPct(TA.fija[gL] * 100), tasaVarTxt: fPct(TA.variable[gL] * 100),
+        monedaLocalTxt: fPct(MO.local[gL] * 100), monedaExtTxt: fPct(MO.extranjera[gL] * 100),
+        gnMonedas: comp([['Peso (COP)', 'Peso (COP)', MO.cop[gL]], ['UVR — indexado a inflación', 'UVR — inflation-indexed', MO.uvr[gL]], ['Dólar (USD)', 'US dollar', MO.usd[gL]], ['Franco suizo (CHF)', 'Swiss franc', MO.chf[gL]], ['Euro (EUR)', 'Euro', MO.eur[gL]], ['Yen (JPY)', 'Japanese yen', MO.jpy[gL]]], G.copTot[gL]),
+        gnFuenteInt: comp([['TES', 'TES', FI.tes[gL]], ['Depósitos pasivos del Tesoro', 'Treasury passive deposits', FI.deposTesoro[gL]], ['Bonos Fogafin', 'Fogafin bonds', FI.fogafin[gL]], ['Bonos Ley 546/99', 'Law 546/99 bonds', FI.ley546[gL]], ['Títulos de reducción de deuda', 'Debt reduction bonds', FI.reduccion[gL]], ['Otros', 'Others', FI.otros[gL]]], G.copInt[gL]),
+        gnFuenteExt: comp([['Bonos', 'Bonds', FE.bonos[gL]], ['BIRF — Banco Mundial', 'IBRD — World Bank', FE.birf[gL]], ['BID', 'IDB', FE.bid[gL]], ['CAF', 'CAF', FE.caf[gL]], ['Otros', 'Others', FE.otros[gL]]], G.copExt[gL]),
+        recIntTxt: fB(G.copInt[gL]), recTesTxt: fB(FI.tes[gL] * G.copInt[gL]), recTesPct: fPct(FI.tes[gL] * 100),
+        recNoTesTxt: fB((1 - FI.tes[gL]) * G.copInt[gL]), recDeposTxt: fB(FI.deposTesoro[gL] * G.copInt[gL]), recOtrosTxt: fB(FI.otros[gL] * G.copInt[gL])
+      });
+    }
+
+    this.ponFechas(vals);
+    return vals;
+  }
+}
+
+</script>
+</body></html>

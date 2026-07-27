@@ -1,0 +1,6 @@
+# Finales de línea LF en el repositorio, para que el script produzca lo mismo
+# en Windows y en el runner de CI.
+* text=auto eol=lf
+
+*.xlsx  binary
+*.woff2 binary
