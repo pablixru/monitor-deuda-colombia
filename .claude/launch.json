@@ -4,7 +4,7 @@
     {
       "name": "monitor-deuda",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["--yes", "serve", "public", "-l", "4173", "--no-clipboard"],
+      "runtimeArgs": ["--yes", "serve", "public", "-l", "4173", "--no-clipboard", "--single"],
       "port": 4173
     }
   ]

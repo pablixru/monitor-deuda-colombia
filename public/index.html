@@ -308,6 +308,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
 </helmet>
 <div id="dmon" data-theme="{{ theme }}" data-lang="{{ lang }}" style="background:var(--bg);color:var(--ink);min-height:100vh;font-family:'Hanken Grotesk',-apple-system,'Segoe UI',sans-serif">
 
+<a href="#main" style="position:absolute;left:-9999px;top:0;z-index:100;padding:12px 18px;background:var(--accent);color:#00140f;font-weight:700;border-radius:0 0 6px 0" style-focus="left:0"><span class="Les">Saltar al contenido</span><span class="Len">Skip to content</span></a>
 <header style="position:sticky;top:0;z-index:50;background:var(--hdr);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)">
   <div style="max-width:1680px;margin:0 auto;padding:12px var(--pad-x);display:flex;align-items:center;gap:18px;flex-wrap:wrap">
     <div style="display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-0.02em;font-size:1.02rem">
@@ -361,6 +362,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     </div>
   </div>
 </header>
+<main id="main" style="scroll-margin-top:80px">
 
 <sc-if value="{{ vInterna }}" hint-placeholder-val="{{ true }}">
 <div data-screen-label="Interna">
@@ -473,8 +475,8 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
         <button sc-camel-on-click="{{ setUP }}" style="{{ uPStyle }}"><span class="Les">% del total</span><span class="Len">% of total</span></button>
         <button sc-camel-on-click="{{ setUPib }}" style="{{ uPibStyle }}"><span class="Les">% del PIB</span><span class="Len">% of GDP</span></button>
       </div>
-      <input type="range" min="0" max="197" value="{{ mes }}" sc-camel-on-change="{{ setMes }}" style="flex:1;min-width:200px" aria-label="Mes">
-      <span style="font-weight:700;font-size:1.02rem;min-width:130px;text-transform:capitalize">{{ fechaSel }}</span>
+      <input type="range" min="0" max="197" value="{{ mes }}" sc-camel-on-change="{{ setMes }}" style="flex:1;min-width:min(200px,52vw)" aria-label="Mes">
+      <span style="font-weight:700;font-size:1.02rem;min-width:min(130px,34vw);text-transform:capitalize">{{ fechaSel }}</span>
     </div>
     <div style="height:16px"></div>
     <sc-if value="{{ ready }}" hint-placeholder-val="{{ true }}">
@@ -482,14 +484,14 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
         <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
           <div style="border-top:1px solid var(--line-soft)">
             <button sc-camel-on-click="{{ g.toggle }}" style="all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%" style-focus="outline:2px solid var(--accent);outline-offset:-2px" style-hover="background:var(--surface)">
-              <div style="display:grid;grid-template-columns:minmax(170px,320px) 1fr auto;gap:18px;align-items:center;padding:15px 8px">
+              <div style="display:grid;grid-template-columns:minmax(min(170px,34vw),320px) 1fr auto;gap:clamp(8px,3vw,18px);align-items:center;padding:15px 8px">
                 <div style="display:flex;align-items:center;gap:12px">
                   <span style="width:10px;height:10px;border-radius:2px;background:{{ g.color }};flex:none"></span>
                   <span style="font-weight:700;font-size:1.04rem;letter-spacing:-0.01em">{{ g.nombre }}</span>
                   <span style="color:var(--ink-faint);font-size:.78rem">{{ g.caret }}</span>
                 </div>
                 <div style="height:24px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="{{ g.barStyle }}"></div></div>
-                <div style="text-align:right;min-width:150px">
+                <div style="text-align:right;min-width:min(150px,36vw)">
                   <div style="font-weight:800;font-size:1.12rem">{{ g.valTxt }}</div>
                   <div style="color:var(--ink-faint);font-size:.82rem">{{ g.subTxt }}</div>
                 </div>
@@ -501,17 +503,17 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
                   <div style="display:grid;grid-template-columns:minmax(150px,300px) 1fr auto;gap:18px;align-items:center;padding:7px 0">
                     <span style="color:var(--ink-soft);font-size:.92rem">{{ s.nombre }}</span>
                     <div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="{{ s.barStyle }}"></div></div>
-                    <div style="text-align:right;min-width:150px;color:var(--ink-soft);font-size:.9rem">{{ s.valTxt }} <span style="color:var(--ink-faint)">· {{ s.pctTxt }}</span></div>
+                    <div style="text-align:right;min-width:min(150px,36vw);color:var(--ink-soft);font-size:.9rem">{{ s.valTxt }} <span style="color:var(--ink-faint)">· {{ s.pctTxt }}</span></div>
                   </div>
                 </sc-for>
               </div>
             </sc-if>
           </div>
         </sc-for>
-        <div style="border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(170px,320px) 1fr auto;gap:18px;padding:16px 8px;align-items:center">
+        <div style="border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(min(170px,34vw),320px) 1fr auto;gap:clamp(8px,3vw,18px);padding:16px 8px;align-items:center">
           <span style="font-weight:800;font-size:1.04rem"><span class="Les">Total general</span><span class="Len">Grand total</span></span>
           <span></span>
-          <div style="text-align:right;min-width:150px;font-weight:800;font-size:1.12rem">{{ totalSelTxt }}</div>
+          <div style="text-align:right;min-width:min(150px,36vw);font-weight:800;font-size:1.12rem">{{ totalSelTxt }}</div>
         </div>
       </div>
     </sc-if>
@@ -1494,6 +1496,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
 
 </sc-if>
 
+</main>
 <footer id="fuentes" style="background:var(--bg-deep);border-top:1px solid var(--line-soft);padding:56px 0 44px">
   <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:36px">
     <div>
@@ -1670,6 +1673,19 @@ class Component extends DCLogic {
       poner('link[rel="canonical"]', 'href', url);
       poner('meta[property="og:url"]', 'content', url);
       poner('meta[property="og:locale"]', 'content', lang === 'en' ? 'en_US' : 'es_CO');
+      // La reescritura hace que cualquier ruta sirva esta página. Las que no
+      // corresponden a una vista se marcan noindex para no sembrar el índice de
+      // Google con copias del sitio bajo direcciones inventadas.
+      const inventada = this.vistaDeRuta() === null;
+      let rb = document.head.querySelector('meta[name="robots"]');
+      if (inventada && !rb) {
+        rb = document.createElement('meta');
+        rb.setAttribute('name', 'robots');
+        rb.setAttribute('content', 'noindex, follow');
+        document.head.appendChild(rb);
+      } else if (!inventada && rb) {
+        rb.remove();
+      }
     } catch (e) {}
   }
   irARuta(v) {
