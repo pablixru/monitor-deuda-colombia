@@ -349,6 +349,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     </sc-if>
     <sc-if value="{{ vGuia }}" hint-placeholder-val="{{ false }}">
       <nav style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
+        <a href="#preguntas" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Preguntas</span><span class="Len">Questions</span></a>
         <a href="#conceptos" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Conceptos</span><span class="Len">Concepts</span></a>
         <a href="#porque" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Por qué importa</span><span class="Len">Why it matters</span></a>
         <a href="#historia" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Historia</span><span class="Len">History</span></a>
@@ -1245,12 +1246,33 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
   </div>
 </div>
 
-<section id="conceptos" style="padding:88px 0">
+
+<section id="preguntas" style="padding:88px 0">
+  <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
+    <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
+      <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Preguntas frecuentes</span><span class="Len">Frequently asked questions</span></h2>
+      <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 01</span>
+    </div>
+    <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 44px"><span class="Les">Las respuestas salen de los mismos datos que las gráficas, así que cambian con cada corte mensual. Ninguna cifra está escrita a mano.</span><span class="Len">The answers come from the same data as the charts, so they change with every monthly cut-off. No figure is written by hand.</span></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px">
+      <sc-for list="{{ preguntas }}" as="p" hint-placeholder-count="8">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px 26px">
+          <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-0.015em;margin:0 0 12px">{{ p.q }}</h3>
+          <p style="color:var(--ink-soft);line-height:1.65;margin:0 0 14px;font-size:.95rem">{{ p.a }}</p>
+          <a href="{{ p.ancla }}" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent-soft);text-decoration:none;border-bottom:1px dashed currentColor;cursor:pointer;font-size:.86rem" style-hover="color:var(--accent)">{{ p.ver }}</a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="conceptos" style="padding:88px 0;border-top:1px solid var(--line-soft)">
   <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Los conceptos</span><span class="Len">The concepts</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 01</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 02</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 44px;max-width:none"><span class="Les">Cada término lleva su definición formal y la fuente donde consultarla. En el resto de la página, las palabras <span style="color:var(--accent-soft);border-bottom:1px dashed currentColor">subrayadas así</span> traen de vuelta aquí.</span><span class="Len">Each term carries its formal definition and where to look it up. Elsewhere on the page, words <span style="color:var(--accent-soft);border-bottom:1px dashed currentColor">underlined like this</span> bring you back here.</span></p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:18px">
@@ -1373,7 +1395,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Por qué importa el nivel de deuda</span><span class="Len">Why the level of debt matters</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 02</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 03</span>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:34px 48px">
       <div>
@@ -1393,7 +1415,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Cómo llegó Colombia hasta acá</span><span class="Len">How Colombia got here</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 03</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 04</span>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:34px 48px">
       <div>
@@ -1413,7 +1435,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Notas</span><span class="Len">Notes</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 04</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 05</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 44px;max-width:none"><span class="Les">Las advertencias metodológicas que acompañan a las cifras. Los numeritos en volandas junto a los datos traen aquí.</span><span class="Len">The methodological caveats behind the figures. The small superscript numbers next to the data bring you here.</span></p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,430px),1fr));gap:18px">
@@ -1462,7 +1484,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Fuentes y referencias</span><span class="Len">Sources and references</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 05</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 06</span>
     </div>
     <h3 style="font-size:1.15rem;font-weight:700;letter-spacing:-0.015em;margin:0 0 18px"><span class="Les">Los datos</span><span class="Len">The data</span></h3>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;margin-bottom:48px">
@@ -1647,6 +1669,17 @@ class Component extends DCLogic {
       guia: ['What domestic debt, external debt and TES are', 'A plain-language glossary of Colombian public debt, with IMF and Banco de la República definitions, methodological notes and sources.']
     }
   };
+  // Cada ancla vive en una vista concreta. Sin esto, un enlace a #gvuelco
+  // cambiaba a la Guía y el destino no existía.
+  vistaDeAncla(id) {
+    const guia = ['preguntas', 'conceptos', 'porque', 'historia', 'notas', 'referencias'];
+    if (id.slice(0, 2) === 'g-' || /^nd+$/.test(id) || guia.indexOf(id) >= 0) return 'guia';
+    if (['tenedores', 'evolucion', 'cambios'].indexOf(id) >= 0) return 'interna';
+    if (id.charAt(0) === 'x') return 'externa';
+    if (id === 'traslape') return this.state.vista === 'guia' ? 'total' : (this.state.vista || 'total');
+    if (id.charAt(0) === 'g') return 'total';
+    return 'guia';
+  }
   vistaDeRuta() {
     try {
       const p = (location.pathname || '/').replace(/\/+$/, '') || '/';
@@ -1690,6 +1723,112 @@ class Component extends DCLogic {
   }
   irARuta(v) {
     try { history.pushState({ v: v }, '', this.RUTAS[v] || '/'); } catch (e) {}
+  }
+  // Las respuestas se arman con los datos ya cargados: ninguna cifra va escrita
+  // a mano, así que la sección se actualiza sola con el corte de cada mes.
+  preguntasFrecuentes(es, loc) {
+    const st = this.state, D = st.data, E = st.xdata, G = st.gdata;
+    if (!D || !E || !G || !this.gs) return [];
+    const pibCop = +((st.meta || {}).pibCop ?? this.props.pibCop ?? 1928) || 1928;
+    const n = D.dates.length, gn = G.dates.length, xn = E.dates.length;
+    const bil = v => '$' + v.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' B';
+    const usd = v => 'US$' + Math.round(v).toLocaleString(loc) + ' M';
+    const pct = v => v.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + (es ? ' %' : '%');
+    const fecha = f => { const p = String(f).split('-'); return (es ? this.MES : this.MEN)[+p[1] - 1] + ' ' + p[0]; };
+
+    const gTot = G.copTot[gn - 1], gUsd = G.usdTot[gn - 1];
+    const gInt = G.copInt[gn - 1], gExt = G.copExt[gn - 1];
+    const gPib = gTot / pibCop * 100;
+    const corteG = fecha(G.dates[gn - 1]);
+    const tesTot = this.tot[n - 1] / 1e6, tesExt = this.gs.ext[n - 1] / 1e6;
+    const tesExtPct = this.gs.ext[n - 1] / this.tot[n - 1] * 100;
+    const pen = this.gs.pen[n - 1] / 1e6;
+    const corteT = fecha(D.dates[n - 1]);
+    const xTot = E.total[xn - 1], xPib = E.pibTotal[xn - 1], corteX = fecha(E.dates[xn - 1]);
+    const acre = (E.snapshot.acreedores || [])[0] || null;
+    const org = (E.snapshot.acreedores || []).filter(a => /Organismos|Multilateral/.test(a.es))[0] || null;
+    let int12 = 0; for (let i = xn - 12; i < xn; i++) int12 += E.intTotal[i] || 0;
+    const cupon = (G.ind.cupTot[gn - 1] || 0) * 100;
+    const vida = G.ind.vmTot[gn - 1] || 0;
+    const anios = G.perfil.anios, tot3 = G.perfil.series[2].vals;
+    const iAn = anios.indexOf(+G.dates[gn - 1].slice(0, 4));
+    const esteAnio = iAn >= 0 ? (tot3[iAn] || 0) : 0, proxAnio = iAn >= 0 ? (tot3[iAn + 1] || 0) : 0;
+
+    const P = [];
+    const add = (ancla, verEs, verEn, qEs, qEn, aEs, aEn) =>
+      P.push({ q: es ? qEs : qEn, a: es ? aEs : aEn, ancla: ancla, ver: es ? verEs : verEn });
+
+    add('#gvuelco', 'Ver la deuda del Gobierno', 'See government debt',
+      '¿Cuánto debe el Gobierno de Colombia?',
+      'How much does Colombia’s government owe?',
+      'A ' + corteG + ', la deuda bruta del Gobierno Nacional Central es de ' + bil(gTot) + ' — unos ' + usd(gUsd) + '. De ese total, ' + bil(gInt) + ' es deuda interna y ' + bil(gExt) + ' externa. Equivale a cerca del ' + pct(gPib) + ' del PIB, calculado sobre un PIB fijo; ver la nota 3.',
+      'As of ' + corteG + ', the central government’s gross debt is ' + bil(gTot) + ' — about ' + usd(gUsd) + '. Of that, ' + bil(gInt) + ' is domestic debt and ' + bil(gExt) + ' external. That is roughly ' + pct(gPib) + ' of GDP, computed against a fixed GDP; see note 3.');
+
+    add('#tenedores', 'Ver todos los tenedores', 'See all holders',
+      '¿Quién tiene los TES de Colombia?',
+      'Who holds Colombia’s TES?',
+      'A ' + corteT + ' hay ' + bil(tesTot) + ' en TES clase B en circulación. El mayor tenedor son los fondos de pensiones y cesantías, con ' + bil(pen) + '. Los inversionistas extranjeros tienen ' + bil(tesExt) + ', el ' + pct(tesExtPct) + ' del total. El resto se reparte entre bancos, aseguradoras, el sector público y otros tenedores.',
+      'As of ' + corteT + ' there are ' + bil(tesTot) + ' in class-B TES outstanding. The largest holder is pension and severance funds, with ' + bil(pen) + '. Foreign investors hold ' + bil(tesExt) + ', or ' + pct(tesExtPct) + ' of the total. The rest is split among banks, insurers, the public sector and other holders.');
+
+    add('#xquien', 'Ver acreedores y monedas', 'See creditors and currencies',
+      '¿A quién le debe Colombia por fuera?',
+      'Who does Colombia owe abroad?',
+      'A ' + corteX + ', la deuda externa bruta del país suma ' + usd(xTot) + ', el ' + pct(xPib) + ' del PIB. En la deuda pública de largo plazo, el grupo más grande es ' + (acre ? '«' + acre.es + '», con ' + usd(acre.v) : 'el de los tenedores de títulos') + '. ' + (org ? 'Los organismos multilaterales —Banco Mundial, BID, CAF y FMI— suman ' + usd(org.v) + '.' : ''),
+      'As of ' + corteX + ', the country’s gross external debt totals ' + usd(xTot) + ', or ' + pct(xPib) + ' of GDP. Within long-term public debt, the largest group is ' + (acre ? '“' + acre.en + '”, at ' + usd(acre.v) : 'that of securities holders') + '. ' + (org ? 'Multilateral organisations — the World Bank, IDB, CAF and the IMF — add up to ' + usd(org.v) + '.' : ''));
+
+    add('#g-tes', 'Ver la definición', 'See the definition',
+      '¿Qué son los TES?',
+      'What are TES?',
+      'Son los Títulos de Tesorería, creados por la Ley 51 de 1990. Es el instrumento con el que el Gobierno se financia dentro del país: los emite el Ministerio de Hacienda, los administra el Banco de la República y pagan una tasa fija o variable a plazos pactados. Los de clase B son los que se subastan en el mercado y los que sigue esta página.',
+      'They are Treasury securities, created by Law 51 of 1990. They are how the government funds itself at home: issued by the Finance Ministry, administered by Banco de la República, paying a fixed or floating rate over agreed maturities. Class B are the ones auctioned in the market and the ones this page tracks.');
+
+    add('#gcosto', 'Ver costo y plazo', 'See cost and maturity',
+      '¿Cuánto paga Colombia en intereses?',
+      'How much does Colombia pay in interest?',
+      'En deuda externa, el país pagó ' + usd(int12) + ' en intereses en los últimos doce meses hasta ' + corteX + '. La deuda del Gobierno paga un cupón promedio de ' + pct(cupon) + ', que es la tasa pactada cuando se emitió cada título, no la que el mercado exige hoy.',
+      'On external debt, the country paid ' + usd(int12) + ' in interest over the twelve months to ' + corteX + '. Government debt carries an average coupon of ' + pct(cupon) + ' — the rate agreed when each security was issued, not what the market demands today.');
+
+    add('#gperfil', 'Ver el perfil completo', 'See the full profile',
+      '¿Cuándo vence la deuda de Colombia?',
+      'When does Colombia’s debt mature?',
+      'La vida media de la deuda del Gobierno es de ' + vida.toLocaleString(loc, { maximumFractionDigits: 1 }) + ' años. Del servicio pendiente —capital más intereses— quedan ' + bil(esteAnio) + ' para lo que resta de ' + G.dates[gn - 1].slice(0, 4) + ' y ' + bil(proxAnio) + ' para el año siguiente. Son pagos por la deuda que ya existe, no por la que se contraiga después.',
+      'The average life of government debt is ' + vida.toLocaleString(loc, { maximumFractionDigits: 1 }) + ' years. Of the remaining service — principal plus interest — ' + bil(esteAnio) + ' falls in the rest of ' + G.dates[gn - 1].slice(0, 4) + ' and ' + bil(proxAnio) + ' the following year. These are payments on debt that already exists, not on future borrowing.');
+
+    add('#porque', 'Por qué importa el nivel', 'Why the level matters',
+      '¿Es alta la deuda de Colombia?',
+      'Is Colombia’s debt high?',
+      'La deuda externa está en ' + pct(xPib) + ' del PIB. No hay un umbral único: lo que una economía puede sostener depende de su historial. La literatura sobre intolerancia a la deuda encuentra que en economías emergentes los niveles «seguros» de deuda externa pueden ser mucho más bajos que en países ricos, y dependen del historial de cesaciones de pagos e inflación de cada país.',
+      'External debt stands at ' + pct(xPib) + ' of GDP. There is no single threshold: what an economy can sustain depends on its history. The debt-intolerance literature finds that in emerging economies “safe” external debt levels can be far lower than in rich countries, and depend on each country’s record of default and inflation.');
+
+    add('#traslape', 'Ver el traslape', 'See the overlap',
+      '¿Por qué las cifras de deuda no coinciden entre fuentes?',
+      'Why don’t debt figures agree across sources?',
+      'Porque Hacienda y el Banco de la República clasifican con criterios distintos. Hacienda cuenta un TES como deuda interna aunque lo tenga un extranjero, porque clasifica por dónde se emitió el título; el Banco lo cuenta como deuda externa, porque clasifica por dónde vive el acreedor. El mismo papel aparece en dos cuentas, así que las cifras no se pueden sumar.',
+      'Because the Finance Ministry and Banco de la República classify by different criteria. The Ministry counts a TES as domestic debt even when a foreigner holds it, because it classifies by where the security was issued; the Bank counts it as external debt, because it classifies by where the creditor lives. The same paper appears in two ledgers, so the figures cannot be added together.');
+    return P;
+  }
+  // Publica las mismas preguntas como datos estructurados, para que el buscador
+  // lea exactamente lo que ve el lector.
+  publicarFaq(preguntas, activa) {
+    try {
+      const id = 'faq-jsonld';
+      let el = document.getElementById(id);
+      if (!activa || !preguntas.length) { if (el) el.remove(); return; }
+      const datos = {
+        '@context': 'https://schema.org', '@type': 'FAQPage',
+        mainEntity: preguntas.map(p => ({
+          '@type': 'Question', name: p.q,
+          acceptedAnswer: { '@type': 'Answer', text: p.a }
+        }))
+      };
+      const txt = JSON.stringify(datos);
+      if (!el) {
+        el = document.createElement('script');
+        el.type = 'application/ld+json'; el.id = id;
+        document.head.appendChild(el);
+      }
+      if (el.textContent !== txt) el.textContent = txt;
+    } catch (e) {}
   }
   // --- etiquetas de corte -------------------------------------------------
   // Se derivan de los propios datos para que el texto no pueda desmentir a las
@@ -1785,8 +1924,9 @@ class Component extends DCLogic {
       irGlosario: ev => {
         if (ev && ev.preventDefault) ev.preventDefault();
         const destino = (ev.currentTarget.getAttribute('href') || '').slice(1);
-        this.setState({ vista: 'guia' });
-        this.irARuta('guia');
+        const destinoVista = this.vistaDeAncla(destino);
+        this.setState({ vista: destinoVista });
+        this.irARuta(destinoVista);
         // La vista se monta un instante después del setState, así que el ancla
         // todavía no existe: se reintenta hasta que aparezca.
         // El salto es instantáneo a propósito: al re-renderizar, el runtime
@@ -2163,6 +2303,8 @@ class Component extends DCLogic {
       });
     }
 
+    vals.preguntas = this.preguntasFrecuentes(es, loc);
+    this.publicarFaq(vals.preguntas, vista === 'guia');
     this.ponFechas(vals);
     return vals;
   }
