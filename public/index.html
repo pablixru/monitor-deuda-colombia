@@ -349,7 +349,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
 <sc-if value="{{ heroA }}" hint-placeholder-val="{{ false }}">
 <div style="max-width:1680px;margin:0 auto;padding:92px var(--pad-x) 76px">
   <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Tenedores de TES · Saldos a {{ cTesEs }}</span><span class="Len">TES holders · Balances as of {{ cTesEn }}</span></div>
-  <h1 style="font-size:clamp(3.2rem,8.6vw,8.8rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 40px;text-wrap:balance;max-width:14ch"><span class="Les">¿De quién es la <span style="color:var(--accent)">deuda interna</span> de Colombia?</span><span class="Len">Who holds Colombia's <span style="color:var(--accent)">domestic debt</span>?</span></h1>
+  <h1 style="font-size:clamp(3.2rem,8.6vw,8.8rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 40px;text-wrap:balance;max-width:14ch"><span class="Les">¿De quién es la <a href="#g-deuda-interna" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">deuda interna</a> de Colombia?</span><span class="Len">Who holds Colombia's <a href="#g-deuda-interna" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">domestic debt</a>?</span></h1>
   <div style="display:flex;gap:48px;flex-wrap:wrap;align-items:flex-end">
     <div>
       <div style="font-size:clamp(2.4rem,4.4vw,4rem);font-weight:800;letter-spacing:-0.03em;line-height:1">{{ totalTxt }}</div>
@@ -372,7 +372,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
 <div style="max-width:1680px;margin:0 auto;padding:88px var(--pad-x) 72px;display:grid;grid-template-columns:minmax(300px,1.15fr) minmax(min(100%,300px),1fr);gap:56px;align-items:center">
   <div>
     <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Tenedores de TES · {{ cTesEsC }}</span><span class="Len">TES holders · {{ cTesEnC }}</span></div>
-    <h1 style="font-size:clamp(2.8rem,5.6vw,5.6rem);font-weight:800;letter-spacing:-0.045em;line-height:.97;margin:18px 0 26px;text-wrap:balance"><span class="Les">¿De quién es la <span style="color:var(--accent)">deuda interna</span> de Colombia?</span><span class="Len">Who holds Colombia's <span style="color:var(--accent)">domestic debt</span>?</span></h1>
+    <h1 style="font-size:clamp(2.8rem,5.6vw,5.6rem);font-weight:800;letter-spacing:-0.045em;line-height:.97;margin:18px 0 26px;text-wrap:balance"><span class="Les">¿De quién es la <a href="#g-deuda-interna" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">deuda interna</a> de Colombia?</span><span class="Len">Who holds Colombia's <a href="#g-deuda-interna" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">domestic debt</a>?</span></h1>
     <div style="font-size:clamp(2rem,3vw,2.8rem);font-weight:800;letter-spacing:-0.03em">{{ totalTxt }}</div>
     <div style="color:var(--ink-faint);font-size:.9rem;margin-top:6px"><span class="Les">billones de pesos en TES clase B</span><span class="Len">trillion pesos in class-B TES</span></div>
   </div>
@@ -404,7 +404,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
   </svg>
   <div style="position:relative;max-width:1680px;margin:0 auto;padding:100px var(--pad-x) 190px">
     <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Tenedores de TES · {{ rTes }}</span><span class="Len">TES holders · {{ rTes }}</span></div>
-    <h1 style="font-size:clamp(3.2rem,8.2vw,8.4rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 30px;text-wrap:balance;max-width:14ch"><span class="Les">¿De quién es la <span style="color:var(--accent)">deuda interna</span> de Colombia?</span><span class="Len">Who holds Colombia's <span style="color:var(--accent)">domestic debt</span>?</span></h1>
+    <h1 style="font-size:clamp(3.2rem,8.2vw,8.4rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 30px;text-wrap:balance;max-width:14ch"><span class="Les">¿De quién es la <a href="#g-deuda-interna" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">deuda interna</a> de Colombia?</span><span class="Len">Who holds Colombia's <a href="#g-deuda-interna" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">domestic debt</a>?</span></h1>
     <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap">
       <span style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.03em">{{ totalTxt }}</span><a href="#n4" sc-camel-on-click="{{ irGlosario }}" aria-label="Nota 4" style="color:var(--accent);font-size:.6em;font-weight:800;vertical-align:super;text-decoration:none;margin-left:2px;cursor:pointer" style-hover="color:var(--accent-soft)">4</a>
       <span style="color:var(--ink-faint);font-size:.92rem"><span class="Les">billones de pesos en TES clase B · {{ cTesMesEs }}</span><span class="Len">trillion pesos in class-B TES · {{ cTesMesEn }}</span></span>
@@ -596,7 +596,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
   </svg>
   <div style="position:relative;max-width:1680px;margin:0 auto;padding:100px var(--pad-x) 190px">
     <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Deuda externa · {{ rExt }}</span><span class="Len">External debt · {{ rExt }}</span></div>
-    <h1 style="font-size:clamp(3rem,7.4vw,7.6rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 30px;text-wrap:balance;max-width:15ch"><span class="Les">¿A quién le debe Colombia <span style="color:var(--accent)">por fuera</span>?</span><span class="Len">Who does Colombia owe <span style="color:var(--accent)">abroad</span>?</span></h1>
+    <h1 style="font-size:clamp(3rem,7.4vw,7.6rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 30px;text-wrap:balance;max-width:15ch"><span class="Les">¿A quién le debe Colombia <a href="#g-deuda-externa" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">por fuera</a>?</span><span class="Len">Who does Colombia owe <a href="#g-deuda-externa" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">abroad</a>?</span></h1>
     <div style="display:flex;gap:40px;align-items:baseline;flex-wrap:wrap">
       <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap">
         <span style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.03em">{{ xTotalTxt }}</span>
@@ -884,7 +884,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
   </svg>
   <div style="position:relative;max-width:1680px;margin:0 auto;padding:100px var(--pad-x) 170px">
     <div style="text-transform:uppercase;letter-spacing:.22em;font-size:.88rem;font-weight:600;color:var(--accent-soft)"><span class="Les">Gobierno Nacional Central · {{ rGnc }}</span><span class="Len">Central Government · {{ rGnc }}</span></div>
-    <h1 style="font-size:clamp(3rem,7.4vw,7.6rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 30px;text-wrap:balance;max-width:15ch"><span class="Les">Todo lo que debe <span style="color:var(--accent)">el Gobierno</span></span><span class="Len">Everything <span style="color:var(--accent)">the government</span> owes</span></h1>
+    <h1 style="font-size:clamp(3rem,7.4vw,7.6rem);font-weight:800;letter-spacing:-0.045em;line-height:.95;margin:20px 0 30px;text-wrap:balance;max-width:15ch"><span class="Les">Todo lo que debe <a href="#g-gnc" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">el Gobierno</a></span><span class="Len">Everything <a href="#g-gnc" sc-camel-on-click="{{ irGlosario }}" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:.055em;text-underline-offset:.1em;text-decoration-color:rgba(0,192,139,.42);cursor:pointer" style-hover="text-decoration-color:var(--accent)">the government</a> owes</span></h1>
     <div style="display:flex;gap:40px;align-items:baseline;flex-wrap:wrap">
       <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap">
         <span style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.03em">{{ gnTotalTxt }}</span>
@@ -1165,6 +1165,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
 </div>
 </sc-if>
 
+<sc-if value="{{ vDatos }}" hint-placeholder-val="{{ true }}">
 <section id="traslape" style="border-top:1px solid var(--line-soft);padding:88px 0;background:var(--bg-deep)">
   <div style="max-width:1680px;margin:0 auto;padding:0 var(--pad-x)">
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
@@ -1211,7 +1212,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     </sc-if>
   </div>
 </section>
-
+</sc-if>
 
 <sc-if value="{{ vGuia }}" hint-placeholder-val="{{ false }}">
 
@@ -1662,6 +1663,7 @@ class Component extends DCLogic {
       theme: st.theme, lang: st.lang, ready: !!st.data, xReady: !!st.xdata,
       vInterna: vista === 'interna', vExterna: vista === 'externa', vTotal: vista === 'total',
       vGuia: vista === 'guia', goGuia: () => goto('guia'),
+      vDatos: vista !== 'guia',
       vGuiaStyle: vista === 'guia' ? on : btnBase,
       // Un solo manejador para todos los enlaces de glosario y de notas: lee el
       // ancla del propio <a>, cambia de vista y salta al destino.
