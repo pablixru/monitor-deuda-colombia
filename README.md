@@ -136,6 +136,32 @@ frente a la versión anterior de la página:
 - El grupo «Otros tenedores» de TES no incluía **Proveedores de
   Infraestructura**, así que el área apilada no llegaba al total publicado.
 
+### El cambio de metodología de la deuda externa (enero de 2026)
+
+Desde enero de 2026 el Banco de la República publica la deuda externa con una
+metodología armonizada con los estándares internacionales, y movió el boletín al
+Portal de Estadísticas Económicas. La serie anterior quedó marcada como
+**«Datos descontinuados»** y termina en septiembre de 2025.
+
+El cambio no es cosmético. En el último mes comparable, septiembre de 2025:
+
+| Septiembre 2025 | Serie descontinuada | Serie vigente | Diferencia |
+|---|---|---|---|
+| Total | US$211.584 M | US$236.581 M | +24.997 M |
+| Sector público | US$118.135 M | US$143.170 M | +25.035 M |
+| Sector privado | US$93.449 M | US$93.411 M | −38 M |
+| % del PIB | 48,6 % | 54,1 % | +5,5 pp |
+
+Toda la diferencia está en el sector público; el privado es idéntico. El Banco
+**reconstruyó la historia** con la metodología nueva —la revisión de nivel llega
+al menos hasta diciembre de 2024—, así que la serie de 25 años no tiene un
+escalón artificial en el punto del cambio. La portada de la vista de deuda
+externa lleva una nota que explica esto.
+
+Si alguien compara la cifra de la página contra un boletín anterior a septiembre
+de 2025 va a ver un hueco de unos 25 mil millones de dólares: son dos
+metodologías distintas, no un error.
+
 ---
 
 Datos: Ministerio de Hacienda y Crédito Público · Banco de la República.

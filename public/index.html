@@ -610,6 +610,9 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
         <span style="color:var(--ink-faint);font-size:.84rem;line-height:1.5"><span class="Les">Convertido a una TRM de {{ trmTxt }} — la del {{ cExtDiaEs }}, fecha de corte del boletín. El porcentaje del PIB no sale de esta cifra: el Banco de la República lo calcula en dólares, contra un PIB también en dólares, así que dividir los pesos entre el PIB en pesos da un número distinto.</span><span class="Len">Converted at a TRM of {{ trmTxt }} — {{ cExtDiaEn }}, the bulletin's cut-off. The share of GDP does not come from this figure: Banco de la República computes it in dollars against a dollar-denominated GDP, so dividing pesos by peso GDP gives a different number.</span></span>
       </sc-if>
     </div>
+    <sc-if value="{{ xArmHay }}" hint-placeholder-val="{{ true }}">
+      <p style="color:var(--ink-faint);font-size:.84rem;line-height:1.55;margin:26px 0 0"><span class="Les">Desde enero de 2026 el Banco de la República publica esta serie con una metodología armonizada con los estándares internacionales, y reconstruyó la historia con ella. No es comparable con los boletines anteriores: para septiembre de 2025 la serie vigente da {{ xArmTxt }} y la descontinuada, US$211.584 M.</span><span class="Len">Since January 2026 Banco de la República publishes this series under a methodology harmonised with international standards, and rebuilt its history accordingly. It is not comparable with earlier bulletins: for September 2025 the current series reports {{ xArmTxt }} against US$211,584 M in the discontinued one.</span></p>
+    </sc-if>
   </div>
 </div>
 
@@ -1586,6 +1589,9 @@ class Component extends DCLogic {
         const p = E.dates[f0 + i].split('-');
         if (p[1] === '01') fGridX.push({ label: p[0], labStyle: this.tick({ left: ((60 + i * fW + fW / 2) / 10).toFixed(2) + '%', top: '100%', marginTop: '11px', transform: 'translateX(-50%)', fontWeight: 500 }) });
       }
+      // El boletin anterior, hoy descontinuado, cerro en septiembre de 2025:
+      // ese mes es el ultimo punto donde las dos metodologias se pueden comparar.
+      const iArm = E.dates.indexOf('2025-09');
       const xFecha = i => { const q = E.dates[i].split('-'); return (es ? this.MES : this.MEN)[+q[1] - 1] + ' ' + q[0]; };
       const TH = this.hoverEn({
         n: tLen, hover: st.tHover, setHover: i => this.setState({ tHover: i }), bandas: false,
@@ -1617,6 +1623,7 @@ class Component extends DCLogic {
       Object.assign(vals, {
         xHeroLine: xLine, xHeroPath: xLine + 'L1000,300L0,300Z',
         xTotalTxt: fMon(E.total[last]), xPibTxt: fPct(E.pibTotal[last]),
+        xArmTxt: iArm >= 0 ? fUSD(E.total[iArm]) : '', xArmHay: iArm >= 0,
         xHeroUnidad: cop ? (es ? 'billones de pesos · abril 2026' : 'trillion pesos · April 2026') : (es ? 'millones de dólares · abril 2026' : 'million dollars · April 2026'),
         fUnidadTxt: cop ? (es ? 'Billones de pesos por mes — arriba entra, abajo sale' : 'Trillion pesos per month — up is in, down is out') : (es ? 'Millones de dólares por mes — arriba entra, abajo sale' : 'Million dollars per month — up is in, down is out'),
         setDesgSector: () => this.setState({ xDesglose: 'sector', xHover: null }),
