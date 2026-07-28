@@ -436,7 +436,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">¿Quién tiene los TES?</span><span class="Len">Who holds the TES?</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 01</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 01</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 36px"><span class="Les">Saldo de títulos de tesorería en poder de cada grupo de tenedores. Selecciona un mes con el control deslizante y pulsa un grupo para ver su detalle.</span><span class="Len">Treasury bond balances held by each group. Pick a month with the slider and click a group to expand its detail.</span></p>
     <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:18px">
@@ -499,7 +499,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Evolución {{ rTes }}</span><span class="Len">Evolution {{ rTes }}</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 02</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 02</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 30px"><span class="Les">Saldo mensual por grupo de tenedores. Pasa el cursor sobre la gráfica para ver los valores de cada mes.</span><span class="Len">Monthly balance by holder group. Hover over the chart to inspect each month.</span></p>
     <div style="display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap">
@@ -552,12 +552,12 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Cambios recientes</span><span class="Len">Recent changes</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 03</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 03</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 40px"><span class="Les">Variación del saldo de cada grupo respecto al mes anterior y al mismo mes del año pasado, para el mes seleccionado (</span><span class="Len">Change in each group's balance vs. the previous month and the same month last year, for the selected month (</span><span style="font-weight:700;text-transform:capitalize">{{ fechaSel }}</span>).</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:34px 40px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
       <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
-        <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
             <span style="width:9px;height:9px;border-radius:2px;background:{{ g.color }};flex:none"></span>
             <h3 style="font-size:1.08rem;font-weight:700;letter-spacing:-0.015em;margin:0">{{ g.nombre }}</h3>
@@ -618,7 +618,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Evolución {{ rExt }}</span><span class="Len">Evolution {{ rExt }}</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 01</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 01</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 30px"><span class="Les">Saldo mensual de la deuda externa bruta. Cambia el desglose entre sectores y plazos, y la escala entre el saldo y su peso en el PIB.</span><span class="Len">Monthly gross external debt balance. Switch the breakdown between sectors and maturities, and the scale between the balance and its share of GDP.</span></p>
     <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px">
@@ -686,23 +686,23 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">¿Cuánto cuesta?</span><span class="Len">What does it cost?</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 02</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 02</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 40px"><span class="Les">Intereses efectivamente pagados sobre la deuda de largo plazo. La tasa implícita divide los intereses de los últimos doce meses entre el saldo promedio del período: es lo que en la práctica cuesta el endeudamiento externo.</span><span class="Len">Interest actually paid on long-term debt. The implicit rate divides the last twelve months of interest by the average balance over the same period — what external borrowing costs in practice.</span></p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px 40px;margin-bottom:52px">
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-bottom:52px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ int12Txt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Intereses pagados en 12 meses</span><span class="Len">Interest paid over 12 months</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ tasaImpTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Tasa implícita anual</span><span class="Len">Implicit annual rate</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ intPub12Txt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">De los cuales, sector público</span><span class="Len">Of which, public sector</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ intDiaTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Promedio por día</span><span class="Len">Average per day</span></div>
       </div>
@@ -750,7 +750,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Cuánto entra, cuánto sale</span><span class="Len">Money in, money out</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 03</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 03</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 30px"><span class="Les">Desembolsos y amortizaciones mensuales del Gobierno general en deuda de largo plazo — títulos y préstamos. Hacia arriba, plata que entra; hacia abajo, deuda que se paga.</span><span class="Len">Monthly disbursements and repayments of general government long-term debt — securities and loans. Up is money coming in; down is debt being repaid.</span></p>
     <sc-if value="{{ xReady }}" hint-placeholder-val="{{ true }}">
@@ -801,7 +801,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Quién debe y a quién</span><span class="Len">Who owes, and to whom</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 04</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 04</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 44px"><span class="Les">Deuda del sector público a largo plazo — {{ pubLpTxt }} en {{ cSnapEs }} — desagregada por deudor, por acreedor y por moneda.</span><span class="Len">Long-term public sector debt — {{ pubLpTxt }} in {{ cSnapEn }} — broken down by borrower, creditor and currency.</span></p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:56px 48px">
@@ -906,7 +906,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">El vuelco: de afuera hacia adentro</span><span class="Len">The shift: from abroad to home</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 01</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 01</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 30px"><span class="Les">En 2001 el Gobierno debía casi lo mismo adentro que afuera. Hoy la deuda interna pesa {{ gnIntPct }} y la externa {{ gnExtPct }}. Es el cambio estructural más importante de las finanzas públicas colombianas del siglo.</span><span class="Len">In 2001 the government owed almost as much at home as abroad. Today domestic debt is {{ gnIntPct }} and external {{ gnExtPct }} — the biggest structural change in Colombian public finances this century.</span></p>
     <div style="display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap">
@@ -947,20 +947,20 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:#46433f;font-weight:600"><span style="width:9px;height:9px;border-radius:2px;background:#2f89dd"></span><span class="Les">Deuda externa</span><span class="Len">External debt</span></span>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px 40px;margin-top:44px">
-        <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:44px">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
           <div style="font-size:2rem;font-weight:800;letter-spacing:-0.03em">{{ gnIntPct01 }} / {{ gnExtPct01 }}</div>
           <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Interna / externa en {{ iGncEs }}</span><span class="Len">Domestic / external in {{ iGncEn }}</span></div>
         </div>
-        <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
           <div style="font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ gnIntPct }} / {{ gnExtPct }}</div>
           <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Interna / externa hoy</span><span class="Len">Domestic / external today</span></div>
         </div>
-        <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
           <div style="font-size:2rem;font-weight:800;letter-spacing:-0.03em">{{ gnIntTxt }}</div>
           <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Deuda interna hoy</span><span class="Len">Domestic debt today</span></div>
         </div>
-        <div style="border-top:1px solid var(--line);padding-top:16px">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
           <div style="font-size:2rem;font-weight:800;letter-spacing:-0.03em">{{ gnExtTxt }}</div>
           <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Deuda externa hoy</span><span class="Len">External debt today</span></div>
         </div>
@@ -974,23 +974,23 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Cuánto vence y cuándo</span><span class="Len">What matures, and when</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 02</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 02</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 40px"><span class="Les">Todo lo que el Gobierno tendrá que pagar por la deuda que ya tiene: capital que vence cada año más los intereses que corren hasta entonces. No incluye deuda futura.</span><span class="Len">Everything the government must pay on debt it already holds: principal maturing each year plus the interest accruing until then. Future borrowing not included.</span></p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px 40px;margin-bottom:52px">
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-bottom:52px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ pTotTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Servicio total pendiente</span><span class="Len">Total remaining service</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ pIntTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Solo en intereses</span><span class="Len">Interest alone</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ pProxTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Resto de 2026</span><span class="Len">Rest of 2026</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ pProx2Txt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">2027 completo</span><span class="Len">Full year 2027</span></div>
       </div>
@@ -1038,27 +1038,27 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">A qué tasa y a qué plazo</span><span class="Len">At what rate, for how long</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 03</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 03</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 40px"><span class="Les">El cupón promedio es la tasa que efectivamente paga la deuda viva. La interna se paga en pesos y la externa en dólares, así que las dos cifras no son comparables entre sí: la brecha refleja sobre todo la inflación colombiana, no el riesgo del país.</span><span class="Len">The average coupon is the rate the outstanding debt actually pays. Domestic debt pays in pesos and external in dollars, so the two are not directly comparable: the gap mostly reflects Colombian inflation, not country risk.</span></p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:34px 40px;margin-bottom:52px">
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:52px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;color:var(--accent)">{{ cupTotTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Cupón promedio total</span><span class="Len">Average coupon, total</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ cupIntTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Interna, en pesos</span><span class="Len">Domestic, in pesos</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ cupExtTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Externa, en dólares</span><span class="Len">External, in dollars</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ vidaMediaTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Años de vida media</span><span class="Len">Years, average life</span></div>
       </div>
-      <div style="border-top:1px solid var(--line);padding-top:16px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px">
         <div style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em">{{ tasaFijaTxt }}</div>
         <div style="color:var(--ink-soft);margin-top:6px;line-height:1.5"><span class="Les">Está a tasa fija</span><span class="Len">Is at a fixed rate</span></div>
       </div>
@@ -1102,7 +1102,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">De qué está hecha</span><span class="Len">What it is made of</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 04</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 04</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 44px"><span class="Les">Instrumento por instrumento y moneda por moneda. El {{ monedaLocalTxt }} de la deuda del Gobierno está en moneda local — pesos o UVR —, lo que la blinda frente a los saltos del dólar.</span><span class="Len">Instrument by instrument, currency by currency. {{ monedaLocalTxt }} of government debt is in local currency — pesos or UVR — which shields it from swings in the dollar.</span></p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:56px 48px">
@@ -1167,7 +1167,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <div style="display:flex;align-items:baseline;gap:26px;margin-bottom:14px;flex-wrap:wrap">
       <h2 style="font-size:clamp(1.8rem,2.7vw,2.7rem);font-weight:800;letter-spacing:-0.025em;margin:0;text-wrap:balance"><span class="Les">Un mismo papel, dos cuentas</span><span class="Len">One security, two ledgers</span></h2>
       <div style="flex:1 1 60px;height:1px;background:var(--line-soft);align-self:center"></div>
-      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em">§ 05</span>
+      <span style="color:var(--accent);font-size:.85rem;letter-spacing:.14em;align-self:center">§ 05</span>
     </div>
     <p style="color:var(--ink-soft);line-height:1.55;margin:0 0 44px"><span class="Les">Las tres vistas de esta página no se pueden sumar entre sí. Hacienda cuenta un TES como deuda interna aunque lo tenga un extranjero — clasifica por dónde se emitió el título. El Banco de la República lo cuenta como deuda externa — clasifica por dónde vive el acreedor. Por eso Hacienda reporta {{ gnExtTxt }} de deuda externa del Gobierno y el Emisor {{ xTotalTxt }} para todo el país.</span><span class="Len">The three views on this page cannot be added together. The Finance Ministry counts a TES as domestic debt even when a foreigner holds it — it classifies by where the security was issued. Banco de la República counts it as external — it classifies by where the creditor lives. Hence {{ gnExtTxt }} of government external debt on one side, {{ xTotalTxt }} for the whole country on the other.</span></p>
     <sc-if value="{{ xReady }}" hint-placeholder-val="{{ true }}">
