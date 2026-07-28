@@ -1,6 +1,6 @@
 # Deuda Colombia
 
-**→ [deuda-colombia.vercel.app](https://deuda-colombia.vercel.app)**
+**→ [deudacolombia.site](https://deudacolombia.site)**
 
 Página pública para consultar **quién es dueño de la deuda de Colombia**: quién
 tiene los TES, a quién le debe el país por fuera y cómo está compuesta la deuda

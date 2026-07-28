@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deuda-colombia.vercel.app/sitemap.xml
+Sitemap: https://deudacolombia.site/sitemap.xml
