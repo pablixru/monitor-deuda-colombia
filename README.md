@@ -83,6 +83,12 @@ vercel.json             configuración del despliegue
 DESIGN-SYSTEM.md        el sistema de diseño de la página
 ```
 
+La página tiene cuatro vistas: **Total GNC**, **Interna**, **Externa** y
+**Guía**. Esta última es el glosario: define los conceptos con su fuente
+autorizada, explica por qué importa el nivel de deuda, recoge las notas
+metodológicas numeradas y lista las referencias. Los términos subrayados en el
+resto del sitio y los numeritos en volandas junto a las cifras enlazan allí.
+
 La página es HTML, CSS y JavaScript planos: **no hay paso de compilación**.
 React y las tipografías se sirven desde `assets/`, así que el sitio no hace
 ninguna petición a terceros.
