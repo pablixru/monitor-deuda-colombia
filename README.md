@@ -83,7 +83,13 @@ vercel.json             configuración del despliegue
 DESIGN-SYSTEM.md        el sistema de diseño de la página
 ```
 
-La página tiene cuatro vistas: **Total GNC**, **Interna**, **Externa** y
+La página tiene cuatro vistas, **cada una con su propia URL** — `/`, `/interna`,
+`/externa` y `/guia` —, con su título, su descripción y su canónica. Vercel
+reescribe esas rutas a `index.html` y el botón atrás del navegador funciona.
+Si añades una vista, hay que tocar tres sitios: el mapa `RUTAS`, el objeto
+`META` y `public/sitemap.xml`.
+
+Las vistas son: **Total GNC**, **Interna**, **Externa** y
 **Guía**. Esta última es el glosario: define los conceptos con su fuente
 autorizada, explica por qué importa el nivel de deuda, recoge las notas
 metodológicas numeradas y lista las referencias. Los términos subrayados en el
