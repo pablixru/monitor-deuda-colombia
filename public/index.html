@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="es"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deuda Colombia</title>
@@ -7,6 +7,25 @@
 <link rel="icon" href="icon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="theme-color" content="#f5f4f2">
+<meta name="description" content="Quién es dueño de la deuda de Colombia: tenedores de TES, deuda externa y deuda del Gobierno Nacional Central. Datos oficiales, actualizados cada mes.">
+<link rel="canonical" href="https://deuda-colombia.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deuda Colombia">
+<meta property="og:locale" content="es_CO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://deuda-colombia.vercel.app/">
+<meta property="og:title" content="Deuda Colombia">
+<meta property="og:description" content="Quién es dueño de la deuda de Colombia: tenedores de TES, deuda externa y deuda del Gobierno Nacional Central. Datos oficiales, actualizados cada mes.">
+<meta property="og:image" content="https://deuda-colombia.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Deuda Colombia — ¿Quién es dueño de la deuda de Colombia?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Deuda Colombia">
+<meta name="twitter:description" content="Quién es dueño de la deuda de Colombia: tenedores de TES, deuda externa y deuda del Gobierno Nacional Central. Datos oficiales, actualizados cada mes.">
+<meta name="twitter:image" content="https://deuda-colombia.vercel.app/og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://deuda-colombia.vercel.app/#sitio","url":"https://deuda-colombia.vercel.app/","name":"Deuda Colombia","inLanguage":"es-CO","description":"Quién es dueño de la deuda de Colombia: tenedores de TES, deuda externa y deuda del Gobierno Nacional Central, con datos oficiales actualizados cada mes.","creator":{"@id":"https://deuda-colombia.vercel.app/#autor"}},{"@type":"Person","@id":"https://deuda-colombia.vercel.app/#autor","name":"Pablo Ruiz Carrizosa","url":"https://pabloruiz.vercel.app","jobTitle":"Economista"},{"@type":"Dataset","@id":"https://deuda-colombia.vercel.app/#tes","name":"Tenedores de TES clase B de Colombia","description":"Saldo mensual de los Títulos de Tesorería clase B por tipo de tenedor: fondos de pensiones, inversionistas extranjeros, bancos comerciales, aseguradoras, sector público y otros.","inLanguage":"es-CO","temporalCoverage":"2010-01/..","spatialCoverage":{"@type":"Place","name":"Colombia"},"variableMeasured":"Saldo de TES clase B en millones de pesos","creator":{"@id":"https://deuda-colombia.vercel.app/#autor"},"isBasedOn":"https://www.irc.gov.co/deuda-publica/deuda-interna-gnc/tenedores-tes","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://deuda-colombia.vercel.app/data/tes.json"}]},{"@type":"Dataset","@id":"https://deuda-colombia.vercel.app/#externa","name":"Deuda externa de Colombia","description":"Saldo mensual de la deuda externa bruta de Colombia por sectores y plazos, con intereses, flujos y el desglose por deudor, acreedor y moneda.","inLanguage":"es-CO","temporalCoverage":"2001-02/..","spatialCoverage":{"@type":"Place","name":"Colombia"},"variableMeasured":"Saldo de deuda externa bruta en millones de dólares","creator":{"@id":"https://deuda-colombia.vercel.app/#autor"},"isBasedOn":"https://suameca.banrep.gov.co/estadisticas-economicas/tablasPreconstruidas?idDashboard=407211,407221,407231,40713","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://deuda-colombia.vercel.app/data/externa.json"}]},{"@type":"Dataset","@id":"https://deuda-colombia.vercel.app/#gnc","name":"Deuda del Gobierno Nacional Central de Colombia","description":"Saldos, composición por fuente, moneda y tasa, indicadores de duración y vida media, y perfil de vencimientos de la deuda del Gobierno Nacional Central.","inLanguage":"es-CO","temporalCoverage":"2001-06/..","spatialCoverage":{"@type":"Place","name":"Colombia"},"variableMeasured":"Saldo de deuda del GNC en millones de pesos y de dólares","creator":{"@id":"https://deuda-colombia.vercel.app/#autor"},"isBasedOn":"https://www.irc.gov.co/deuda-publica/perfil-deuda-publica-gnc","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://deuda-colombia.vercel.app/data/gnc.json"}]}]}</script>
 
 
 
@@ -1536,6 +1555,7 @@ class Component extends DCLogic {
       .catch(e => console.error('No se pudo cargar data/externa.json', e));
     fetch(R('gncData', 'data/gnc.json')).then(r => r.json()).then(d => this.setState({ gdata: d }))
       .catch(e => console.error('No se pudo cargar data/gnc.json', e));
+    try { window.addEventListener('popstate', () => this.setState({ vista: this.vistaDeRuta() || 'total' })); } catch (e) {}
     fetch(R('metaData', 'data/meta.json')).then(r => r.json()).then(d => this.setState({ meta: d }))
       .catch(e => console.error('No se pudo cargar data/meta.json', e));
   }
@@ -1606,6 +1626,54 @@ class Component extends DCLogic {
       if (idx !== hover) setHover(idx);
     };
     return { areas, gridY, gridX, yLabs, hoverOn, hx, tipRows, tipDate, tipTotal, tipStyle, move, leave: () => setHover(null) };
+  }
+  // Cada vista tiene su propia URL: si todas comparten «/», los buscadores solo
+  // pueden indexar una y las cuatro compiten por la misma consulta.
+  RUTAS = { total: '/', interna: '/interna', externa: '/externa', guia: '/guia' };
+  META = {
+    es: {
+      total: ['Deuda del Gobierno de Colombia, mes a mes', 'Cuánto debe el Gobierno Nacional Central de Colombia: deuda interna y externa, vencimientos, costo y composición, con datos oficiales del Ministerio de Hacienda.'],
+      interna: ['¿Quién tiene los TES de Colombia?', 'Quién es dueño de la deuda interna de Colombia: saldo de TES clase B en manos de fondos de pensiones, bancos, aseguradoras e inversionistas extranjeros, mes a mes desde 2010.'],
+      externa: ['Deuda externa de Colombia', 'A quién le debe Colombia por fuera: saldo, acreedores, monedas, intereses y flujos de la deuda externa, con datos del Banco de la República desde 2001.'],
+      guia: ['Qué es la deuda interna, la externa y los TES', 'Glosario en lenguaje llano de la deuda pública colombiana, con definiciones del FMI y del Banco de la República, notas metodológicas y fuentes.']
+    },
+    en: {
+      total: ['Colombia’s central government debt, month by month', 'How much Colombia’s central government owes: domestic and external debt, maturities, cost and composition, from official Ministry of Finance data.'],
+      interna: ['Who holds Colombia’s TES?', 'Who owns Colombia’s domestic debt: class-B TES held by pension funds, banks, insurers and foreign investors, month by month since 2010.'],
+      externa: ['Colombia’s external debt', 'Who Colombia owes abroad: balance, creditors, currencies, interest and flows, from Banco de la República data since 2001.'],
+      guia: ['What domestic debt, external debt and TES are', 'A plain-language glossary of Colombian public debt, with IMF and Banco de la República definitions, methodological notes and sources.']
+    }
+  };
+  vistaDeRuta() {
+    try {
+      const p = (location.pathname || '/').replace(/\/+$/, '') || '/';
+      for (const k in this.RUTAS) if (this.RUTAS[k] === p) return k;
+    } catch (e) {}
+    return null;
+  }
+  sincronizarMeta(vista, lang) {
+    try {
+      const m = (this.META[lang] || this.META.es)[vista] || this.META.es.total;
+      const titulo = m[0] + ' · Deuda Colombia';
+      if (document.title !== titulo) document.title = titulo;
+      if (document.documentElement.lang !== lang) document.documentElement.lang = lang;
+      const url = 'https://deuda-colombia.vercel.app' + (this.RUTAS[vista] || '/');
+      const poner = (sel, attr, val) => {
+        const el = document.head.querySelector(sel);
+        if (el && el.getAttribute(attr) !== val) el.setAttribute(attr, val);
+      };
+      poner('meta[name="description"]', 'content', m[1]);
+      poner('meta[property="og:title"]', 'content', titulo);
+      poner('meta[property="og:description"]', 'content', m[1]);
+      poner('meta[name="twitter:title"]', 'content', titulo);
+      poner('meta[name="twitter:description"]', 'content', m[1]);
+      poner('link[rel="canonical"]', 'href', url);
+      poner('meta[property="og:url"]', 'content', url);
+      poner('meta[property="og:locale"]', 'content', lang === 'en' ? 'en_US' : 'es_CO');
+    } catch (e) {}
+  }
+  irARuta(v) {
+    try { history.pushState({ v: v }, '', this.RUTAS[v] || '/'); } catch (e) {}
   }
   // --- etiquetas de corte -------------------------------------------------
   // Se derivan de los propios datos para que el texto no pueda desmentir a las
@@ -1679,10 +1747,11 @@ class Component extends DCLogic {
   renderVals() {
     const st = this.state, es = st.lang === 'es', loc = es ? 'es-CO' : 'en-US';
     const hero = this.props.hero ?? 'inmersivo';
-    const vista = st.vista ?? this.props.vistaInicial ?? 'interna';
+    const vista = st.vista ?? this.vistaDeRuta() ?? this.props.vistaInicial ?? 'total';
+    this.sincronizarMeta(vista, st.lang);
     const btnBase = { padding: '7px 16px', borderRadius: '999px', fontWeight: 650, fontSize: '.85rem', border: '1px solid transparent', background: 'transparent', color: 'var(--ink-soft)', cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap' };
     const on = { ...btnBase, background: 'var(--accent)', color: '#001410' };
-    const goto = v => { this.setState({ vista: v }); try { window.scrollTo(0, 0); } catch (e) {} };
+    const goto = v => { this.setState({ vista: v }); this.irARuta(v); try { window.scrollTo(0, 0); } catch (e) {} };
     const meta = st.meta || {};
     const trm = +(meta.trm ?? this.props.trm ?? 3621.86) || 3621.86;
     const cop = (st.xMoneda ?? 'usd') === 'cop';
@@ -1701,6 +1770,7 @@ class Component extends DCLogic {
         if (ev && ev.preventDefault) ev.preventDefault();
         const destino = (ev.currentTarget.getAttribute('href') || '').slice(1);
         this.setState({ vista: 'guia' });
+        this.irARuta('guia');
         // La vista se monta un instante después del setState, así que el ancla
         // todavía no existe: se reintenta hasta que aparezca.
         // El salto es instantáneo a propósito: al re-renderizar, el runtime

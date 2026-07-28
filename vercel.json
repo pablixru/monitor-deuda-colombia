@@ -2,6 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "outputDirectory": "public",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/interna", "destination": "/index.html" },
+    { "source": "/externa", "destination": "/index.html" },
+    { "source": "/guia", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/assets/fonts/(.*)",
