@@ -15,12 +15,6 @@
       "has": [{ "type": "host", "value": "deuda-colombia.vercel.app" }],
       "destination": "https://deudacolombia.site/$1",
       "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "monitor-deuda-colombia.vercel.app" }],
-      "destination": "https://deudacolombia.site/$1",
-      "permanent": true
     }
   ],
   "rewrites": [
