@@ -1528,7 +1528,6 @@ class Component extends DCLogic {
   MENs = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   componentDidMount() {
     var R = function (id, path) { return (window.__resources && window.__resources[id]) || path; };
-    try { const t = localStorage.getItem('dmon-theme'); if (t === 'light' || t === 'dark') this.setState({ theme: t }); } catch (e) {}
     fetch(R('tesData', 'data/tes.json')).then(r => r.json()).then(d => {
       const n = d.dates.length, gs = {};
       for (const g of this.GDEF) { gs[g.id] = new Array(n).fill(0); for (const c of g.cats) { const s = d.series[c]; if (s) for (let i = 0; i < n; i++) gs[g.id][i] += s[i]; } }
@@ -1961,7 +1960,8 @@ class Component extends DCLogic {
       langBtn: es ? 'EN' : 'ES',
       themeBtn: st.theme === 'dark' ? (es ? 'Claro' : 'Light') : (es ? 'Oscuro' : 'Dark'),
       toggleLang: () => this.setState({ lang: es ? 'en' : 'es' }),
-      toggleTheme: () => { const t = st.theme === 'dark' ? 'light' : 'dark'; try { localStorage.setItem('dmon-theme', t); } catch (e) {} this.setState({ theme: t }); }
+      // El tema no se recuerda a proposito: cada visita empieza en claro.
+      toggleTheme: () => this.setState({ theme: st.theme === 'dark' ? 'light' : 'dark' })
     };
     const fPct = p => p.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %';
 
