@@ -306,6 +306,40 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
 #dmon .gl-p{color:var(--ink-soft);line-height:1.6;margin:10px 0 0;font-size:.95rem}
 #dmon .gl-f{color:var(--ink-faint);line-height:1.5;margin:12px 0 0;font-size:.8rem}
 #dmon .gl-f a{color:var(--accent-soft);text-decoration:none;border-bottom:1px dashed currentColor}
+
+/* ---- Móvil ------------------------------------------------------------- */
+#dmon .mnu-btn{display:none;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);font-weight:650;font-size:.82rem;font-family:inherit;cursor:pointer}
+@media (max-width:820px){
+  /* La cabecera ocupaba un tercio de la pantalla: el índice de secciones pasa
+     a un desplegable y sólo quedan la marca, las vistas y los ajustes. */
+  #dmon .mnu-btn{display:inline-flex;margin-left:auto}
+  #dmon header > div{gap:10px !important;padding-top:10px !important;padding-bottom:10px !important}
+  #dmon .secnav{display:none !important;position:absolute;top:calc(100% + 8px);right:var(--pad-x);left:var(--pad-x);flex-direction:column;align-items:stretch;background:var(--surface);border-radius:12px;padding:8px;box-shadow:0 14px 34px -10px rgba(0,0,0,.45);z-index:60}
+  #dmon .secnav[data-abierto="si"]{display:flex !important}
+  #dmon .secnav a{padding:11px 14px !important;font-size:.95rem !important}
+
+  /* Las etiquetas del eje viven fuera del área de trazado: sin este hueco a la
+     izquierda se salían del recuadro hasta 42 px. */
+  #dmon [style*="paper-hi"]{padding-left:52px !important;padding-right:14px !important}
+  #dmon [style*="right:94%"]{font-size:.68rem !important}
+
+  /* La cabecera de sección se partía en tres renglones. */
+  #dmon [style*="flex:1 1 60px"]{display:none !important}
+  #dmon h2{font-size:1.55rem !important}
+  /* El indice de seccion se iba a un renglon propio; comparte linea con el titulo. */
+  #dmon div:has(> h2){flex-wrap:nowrap !important;gap:12px !important;align-items:baseline}
+  #dmon div:has(> h2) h2{min-width:0}
+  /* La portada de la Guia traia el doble de aire que el resto. */
+  #dmon main > div > div[style*="padding-top:90px"]{padding-top:34px !important;padding-bottom:38px !important}
+
+  /* Menos aire antes del primer texto. */
+  #dmon main > div > div[style*="padding"]{padding-top:34px !important;padding-bottom:38px !important}
+  #dmon section{padding-top:44px !important;padding-bottom:44px !important}
+}
+@media (max-width:460px){
+  #dmon [style*="paper-hi"]{padding-left:58px !important;padding-right:10px !important}
+  #dmon [style*="right:94%"]{font-size:.64rem !important}
+}
 #dmon[data-theme="light"]{--bg:#f5f4f2;--bg-deep:#eceae7;--surface:#ffffff;--surface-high:#f1efec;--ink:#1b1a19;--ink-soft:#46433f;--ink-faint:#6d6763;--line:#dbd7d3;--line-soft:#e7e3df;--accent-soft:#04724f;--red:#d23a2e;--blue:#0a72c9;--glow:rgba(0,192,139,.16);--hdr:rgba(245,244,242,.82)}
 #dmon a{color:var(--ink);text-decoration:none}
 #dmon a:hover{color:var(--accent-soft)}
@@ -334,41 +368,42 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
       <button sc-camel-on-click="{{ goGuia }}" style="{{ vGuiaStyle }}"><span class="Les">Guía</span><span class="Len">Guide</span></button>
     </div>
     <sc-if value="{{ vInterna }}" hint-placeholder-val="{{ true }}">
-      <nav style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
-        <a href="#tenedores" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Tenedores</span><span class="Len">Holders</span></a>
-        <a href="#evolucion" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Evolución</span><span class="Len">History</span></a>
-        <a href="#cambios" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Cambios</span><span class="Len">Changes</span></a>
-        <a href="#traslape" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Traslape</span><span class="Len">Overlap</span></a>
+      <nav class="secnav" data-abierto="{{ menuAbierto }}" style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
+        <a href="#tenedores" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Tenedores</span><span class="Len">Holders</span></a>
+        <a href="#evolucion" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Evolución</span><span class="Len">History</span></a>
+        <a href="#cambios" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Cambios</span><span class="Len">Changes</span></a>
+        <a href="#traslape" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Traslape</span><span class="Len">Overlap</span></a>
       </nav>
     </sc-if>
     <sc-if value="{{ vExterna }}" hint-placeholder-val="{{ false }}">
-      <nav style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
-        <a href="#xevolucion" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Evolución</span><span class="Len">History</span></a>
-        <a href="#xcosto" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Costo</span><span class="Len">Cost</span></a>
-        <a href="#xflujos" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Flujos</span><span class="Len">Flows</span></a>
-        <a href="#xquien" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Quién y a quién</span><span class="Len">Who owes whom</span></a>
-        <a href="#traslape" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Traslape</span><span class="Len">Overlap</span></a>
+      <nav class="secnav" data-abierto="{{ menuAbierto }}" style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
+        <a href="#xevolucion" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Evolución</span><span class="Len">History</span></a>
+        <a href="#xcosto" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Costo</span><span class="Len">Cost</span></a>
+        <a href="#xflujos" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Flujos</span><span class="Len">Flows</span></a>
+        <a href="#xquien" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Quién y a quién</span><span class="Len">Who owes whom</span></a>
+        <a href="#traslape" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Traslape</span><span class="Len">Overlap</span></a>
       </nav>
     </sc-if>
     <sc-if value="{{ vTotal }}" hint-placeholder-val="{{ false }}">
-      <nav style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
-        <a href="#gvuelco" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">El vuelco</span><span class="Len">The shift</span></a>
-        <a href="#gperfil" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Vencimientos</span><span class="Len">Maturities</span></a>
-        <a href="#gcosto" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Costo y plazo</span><span class="Len">Cost &amp; term</span></a>
-        <a href="#gcomposicion" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Composición</span><span class="Len">Composition</span></a>
-        <a href="#traslape" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Traslape</span><span class="Len">Overlap</span></a>
+      <nav class="secnav" data-abierto="{{ menuAbierto }}" style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
+        <a href="#gvuelco" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">El vuelco</span><span class="Len">The shift</span></a>
+        <a href="#gperfil" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Vencimientos</span><span class="Len">Maturities</span></a>
+        <a href="#gcosto" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Costo y plazo</span><span class="Len">Cost &amp; term</span></a>
+        <a href="#gcomposicion" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Composición</span><span class="Len">Composition</span></a>
+        <a href="#traslape" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Traslape</span><span class="Len">Overlap</span></a>
       </nav>
     </sc-if>
     <sc-if value="{{ vGuia }}" hint-placeholder-val="{{ false }}">
-      <nav style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
-        <a href="#preguntas" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Preguntas</span><span class="Len">Questions</span></a>
-        <a href="#conceptos" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Conceptos</span><span class="Len">Concepts</span></a>
-        <a href="#porque" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Por qué importa</span><span class="Len">Why it matters</span></a>
-        <a href="#historia" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Historia</span><span class="Len">History</span></a>
-        <a href="#notas" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Notas</span><span class="Len">Notes</span></a>
-        <a href="#referencias" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Fuentes</span><span class="Len">Sources</span></a>
+      <nav class="secnav" data-abierto="{{ menuAbierto }}" style="display:flex;gap:4px;border:1px solid var(--line);border-radius:999px;padding:4px;background:rgba(255,255,255,.02);margin-left:auto;flex-wrap:wrap">
+        <a href="#preguntas" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Preguntas</span><span class="Len">Questions</span></a>
+        <a href="#conceptos" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Conceptos</span><span class="Len">Concepts</span></a>
+        <a href="#porque" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Por qué importa</span><span class="Len">Why it matters</span></a>
+        <a href="#historia" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Historia</span><span class="Len">History</span></a>
+        <a href="#notas" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Notas</span><span class="Len">Notes</span></a>
+        <a href="#referencias" sc-camel-on-click="{{ cerrarMenu }}" style="padding:6px 14px;border-radius:999px;font-size:.86rem;font-weight:600;color:var(--ink-soft)" style-hover="color:var(--accent-soft)"><span class="Les">Fuentes</span><span class="Len">Sources</span></a>
       </nav>
     </sc-if>
+    <button class="mnu-btn" sc-camel-on-click="{{ alternarMenu }}" sc-camel-aria-expanded="{{ menuAbierto }}" aria-label="Secciones"><span class="Les">Secciones</span><span class="Len">Sections</span> <span aria-hidden="true">▾</span></button>
     <div style="display:flex;gap:8px">
       <button sc-camel-on-click="{{ toggleLang }}" style="padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);font-weight:650;font-size:.82rem;cursor:pointer;font-family:inherit" style-hover="border-color:var(--accent);color:var(--accent-soft)" style-focus="outline:2px solid var(--accent);outline-offset:2px">{{ langBtn }}</button>
       <button sc-camel-on-click="{{ toggleTheme }}" style="padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);font-weight:650;font-size:.82rem;cursor:pointer;font-family:inherit" style-hover="border-color:var(--accent);color:var(--accent-soft)" style-focus="outline:2px solid var(--accent);outline-offset:2px">{{ themeBtn }}</button>
@@ -1465,7 +1500,7 @@ class Component extends DCLogic {
             vista: null, xMoneda: 'usd', xEscala: 'valor', xDesglose: 'sector', xRango: 'max', xHover: null,
             gdata: null, gnMoneda: 'cop', gnRango: 'max', gnHover: null, meta: null,
             pHover: null, cHover: null, tHover: null, fHover: null,
-            glAbierta: null, tactil: false };
+            glAbierta: null, menu: false };
   GDEF = [
     { id: 'pen', es: 'Fondos de pensiones y cesantías', en: 'Pension & severance funds', color: '#00c08b', cats: ['Fondos de Pensiones y Cesantias', 'Fondos de Prima Media', 'Administradoras de Carteras Colectivas y de Fdos Pensiones y Cesantias'] },
     { id: 'ext', es: 'Inversionistas extranjeros', en: 'Foreign investors', color: '#2f89dd', cats: ['Fondos de Capital Extranjero'] },
@@ -1862,7 +1897,7 @@ class Component extends DCLogic {
     this.sincronizarMeta(vista, st.lang);
     const btnBase = { padding: '7px 16px', borderRadius: '999px', fontWeight: 650, fontSize: '.85rem', border: '1px solid transparent', background: 'transparent', color: 'var(--ink-soft)', cursor: 'pointer', fontFamily: 'inherit', whiteSpace: 'nowrap' };
     const on = { ...btnBase, background: 'var(--accent)', color: '#001410' };
-    const goto = v => { this.setState({ vista: v }); this.irARuta(v); try { window.scrollTo(0, 0); } catch (e) {} };
+    const goto = v => { this.setState({ vista: v, menu: false }); this.irARuta(v); try { window.scrollTo(0, 0); } catch (e) {} };
     const meta = st.meta || {};
     const trm = +(meta.trm ?? this.props.trm ?? 3621.86) || 3621.86;
     const cop = (st.xMoneda ?? 'usd') === 'cop';
@@ -1873,6 +1908,9 @@ class Component extends DCLogic {
       theme: st.theme, lang: st.lang, ready: !!st.data, xReady: !!st.xdata,
       vInterna: vista === 'interna', vExterna: vista === 'externa', vTotal: vista === 'total',
       vGuia: vista === 'guia', goGuia: () => goto('guia'),
+      menuAbierto: st.menu ? 'si' : 'no',
+      alternarMenu: () => this.setState({ menu: !st.menu }),
+      cerrarMenu: () => this.setState({ menu: false }),
       vDatos: vista !== 'guia',
       vGuiaStyle: vista === 'guia' ? on : btnBase,
       // Un solo manejador para todos los enlaces de glosario y de notas: lee el
