@@ -321,24 +321,36 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
   /* Las etiquetas del eje viven fuera del área de trazado: sin este hueco a la
      izquierda se salían del recuadro hasta 42 px. */
   #dmon [style*="paper-hi"]{padding-left:52px !important;padding-right:14px !important}
-  #dmon [style*="right:94%"]{font-size:.68rem !important}
+  #dmon [style*="right: 94%"]{font-size:.68rem !important}
 
   /* La cabecera de sección se partía en tres renglones. */
-  #dmon [style*="flex:1 1 60px"]{display:none !important}
+  #dmon [style*="flex: 1 1 60px"]{display:none !important}
   #dmon h2{font-size:1.55rem !important}
   /* El indice de seccion se iba a un renglon propio; comparte linea con el titulo. */
   #dmon div:has(> h2){flex-wrap:nowrap !important;gap:12px !important;align-items:baseline}
   #dmon div:has(> h2) h2{min-width:0}
   /* La portada de la Guia traia el doble de aire que el resto. */
-  #dmon main > div > div[style*="padding-top:90px"]{padding-top:34px !important;padding-bottom:38px !important}
+  #dmon main > div > div[style*="padding-top: 90px"]{padding-top:34px !important;padding-bottom:38px !important}
 
   /* Menos aire antes del primer texto. */
   #dmon main > div > div[style*="padding"]{padding-top:34px !important;padding-bottom:38px !important}
   #dmon section{padding-top:44px !important;padding-bottom:44px !important}
+
+  /* A ancho de teléfono la proporción del viewBox dejaba las gráficas en 82-109
+     px de alto, ilegibles. Se les fija altura y se libera la proporción; el
+     trazo se mantiene uniforme para que no se deforme. */
+  #dmon svg.chart{height:230px}
+  #dmon svg.chart *{vector-effect:non-scaling-stroke}
+
+  /* Los pies del eje iban lado a lado y a este ancho se partían los dos, hasta
+     «Año →». Se apilan y la etiqueta corta no se rompe. */
+  #dmon [style*="padding: 8px 2px 0px"]{flex-direction:column;align-items:flex-start;gap:2px !important}
+  #dmon [style*="padding: 8px 2px 0px"] > span:last-child{white-space:nowrap}
 }
 @media (max-width:460px){
+  #dmon svg.chart{height:210px}
   #dmon [style*="paper-hi"]{padding-left:58px !important;padding-right:10px !important}
-  #dmon [style*="right:94%"]{font-size:.64rem !important}
+  #dmon [style*="right: 94%"]{font-size:.64rem !important}
 }
 #dmon[data-theme="light"]{--bg:#f5f4f2;--bg-deep:#eceae7;--surface:#ffffff;--surface-high:#f1efec;--ink:#1b1a19;--ink-soft:#46433f;--ink-faint:#6d6763;--line:#dbd7d3;--line-soft:#e7e3df;--accent-soft:#04724f;--red:#d23a2e;--blue:#0a72c9;--glow:rgba(0,192,139,.16);--hdr:rgba(245,244,242,.82)}
 #dmon a{color:var(--ink);text-decoration:none}
@@ -583,7 +595,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <sc-if value="{{ ready }}" hint-placeholder-val="{{ true }}">
       <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px;position:relative">
         <div sc-camel-on-mouse-move="{{ chMove }}" sc-camel-on-mouse-leave="{{ chLeave }}" style="position:relative;margin:6px 0 40px">
-          <svg sc-camel-view-box="0 0 1000 400" style="width:100%;display:block">
+          <svg sc-camel-view-box="0 0 1000 400" sc-camel-preserve-aspect-ratio="none" class="chart" style="width:100%;display:block">
             <sc-for list="{{ gridY }}" as="y" hint-placeholder-count="4">
               <line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line>
             </sc-for>
@@ -709,7 +721,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <sc-if value="{{ xReady }}" hint-placeholder-val="{{ true }}">
       <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px;position:relative">
         <div sc-camel-on-mouse-move="{{ xMove }}" sc-camel-on-mouse-leave="{{ xLeave }}" style="position:relative;margin:6px 0 40px">
-          <svg sc-camel-view-box="0 0 1000 400" style="width:100%;display:block">
+          <svg sc-camel-view-box="0 0 1000 400" sc-camel-preserve-aspect-ratio="none" class="chart" style="width:100%;display:block">
             <sc-for list="{{ xGridY }}" as="y" hint-placeholder-count="4">
               <line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line>
             </sc-for>
@@ -782,7 +794,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <sc-if value="{{ xReady }}" hint-placeholder-val="{{ true }}">
       <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px">
         <div sc-camel-on-mouse-move="{{ tMove }}" sc-camel-on-mouse-leave="{{ tLeave }}" style="position:relative;margin:6px 0 40px">
-          <svg sc-camel-view-box="0 0 1000 300" style="width:100%;display:block">
+          <svg sc-camel-view-box="0 0 1000 300" sc-camel-preserve-aspect-ratio="none" class="chart" style="width:100%;display:block">
             <sc-for list="{{ tGridY }}" as="y" hint-placeholder-count="4">
               <line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line>
             </sc-for>
@@ -828,7 +840,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <sc-if value="{{ xReady }}" hint-placeholder-val="{{ true }}">
       <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px">
         <div sc-camel-on-mouse-move="{{ fMove }}" sc-camel-on-mouse-leave="{{ fLeave }}" style="position:relative;margin:6px 0 40px">
-          <svg sc-camel-view-box="0 0 1000 340" style="width:100%;display:block">
+          <svg sc-camel-view-box="0 0 1000 340" sc-camel-preserve-aspect-ratio="none" class="chart" style="width:100%;display:block">
             <sc-for list="{{ fGridY }}" as="y" hint-placeholder-count="4">
               <line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line>
             </sc-for>
@@ -987,7 +999,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <sc-if value="{{ gnReady }}" hint-placeholder-val="{{ true }}">
       <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px;position:relative">
         <div sc-camel-on-mouse-move="{{ gnMove }}" sc-camel-on-mouse-leave="{{ gnLeave }}" style="position:relative;margin:6px 0 40px">
-          <svg sc-camel-view-box="0 0 1000 400" style="width:100%;display:block">
+          <svg sc-camel-view-box="0 0 1000 400" sc-camel-preserve-aspect-ratio="none" class="chart" style="width:100%;display:block">
             <sc-for list="{{ gnGridY }}" as="y" hint-placeholder-count="4"><line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line></sc-for>
             <sc-for list="{{ gnAreas }}" as="a" hint-placeholder-count="2"><path d="{{ a.d }}" fill="{{ a.color }}" sc-camel-fill-opacity="0.93"></path></sc-for>
             <sc-for list="{{ gnGridX }}" as="x" hint-placeholder-count="8"><line x1="{{ x.x }}" x2="{{ x.x }}" y1="400" y2="406" stroke="#6d6763" sc-camel-stroke-width="1"></line></sc-for>
@@ -1070,7 +1082,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <sc-if value="{{ gnReady }}" hint-placeholder-val="{{ true }}">
       <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px">
         <div sc-camel-on-mouse-move="{{ pMove }}" sc-camel-on-mouse-leave="{{ pLeave }}" style="position:relative;margin:6px 0 40px">
-          <svg sc-camel-view-box="0 0 1000 360" style="width:100%;display:block">
+          <svg sc-camel-view-box="0 0 1000 360" sc-camel-preserve-aspect-ratio="none" class="chart" style="width:100%;display:block">
             <sc-for list="{{ pGridY }}" as="y" hint-placeholder-count="4"><line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line></sc-for>
             <sc-for list="{{ pBars }}" as="b" hint-placeholder-count="22"><rect x="{{ b.x }}" y="{{ b.y }}" width="{{ b.w }}" height="{{ b.h }}" fill="{{ b.color }}"></rect></sc-for>
             <line x1="60" x2="1000" y1="359.2" y2="359.2" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
@@ -1138,7 +1150,7 @@ body{margin:0;background:#0a0a0a;font-family:'Hanken Grotesk',-apple-system,'Seg
     <sc-if value="{{ gnReady }}" hint-placeholder-val="{{ true }}">
       <div style="background:linear-gradient(160deg,var(--paper-hi),var(--paper-lo));border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.35);padding:24px 24px 12px">
         <div sc-camel-on-mouse-move="{{ cMove }}" sc-camel-on-mouse-leave="{{ cLeave }}" style="position:relative;margin:6px 0 40px">
-          <svg sc-camel-view-box="0 0 1000 300" style="width:100%;display:block">
+          <svg sc-camel-view-box="0 0 1000 300" sc-camel-preserve-aspect-ratio="none" class="chart" style="width:100%;display:block">
             <sc-for list="{{ cGridY }}" as="y" hint-placeholder-count="4"><line x1="60" x2="1000" y1="{{ y.y }}" y2="{{ y.y }}" stroke="#d9d3cb" sc-camel-stroke-width="1"></line></sc-for>
             <path d="{{ cupPath }}" fill="none" stroke="#00c08b" sc-camel-stroke-width="2.6" sc-camel-stroke-linejoin="round"></path>
             <line x1="60" x2="1000" y1="299.2" y2="299.2" stroke="#6d6763" sc-camel-stroke-width="1.6"></line>
