@@ -59,9 +59,20 @@ pip install -r requirements.txt
 ### Actualización automática
 
 En `.github/workflows/actualizar-datos.yml` hay una acción que corre varias
-veces al mes, descarga las fuentes que se pueden traer solas, reconstruye los
-JSON y **abre un Pull Request** con un resumen de qué cambió. No publica nada
-por su cuenta: el merge lo haces tú.
+veces al mes, descarga las fuentes que se pueden traer solas y reconstruye los
+JSON. Después decide sola qué hacer:
+
+- **Si el cambio es rutinario** —los cortes avanzaron uno o dos meses y ninguna
+  cifra de portada se movió más de un 12 %—, hace commit en `main` y Vercel
+  despliega. No tienes que hacer nada.
+- **Si algo se sale de lo normal** —una serie que pierde meses, un corte que
+  retrocede o salta, una cifra que da un brinco, un tipo de tenedor que aparece
+  o desaparece—, **no publica**: abre un Pull Request diciendo exactamente qué
+  le pareció raro.
+
+Esos umbrales están en `revisar_anomalias()`, en `scripts/resumen.py`. La idea
+es que un mes normal no te robe tiempo y que uno anormal no se publique sin que
+alguien lo mire.
 
 | Fuente | Cómo llega |
 |---|---|
@@ -86,17 +97,29 @@ publicado. El script no reintenta en ese caso.
 Si una descarga falla, el archivo que ya estaba en `fuentes/` **se deja
 intacto**: vale más un dato viejo que uno roto.
 
-### Comprobación opcional en CI
+También hay una segunda acción, `verificar-datos.yml`, que en cada push
+reconstruye los JSON y falla si no coinciden con los Excel. Atrapa el olvido más
+probable de la rutina manual: reemplazar las fuentes y no volver a correr el
+script.
 
-En `.github/workflows/verificar-datos.yml` hay una acción que reconstruye los
-JSON en cada push y falla si no coinciden con los Excel — atrapa el olvido más
-probable de la rutina: reemplazar las fuentes y no volver a correr el script.
-Está sin publicar porque subir un workflow exige un permiso extra de GitHub.
-Para activarla, en una terminal:
+### Cómo activar las dos acciones
+
+Están escritas pero **sin publicar**: GitHub no deja subir un archivo de
+`.github/workflows/` sin un permiso extra, que sólo se concede en una terminal
+interactiva. Una sola vez:
 
 ```bash
-gh auth refresh -s workflow && git add .github && git commit -m "Verificación de datos en CI" && git push
+gh auth refresh -s workflow
 ```
+
+Y después:
+
+```bash
+git add .github && git commit -m "Actualizacion automatica de datos" && git push
+```
+
+Desde ese momento la primera corrida se puede lanzar a mano desde la pestaña
+**Actions** del repositorio, con «Run workflow».
 
 ---
 

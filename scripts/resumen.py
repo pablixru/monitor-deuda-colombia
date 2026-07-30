@@ -52,7 +52,55 @@ def fila(etiqueta, antes, ahora, sufijo="", dec=1):
     return f"| {etiqueta} | {mil(antes, dec)}{sufijo} |{flecha} **{mil(ahora, dec)}{sufijo}** |"
 
 
+def meses_entre(a: str, b: str) -> int:
+    ya, ma = (int(x) for x in a.split("-"))
+    yb, mb = (int(x) for x in b.split("-"))
+    return (yb - ya) * 12 + (mb - ma)
+
+
+def revisar_anomalias(pares) -> list[str]:
+    """Busca señales de que la actualización no es rutinaria.
+
+    Un mes normal mueve el corte un puesto y las cifras un poco. Si algo se sale
+    de eso —una serie que pierde meses, un corte que salta, una cifra que da un
+    brinco— vale más que lo mire una persona antes de publicarlo.
+    """
+    avisos = []
+    for archivo, nombre in pares:
+        a, b = version_en_git(f"public/data/{archivo}"), actual(archivo)
+        if not a or not b:
+            continue
+
+        if len(b["dates"]) < len(a["dates"]):
+            avisos.append(f"**{nombre}** perdió meses: pasó de {len(a['dates'])} a {len(b['dates'])}.")
+
+        salto = meses_entre(a["dates"][-1], b["dates"][-1])
+        if salto < 0:
+            avisos.append(f"**{nombre}**: el corte retrocedió, de {a['dates'][-1]} a {b['dates'][-1]}.")
+        elif salto > 2:
+            avisos.append(f"**{nombre}**: el corte saltó {salto} meses, de {a['dates'][-1]} a {b['dates'][-1]}.")
+
+        # saltos bruscos en las series de portada
+        series = {"gnc.json": ["copTot", "copInt", "copExt"],
+                  "externa.json": ["total", "pub", "priv"]}.get(archivo, [])
+        for clave in series:
+            va, vb = a.get(clave), b.get(clave)
+            if not va or not vb or va[-1] in (None, 0) or vb[-1] is None:
+                continue
+            cambio = abs(vb[-1] - va[-1]) / abs(va[-1]) * 100
+            if cambio > 12:
+                avisos.append(f"**{nombre}** · `{clave}` cambió {cambio:.1f} % "
+                              f"({va[-1]:,.1f} → {vb[-1]:,.1f}).")
+
+    a, b = version_en_git("public/data/tes.json"), actual("tes.json")
+    if a and b and len(b["series"]) != len(a["series"]):
+        avisos.append(f"**Tenedores de TES**: cambió el número de grupos, "
+                      f"de {len(a['series'])} a {len(b['series'])}.")
+    return avisos
+
+
 def main() -> int:
+    verificar = "--verificar" in sys.argv
     lineas = ["## Qué cambió", ""]
     hubo = False
 
@@ -101,18 +149,28 @@ def main() -> int:
         hubo = True
         lineas += ["### Cifras de portada", "", "| | Antes | Ahora |", "|---|---|---|"] + cifras + [""]
 
+    avisos = revisar_anomalias(pares) if hubo else []
+
     if not hubo:
         lineas = ["## Sin cambios en los datos", "",
                   "Las fuentes se descargaron pero las cifras son las mismas que ya estaban publicadas."]
+    elif avisos:
+        lineas += ["---", "", "### Por qué esto no se publicó solo", ""]
+        lineas += [f"- {a}" for a in avisos]
+        lineas += ["", "Puede ser una revisión legítima de la fuente o un cambio de formato. "
+                       "Compruébalo antes de hacer merge.", "",
+                   "El boletín de deuda externa se actualiza a mano; si su corte no se movió, es normal."]
     else:
         lineas += ["---", "",
-                   "Revisa que los cortes avancen como esperabas y que ninguna cifra dé un salto "
-                   "raro. Si algo no cuadra, **no hagas merge**: puede ser una revisión de la fuente "
-                   "o un cambio de formato.", "",
-                   "El boletín de deuda externa del Banco de la República se actualiza a mano; si "
-                   "su corte no se movió, es normal."]
+                   "Cambio rutinario: los cortes avanzaron como se esperaba y ninguna cifra dio un "
+                   "salto brusco.", "",
+                   "El boletín de deuda externa se actualiza a mano; si su corte no se movió, es normal."]
 
     print("\n".join(lineas))
+
+    # 0 = no hay nada que hacer · 1 = rutinario, se puede publicar · 2 = que lo mire alguien
+    if verificar:
+        return 0 if not hubo else (2 if avisos else 1)
     return 0
 
 
