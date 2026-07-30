@@ -56,6 +56,36 @@ mano cada mes es `--trm` y `--pib`.
 pip install -r requirements.txt
 ```
 
+### Actualización automática
+
+En `.github/workflows/actualizar-datos.yml` hay una acción que corre varias
+veces al mes, descarga las fuentes que se pueden traer solas, reconstruye los
+JSON y **abre un Pull Request** con un resumen de qué cambió. No publica nada
+por su cuenta: el merge lo haces tú.
+
+| Fuente | Cómo llega |
+|---|---|
+| Tenedores de TES | Automática — dirección fija en el portal del IRC |
+| Histórico del GNC | Automática — se lee el listado y se toma el mes más reciente |
+| TRM | Automática — API de Datos Abiertos, para el día de corte del boletín |
+| Boletín de deuda externa | **A mano** — el portal del Banco dispara las descargas por JavaScript |
+| PIB | **A mano** — no está en ninguna de las fuentes |
+
+Dos cosas que conviene saber sobre el portal del Ministerio:
+
+- Rechaza las peticiones de Python con **403 aunque las cabeceras imiten a un
+  navegador**: distingue el cliente por su huella TLS. Por eso `traer_fuentes.py`
+  descarga con `curl`.
+- **Bloquea temporalmente si se le insiste mucho.** Con unas pocas peticiones al
+  mes no debería aparecer, pero si una corrida falla con 403, no es que el
+  archivo no exista: basta esperar a la siguiente fecha programada.
+
+Un 404, en cambio, sí es definitivo y quiere decir que ese mes todavía no se ha
+publicado. El script no reintenta en ese caso.
+
+Si una descarga falla, el archivo que ya estaba en `fuentes/` **se deja
+intacto**: vale más un dato viejo que uno roto.
+
 ### Comprobación opcional en CI
 
 En `.github/workflows/verificar-datos.yml` hay una acción que reconstruye los

@@ -38,6 +38,13 @@ from pathlib import Path
 
 warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")
 
+# La consola de Windows usa cp1252 y revienta al imprimir «→» o «·».
+for _flujo in (sys.stdout, sys.stderr):
+    try:
+        _flujo.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 try:
     import openpyxl
 except ImportError:  # pragma: no cover
@@ -550,6 +557,39 @@ def construir_meta(tes: dict, externa: dict, gnc: dict, trm: float, pib: float) 
 
 # --------------------------------------------------------------------------
 
+def trm_del_corte(corte: str):
+    """TRM del último día hábil del mes de corte, desde Datos Abiertos Colombia.
+
+    La TRM sólo existe para días hábiles, así que no se pide la fecha exacta de
+    fin de mes sino la última disponible hasta ese día. Devuelve None si no se
+    puede consultar: en ese caso se conserva la del mes anterior.
+    """
+    import json as _json
+    import urllib.parse
+    import urllib.request
+
+    anio, mes = (int(x) for x in corte.split("-"))
+    ultimo = dt.date(anio + (mes == 12), mes % 12 + 1, 1) - dt.timedelta(days=1)
+    consulta = urllib.parse.urlencode({
+        "$where": f"vigenciadesde <= '{ultimo.isoformat()}T23:59:59'",
+        "$order": "vigenciadesde DESC",
+        "$limit": 1,
+    })
+    url = f"https://www.datos.gov.co/resource/mcec-87by.json?{consulta}"
+    try:
+        with urllib.request.urlopen(url, timeout=40) as r:
+            filas = _json.loads(r.read().decode("utf-8"))
+        if not filas:
+            return None
+        valor = float(filas[0]["valor"])
+        fecha = filas[0]["vigenciadesde"][:10]
+        print(f"  · TRM del {fecha}: {valor:,.2f} (Datos Abiertos Colombia)")
+        return valor
+    except Exception as e:
+        print(f"  · No se pudo consultar la TRM ({e}); se conserva la anterior.")
+        return None
+
+
 def escribir(destino: Path, datos: dict) -> None:
     destino.parent.mkdir(parents=True, exist_ok=True)
     with destino.open("w", encoding="utf-8") as fh:
@@ -563,8 +603,8 @@ def main() -> int:
     ap.add_argument("--externa", type=Path, default=FUENTES / "boletin_deuda_externa.xlsx")
     ap.add_argument("--gnc", type=Path, default=FUENTES / "historico_gnc.xlsx")
     ap.add_argument("--salida", type=Path, default=SALIDA)
-    ap.add_argument("--trm", type=float, default=None,
-                    help="TRM del corte del boletín externo (COP/USD).")
+    ap.add_argument("--trm", default=None,
+                    help="TRM del corte del boletín externo, o «auto» para consultarla.")
     ap.add_argument("--pib", type=float, default=None,
                     help="PIB nominal en billones de COP.")
     args = ap.parse_args()
@@ -592,7 +632,13 @@ def main() -> int:
     ruta_meta = args.salida / "meta.json"
     if ruta_meta.exists():
         meta_previo = json.loads(ruta_meta.read_text(encoding="utf-8"))
-    trm = args.trm if args.trm is not None else meta_previo.get("trm", 3621.86)
+    anterior = meta_previo.get("trm", 3621.86)
+    if args.trm is None:
+        trm = anterior
+    elif str(args.trm).lower() == "auto":
+        trm = trm_del_corte(externa["dates"][-1]) or anterior
+    else:
+        trm = float(args.trm)
     pib = args.pib if args.pib is not None else meta_previo.get("pibCop", 1928)
 
     print("\nEscribiendo datos…")
@@ -604,7 +650,7 @@ def main() -> int:
     print(f"\nListo. Corte TES/GNC: {gnc['corte']} · deuda externa: "
           f"{externa['dates'][-1]} · TRM {trm:,.2f} · PIB ${pib:,.0f} B")
     if args.trm is None or args.pib is None:
-        print("Recuerda revisar --trm y --pib si cambiaron este mes.")
+        print("Recuerda revisar --trm y --pib si cambiaron este mes (--trm auto los consulta).")
     return 0
 
 
